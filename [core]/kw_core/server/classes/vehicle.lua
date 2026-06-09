@@ -35,7 +35,7 @@ Core.vehicleClass = {
 		if not vehicleProps then
 			return
 		end
-		vehicleProps = json.decode(vehicleProps)
+		vehicleProps = type(vehicleProps) == "string" and json.decode(vehicleProps) or vehicleProps or {}
 
 		if type(vehicleProps.model) ~= "number" then
 			vehicleProps.model = joaat(vehicleProps.model)
@@ -167,7 +167,7 @@ Core.vehicleClass = {
 		assert(type(newProps) == "table", "Expected 'props' to be a table")
 
 		local vehicleData = Core.vehicles[self.plate]
-		local affectedRows = PostgreSQL.update.await("UPDATE owned_vehicles SET vehicle = ? WHERE plate = ? AND owner = ?", json.encode(newProps), vehicleData.plate, vehicleData.owner)
+		local affectedRows = PostgreSQL.update.await("UPDATE owned_vehicles SET vehicle = ? WHERE plate = ? AND owner = ?", { json.encode(newProps), vehicleData.plate, vehicleData.owner })
 		if affectedRows <= 0 then
 			self:delete()
 			return false

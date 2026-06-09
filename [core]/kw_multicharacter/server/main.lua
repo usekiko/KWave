@@ -31,10 +31,14 @@ AddEventHandler("playerDropped", function()
 end)
 
 RegisterNetEvent("kw_multicharacter:DeleteCharacter", function(charid)
-    if not Config.CanDelete or type(charid) ~= "number" or string.len(charid) > 2 then
+    if not Config.CanDelete or type(charid) ~= "number" or math.type(charid) ~= "integer" or charid < 1 then
         return
     end
     local source = source
+    local allowedSlots = Multicharacter.playerSlots[source] or Server.slots
+    if charid > allowedSlots then
+        return
+    end
     Database:DeleteCharacter(source, charid)
 end)
 

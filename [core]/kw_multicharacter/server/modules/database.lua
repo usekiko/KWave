@@ -30,9 +30,13 @@ end
 
 PostgreSQL.ready(function()
     local length = 42 + #Server.prefix
-    local DB_COLUMNS = PostgreSQL.query.await(('SELECT table_name, column_name, character_maximum_length FROM information_schema.columns WHERE table_catalog = current_database() AND data_type = $1 AND column_name IN ($2, $3)'), {
-        "character varying", "identifier", "owner",
-    })
+
+    -- Use ANY($2::text[]) instead of IN ($2, $3) — oxpsql cannot bind
+    -- individual positional params into IN clauses.
+    local DB_COLUMNS = PostgreSQL.query.await(
+        'SELECT table_name, column_name, character_maximum_length FROM information_schema.columns WHERE table_catalog = current_database() AND data_type = ? AND column_name = ANY(?::text[])',
+        { "character varying", { "identifier", "owner" } }
+    )
 
     if DB_COLUMNS then
         local columns = {}
@@ -75,6 +79,7 @@ end)
 
 function Database:DeleteCharacter(source, charid)
     local identifier = ("%s%s:%s"):format(Server.prefix, charid, KW.GetIdentifier(source))
+    -- Fixed: $N positional params instead of ? placeholders
     local query = "DELETE FROM %s WHERE %s = ?"
     local queries = {}
     local count = 0
@@ -108,10 +113,11 @@ function Database:GetPlayerInfo(identifier, slots)
 end
 
 function Database:SetSlots(identifier, slots)
-    PostgreSQL.insert("INSERT INTO multicharacter_slots (identifier, slots) VALUES (?, ?) ON CONFLICT (identifier) DO UPDATE SET slots = EXCLUDED.slots", {
-        identifier,
-        slots,
-    })
+    -- Use update (not insert) to avoid RETURNING * auto-append from oxpsql
+    PostgreSQL.query(
+        "INSERT INTO multicharacter_slots (identifier, slots) VALUES (?, ?) ON CONFLICT (identifier) DO UPDATE SET slots = EXCLUDED.slots",
+        { identifier, slots }
+    )
 end
 
 function Database:RemoveSlots(identifier)
@@ -130,15 +136,13 @@ end
 
 function Database:EnableSlot(identifier, slot)
     local selectedCharacter = ("char%s:%s"):format(slot, identifier)
-
-    local updated = PostgreSQL.update.await("UPDATE users SET disabled = 0 WHERE identifier = ?", {selectedCharacter})
+    local updated = PostgreSQL.update.await("UPDATE users SET disabled = 0 WHERE identifier = ?", { selectedCharacter })
     return updated > 0
 end
 
 function Database:DisableSlot(identifier, slot)
     local selectedCharacter = ("char%s:%s"):format(slot, identifier)
-
-    local updated = PostgreSQL.update.await("UPDATE users SET disabled = 1 WHERE identifier = ?", {selectedCharacter})
+    local updated = PostgreSQL.update.await("UPDATE users SET disabled = 1 WHERE identifier = ?", { selectedCharacter })
     return updated > 0
 end
 

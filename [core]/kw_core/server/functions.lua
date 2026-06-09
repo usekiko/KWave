@@ -405,9 +405,18 @@ function KW.GetIdentifier(playerId)
     local identifierType = Config.Identifier
     local identifier = GetPlayerIdentifierByType(playerId, identifierType)
 
-    assert(identifier, ("[KW] GetIdentifier failed: no identifier found for playerId %s with type '%s'"):format(playerId, identifierType))
+    if not identifier then
+        -- Fallback to IP if possible, or print error gracefully
+        identifier = GetPlayerIdentifierByType(playerId, 'ip')
+        if not identifier then
+            print(("[KW] WARNING: GetIdentifier failed: no '%s' or 'ip' identifier found for playerId %s"):format(identifierType, playerId))
+            return nil, 0
+        end
+    end
 
-    return identifier:gsub(("%s:"):format(identifierType), "")
+    -- Still strip the prefix if it exists
+    local stripped = identifier:gsub(("%s:"):format(identifierType), "")
+    return stripped:gsub("ip:", "")
 end
 
 ---@param model string|number

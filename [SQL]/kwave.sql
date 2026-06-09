@@ -160,7 +160,7 @@ CREATE TABLE datastore_data (
   id SERIAL PRIMARY KEY,
   name VARCHAR(60) NOT NULL,
   owner VARCHAR(60) DEFAULT NULL,
-  data TEXT DEFAULT NULL
+  data JSONB DEFAULT '{}'
 );
 
 --
@@ -272,9 +272,11 @@ CREATE TABLE job_grades (
   name VARCHAR(50) NOT NULL,
   label VARCHAR(50) NOT NULL,
   salary INTEGER NOT NULL,
-  skin_male TEXT NOT NULL,
-  skin_female TEXT NOT NULL
+  skin_male JSONB NOT NULL DEFAULT '{}',
+  skin_female JSONB NOT NULL DEFAULT '{}'
 );
+
+CREATE INDEX idx_job_grades_job_name ON job_grades (job_name);
 
 --
 -- Dumping data for table job_grades
@@ -345,13 +347,15 @@ INSERT INTO licenses (type, label) VALUES
 CREATE TABLE owned_vehicles (
   owner VARCHAR(60) DEFAULT NULL,
   plate VARCHAR(12) NOT NULL,
-  vehicle TEXT DEFAULT NULL,
+  vehicle JSONB DEFAULT NULL,
   type VARCHAR(20) NOT NULL DEFAULT 'car',
   job VARCHAR(20) DEFAULT NULL,
   stored SMALLINT NOT NULL DEFAULT 0,
   parking VARCHAR(60) DEFAULT NULL,
   pound VARCHAR(60) DEFAULT NULL
 );
+
+CREATE INDEX idx_owned_vehicles_owner ON owned_vehicles (owner);
 
 -- --------------------------------------------------------
 
@@ -388,21 +392,21 @@ CREATE TABLE society_moneywash (
 CREATE TABLE users (
   identifier VARCHAR(60) NOT NULL,
   ssn VARCHAR(11) NOT NULL,
-  accounts TEXT DEFAULT NULL,
+  accounts JSONB DEFAULT '{}',
   "group" VARCHAR(50) DEFAULT 'user',
-  inventory TEXT DEFAULT NULL,
+  inventory JSONB DEFAULT '{}',
   job VARCHAR(20) DEFAULT 'unemployed',
   job_grade INTEGER DEFAULT 0,
-  loadout TEXT DEFAULT NULL,
-  metadata TEXT DEFAULT NULL,
-  position TEXT DEFAULT NULL,
+  loadout JSONB DEFAULT '{}',
+  metadata JSONB DEFAULT '{}',
+  position JSONB DEFAULT NULL,
   firstname VARCHAR(16) DEFAULT NULL,
   lastname VARCHAR(16) DEFAULT NULL,
   dateofbirth VARCHAR(10) DEFAULT NULL,
   sex VARCHAR(1) DEFAULT NULL,
   height INTEGER DEFAULT NULL,
-  skin TEXT DEFAULT NULL,
-  status TEXT DEFAULT NULL,
+  skin JSONB DEFAULT NULL,
+  status JSONB DEFAULT NULL,
   is_dead SMALLINT DEFAULT 0,
   id SERIAL,
   disabled SMALLINT DEFAULT 0,
@@ -411,6 +415,9 @@ CREATE TABLE users (
   last_seen TIMESTAMP DEFAULT NULL,
   phone_number VARCHAR(20) DEFAULT NULL
 );
+
+CREATE INDEX idx_users_job ON users (job);
+CREATE INDEX idx_users_group ON users ("group");
 
 -- --------------------------------------------------------
 

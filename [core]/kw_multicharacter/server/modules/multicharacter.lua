@@ -3,6 +3,7 @@
 Multicharacter = {}
 Multicharacter._index = Multicharacter
 Multicharacter.awaitingRegistration = {}
+Multicharacter.playerSlots = {}
 
 function Multicharacter:SetupCharacters(source)
     SetPlayerRoutingBucket(source, source)
@@ -14,6 +15,7 @@ function Multicharacter:SetupCharacters(source)
     KW.Players[identifier] = source
 
     local slots = Database:GetPlayerSlots(identifier)
+    self.playerSlots[source] = slots
     identifier = Server.prefix .. "%:" .. identifier
 
     local rawCharacters = Database:GetPlayerInfo(identifier, slots)
@@ -36,7 +38,7 @@ function Multicharacter:SetupCharacters(source)
                 job = KW.Jobs[job].label
             end
 
-            local accounts = json.decode(v.accounts)
+            local accounts = type(v.accounts) == "string" and json.decode(v.accounts) or v.accounts or {}
             local idString = string.sub(v.identifier, #Server.prefix + 1, string.find(v.identifier, ":") - 1)
             local id = tonumber(idString)
             if id then
@@ -49,7 +51,7 @@ function Multicharacter:SetupCharacters(source)
                     firstname = v.firstname,
                     lastname = v.lastname,
                     dateofbirth = v.dateofbirth,
-                    skin = v.skin and json.decode(v.skin) or {},
+                    skin = type(v.skin) == "string" and json.decode(v.skin) or v.skin or {},
                     disabled = v.disabled,
                     sex = v.sex == "m" and TranslateCap("male") or TranslateCap("female"),
                 }
@@ -61,7 +63,13 @@ function Multicharacter:SetupCharacters(source)
 end
 
 function Multicharacter:CharacterChosen(source, charid, isNew)
-    if type(charid) ~= "number" or string.len(charid) > 2 or type(isNew) ~= "boolean" then
+    if type(charid) ~= "number" or math.type(charid) ~= "integer" or charid < 1 or type(isNew) ~= "boolean" then
+        return
+    end
+
+    local allowedSlots = self.playerSlots[source] or Server.slots
+    if charid > allowedSlots then
+        print(("[KW Multicharacter] Player %s tried to bypass char slots!"):format(source))
         return
     end
 
@@ -96,5 +104,6 @@ end
 
 function Multicharacter:PlayerDropped(player)
     self.awaitingRegistration[player] = nil
+    self.playerSlots[player] = nil
     KW.Players[KW.GetIdentifier(player)] = nil
 end

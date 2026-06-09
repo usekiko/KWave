@@ -202,7 +202,7 @@ function loadKWPlayer(identifier, playerId, isNew)
 
     -- Accounts
     local accounts = result.accounts
-    accounts = (accounts and accounts ~= "") and json.decode(accounts) or {}
+    accounts = type(accounts) == "string" and json.decode(accounts) or accounts or {}
 
     for account, data in pairs(Config.Accounts) do
         data.round = data.round or data.round == nil
@@ -241,13 +241,13 @@ function loadKWPlayer(identifier, playerId, isNew)
         grade_label = gradeObject.label,
         grade_salary = gradeObject.salary,
 
-        skin_male = gradeObject.skin_male and json.decode(gradeObject.skin_male) or {},
-        skin_female = gradeObject.skin_female and json.decode(gradeObject.skin_female) or {},
+        skin_male = type(gradeObject.skin_male) == "string" and json.decode(gradeObject.skin_male) or gradeObject.skin_male or {},
+        skin_female = type(gradeObject.skin_female) == "string" and json.decode(gradeObject.skin_female) or gradeObject.skin_female or {},
     }
 
     -- Inventory
     if not Config.CustomInventory then
-        local inventory = (result.inventory and result.inventory ~= "") and json.decode(result.inventory) or {}
+        local inventory = type(result.inventory) == "string" and json.decode(result.inventory) or result.inventory or {}
 
         for name, item in pairs(KW.Items) do
             local count = inventory[name] or 0
@@ -267,7 +267,7 @@ function loadKWPlayer(identifier, playerId, isNew)
             return a.label < b.label
         end)
     elseif result.inventory and result.inventory ~= "" then
-        userData.inventory = json.decode(result.inventory)
+        userData.inventory = type(result.inventory) == "string" and json.decode(result.inventory) or result.inventory or {}
     end
 
     -- Group
@@ -286,7 +286,7 @@ function loadKWPlayer(identifier, playerId, isNew)
     if not Config.CustomInventory then
         if result.loadout and result.loadout ~= "" then
 
-            local loadout = json.decode(result.loadout)
+            local loadout = type(result.loadout) == "string" and json.decode(result.loadout) or result.loadout or {}
             for name, weapon in pairs(loadout) do
                 local label = KW.GetWeaponLabel(name)
 
@@ -304,13 +304,13 @@ function loadKWPlayer(identifier, playerId, isNew)
     end
 
     -- Position
-    userData.coords = json.decode(result.position) or Config.DefaultSpawns[KW.Math.Random(1,#Config.DefaultSpawns)]
+    userData.coords = (type(result.position) == "string" and json.decode(result.position) or result.position) or Config.DefaultSpawns[KW.Math.Random(1,#Config.DefaultSpawns)]
 
     -- Skin
-    userData.skin = (result.skin and result.skin ~= "") and json.decode(result.skin) or { sex = userData.sex == "f" and 1 or 0 }
+    userData.skin = (type(result.skin) == "string" and json.decode(result.skin) or result.skin) or { sex = userData.sex == "f" and 1 or 0 }
 
     -- Metadata
-    userData.metadata = (result.metadata and result.metadata ~= "") and json.decode(result.metadata) or {}
+    userData.metadata = type(result.metadata) == "string" and json.decode(result.metadata) or result.metadata or {}
 
     -- xPlayer Creation
     local xPlayer = CreateExtendedPlayer(playerId, identifier, userData.ssn, userData.group, userData.accounts, userData.inventory, userData.weight, userData.job, userData.loadout, GetPlayerName(playerId), userData.coords, userData.metadata)
@@ -414,12 +414,20 @@ if not Config.CustomInventory then
 
     RegisterNetEvent("kw:giveInventoryItem", function(target, itemType, itemName, itemCount)
         local playerId = source
+        if type(target) ~= "number" or math.type(target) ~= "integer" then
+            print(("[^3WARNING^7] Player Detected Cheating (Invalid Target): ^5%s^7"):format(GetPlayerName(playerId)))
+            return
+        end
         local sourceXPlayer = KW.GetPlayerFromId(playerId)
         local targetXPlayer = KW.GetPlayerFromId(target)
         local distance = #(GetEntityCoords(GetPlayerPed(playerId)) - GetEntityCoords(GetPlayerPed(target)))
         if not sourceXPlayer or not targetXPlayer or distance > Config.DistanceGive then
             print(("[^3WARNING^7] Player Detected Cheating: ^5%s^7"):format(GetPlayerName(playerId)))
             return
+        end
+
+        if type(itemCount) ~= "number" or math.type(itemCount) ~= "integer" or itemCount < 1 then
+            return sourceXPlayer.showNotification(TranslateCap("imp_invalid_quantity"))
         end
 
         if itemType == "item_standard" then
@@ -534,6 +542,10 @@ if not Config.CustomInventory then
             return
         end
 
+        if type(itemCount) ~= "number" or math.type(itemCount) ~= "integer" or itemCount < 1 then
+            return xPlayer.showNotification(TranslateCap("imp_invalid_quantity"))
+        end
+
         if itemType == "item_standard" then
             if not itemCount or itemCount < 1 then
                 return xPlayer.showNotification(TranslateCap("imp_invalid_quantity"))
@@ -607,7 +619,9 @@ if not Config.CustomInventory then
             return
         end
 
-        local count = xPlayer.getInventoryItem(itemName).count
+        local item = xPlayer.getInventoryItem(itemName)
+        if not item then return end
+        local count = item.count
 
         if count < 1 then
             return xPlayer.showNotification(TranslateCap("act_imp"))
@@ -619,20 +633,21 @@ if not Config.CustomInventory then
     RegisterNetEvent("kw:onPickup", function(pickupId)
         local pickup, xPlayer, success = Core.Pickups[pickupId], KW.GetPlayerFromId(source)
 
-        if not xPlayer then
+        if not xPlayer or not pickup or pickup.inCollection then
             return
         end
-
-        if not pickup then return end
+        pickup.inCollection = true
 
         local playerPickupDistance = #(pickup.coords - xPlayer.getCoords(true))
         if playerPickupDistance > 5.0 then
+            pickup.inCollection = false
             print(("[^3WARNING^7] Player Detected Cheating (Out of range pickup): ^5%s^7"):format(xPlayer.getIdentifier()))
             return
         end
 
         if pickup.type == "item_standard" then
             if not xPlayer.canCarryItem(pickup.name, pickup.count) then
+                pickup.inCollection = false
                 return xPlayer.showNotification(TranslateCap("threw_cannot_pickup"))
             end
 
@@ -643,6 +658,7 @@ if not Config.CustomInventory then
             xPlayer.addAccountMoney(pickup.name, pickup.count, "Picked up")
         elseif pickup.type == "item_weapon" then
             if xPlayer.hasWeapon(pickup.name) then
+                pickup.inCollection = false
                 return xPlayer.showNotification(TranslateCap("threw_weapon_already"))
             end
 
@@ -689,7 +705,10 @@ KW.RegisterServerCallback("kw:getGameBuild", function(_, cb)
     cb(tonumber(GetConvar("sv_enforceGameBuild", "1604")))
 end)
 
-KW.RegisterServerCallback("kw:getOtherPlayerData", function(_, cb, target)
+KW.RegisterServerCallback("kw:getOtherPlayerData", function(source, cb, target)
+    if not Core.IsPlayerAdmin(source) then
+        return cb(false)
+    end
     local xPlayer = KW.GetPlayerFromId(target)
 
     if not xPlayer then
@@ -724,21 +743,7 @@ KW.RegisterServerCallback("kw:getPlayerNames", function(source, cb, players)
     cb(players)
 end)
 
-KW.RegisterServerCallback("kw:spawnVehicle", function(source, cb, vehData)
-    local ped = GetPlayerPed(source)
-    KW.OneSync.SpawnVehicle(vehData.model or `ADDER`, vehData.coords or GetEntityCoords(ped), vehData.coords.w or 0.0, vehData.props or {}, function(id)
-        if vehData.warp then
-            local vehicle = NetworkGetEntityFromNetworkId(id)
-            local timeout = 0
-            while GetVehiclePedIsIn(ped, false) ~= vehicle and timeout <= 15 do
-                Wait(0)
-                TaskWarpPedIntoVehicle(ped, vehicle, -1)
-                timeout += 1
-            end
-        end
-        cb(id)
-    end)
-end)
+
 
 AddEventHandler("txAdmin:events:scheduledRestart", function(eventData)
     if eventData.secondsRemaining == 60 then

@@ -386,7 +386,7 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
 
     function self.setAccountMoney(accountName, money, reason)
         reason = reason or "unknown"
-        if not tonumber(money) then
+        if type(money) ~= "number" or money ~= money or money == math.huge then
             error(("Tried To Set Account ^5%s^1 For Player ^5%s^1 To An Invalid Number -> ^5%s^1"):format(accountName, self.playerId, money))
             return
         end
@@ -409,7 +409,7 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
 
     function self.addAccountMoney(accountName, money, reason)
         reason = reason or "Unknown"
-        if not tonumber(money) then
+        if type(money) ~= "number" or money ~= money or money == math.huge then
             error(("Tried To Set Account ^5%s^1 For Player ^5%s^1 To An Invalid Number -> ^5%s^1"):format(accountName, self.playerId, money))
             return
         end
@@ -431,7 +431,7 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
 
     function self.removeAccountMoney(accountName, money, reason)
         reason = reason or "Unknown"
-        if not tonumber(money) then
+        if type(money) ~= "number" or money ~= money or money == math.huge then
             error(("Tried To Set Account ^5%s^1 For Player ^5%s^1 To An Invalid Number -> ^5%s^1"):format(accountName, self.playerId, money))
             return
         end
@@ -593,8 +593,8 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
             grade_label = gradeObject.label,
             grade_salary = gradeObject.salary,
 
-            skin_male = gradeObject.skin_male and json.decode(gradeObject.skin_male) or {},
-            skin_female = gradeObject.skin_female and json.decode(gradeObject.skin_female) or {},
+            skin_male = type(gradeObject.skin_male) == "string" and json.decode(gradeObject.skin_male) or gradeObject.skin_male or {},
+            skin_female = type(gradeObject.skin_female) == "string" and json.decode(gradeObject.skin_female) or gradeObject.skin_female or {},
         }
 
         self.metadata.jobDuty = onDuty

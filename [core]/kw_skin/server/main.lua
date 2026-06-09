@@ -15,9 +15,9 @@ RegisterNetEvent("kw_skin:save", function(skin)
         end
     end
 
-    PostgreSQL.update("UPDATE users SET skin = @skin WHERE identifier = @identifier", {
-        ["@skin"] = json.encode(skin),
-        ["@identifier"] = xPlayer.getIdentifier(),
+    PostgreSQL.update("UPDATE users SET skin = ? WHERE identifier = ?", {
+        json.encode(skin),
+        xPlayer.getIdentifier(),
     })
 end)
 
@@ -39,8 +39,8 @@ end)
 KW.RegisterServerCallback("kw_skin:getPlayerSkin", function(source, cb)
     local xPlayer = KW.Player(source)
 
-    PostgreSQL.query("SELECT skin FROM users WHERE identifier = @identifier", {
-        ["@identifier"] = xPlayer.getIdentifier(),
+    PostgreSQL.query("SELECT skin FROM users WHERE identifier = ?", {
+        xPlayer.getIdentifier(),
     }, function(users)
         local user, skin = users[1], nil
 
@@ -50,7 +50,7 @@ KW.RegisterServerCallback("kw_skin:getPlayerSkin", function(source, cb)
         }
 
         if user.skin then
-            skin = json.decode(user.skin)
+            skin = type(user.skin) == "string" and json.decode(user.skin) or user.skin
         end
 
         cb(skin, jobSkin)

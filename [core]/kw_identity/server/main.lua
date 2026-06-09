@@ -6,9 +6,9 @@ local function deleteIdentityFromDatabase(xPlayer)
     PostgreSQL.query.await("UPDATE users SET firstname = ?, lastname = ?, dateofbirth = ?, sex = ?, height = ?, skin = ? WHERE identifier = ?", { nil, nil, nil, nil, nil, nil, xPlayer.identifier })
 
     if Config.FullCharDelete then
-        PostgreSQL.update.await("UPDATE addon_account_data SET money = 0 WHERE account_name IN (?) AND owner = ?", { { "bank_savings", "caution" }, xPlayer.identifier })
+        PostgreSQL.update.await("UPDATE addon_account_data SET money = 0 WHERE account_name = ANY(?::text[]) AND owner = ?", { { "bank_savings", "caution" }, xPlayer.identifier })
 
-        PostgreSQL.prepare.await("UPDATE datastore_data SET data = ? WHERE name IN (?) AND owner = ?", { "'{}'", { "user_ears", "user_glasses", "user_helmet", "user_mask" }, xPlayer.identifier })
+        PostgreSQL.prepare.await("UPDATE datastore_data SET data = ? WHERE name = ANY(?::text[]) AND owner = ?", { "'{}'", { "user_ears", "user_glasses", "user_helmet", "user_mask" }, xPlayer.identifier })
     end
 end
 
