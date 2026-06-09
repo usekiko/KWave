@@ -1,0 +1,44 @@
+{
+  "name": "oxpsql",
+  "version": "1.0.0",
+  "description": "FXServer to PostgreSQL communication via node-postgres",
+  "bugs": "https://github.com/usekiko/oxpsql/issues",
+  "license": "LGPL-3.0-or-later",
+  "author": "KWave",
+  "workspaces": [
+    "./web"
+  ],
+  "files": [
+    "lib/PostgreSQL.js",
+    "lib/PostgreSQL.d.ts"
+  ],
+  "type": "module",
+  "main": "lib/PostgreSQL.js",
+  "types": "lib/PostgreSQL.d.ts",
+  "scripts": {
+    "build": "bun-tasks bun build:web ::: bun build:root",
+    "build:web": "bun --cwd web vite build",
+    "build:root": "node build.js && cd lib && tsc",
+    "watch": "esbuild --watch --bundle --platform=node --target=node22 src/index.ts --outfile=dist/build.js",
+    "lib": "tsc --project lib/tsconfig.lib.json",
+    "test": "bun test tests/unit",
+    "test:coverage": "bun test tests/unit --coverage",
+    "test:integration": "bun test tests/integration"
+  },
+  "dependencies": {
+    "pg": "^8.11.5",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@citizenfx/server": "2.0.29753-1",
+    "@types/bun": "^1.3.14",
+    "@types/node": "^22.19.19",
+    "@types/pg": "^8.11.6",
+    "bun-tasks": "^0.1.2",
+    "esbuild": "^0.21.5",
+    "oxfmt": "^0.53.0",
+    "postinstall-postinstall": "^2.1.0",
+    "pretty-quick": "^3.3.1",
+    "typescript": "^6.0.3"
+  }
+}
