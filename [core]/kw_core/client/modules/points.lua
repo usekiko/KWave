@@ -1,54 +1,56 @@
 local points = {}
 
 function KW.CreatePointInternal(coords, distance, hidden, enter, leave)
-	local point = {
-		coords = coords,
-		distance = distance,
-		hidden = hidden,
-		enter = enter,
-		leave = leave,
-		resource = GetInvokingResource()
-	}
-	local handle = KW.Table.SizeOf(points) + 1
-	points[handle] = point
-	return handle
+    if type(coords) == 'table' and coords.x then
+        coords = vec3(coords.x, coords.y, coords.z)
+    end
+    
+    local handle = #points + 1
+    
+    local point = lib.points.new({
+        coords = coords,
+        distance = distance,
+        kw_handle = handle,
+        kw_hidden = hidden,
+        kw_resource = GetInvokingResource(),
+        onEnter = function(self)
+            if not self.kw_hidden and enter then
+                enter()
+            end
+        end,
+        onExit = function(self)
+            if leave then
+                leave()
+            end
+        end
+    })
+    
+    points[handle] = point
+    return handle
 end
 
 function KW.RemovePointInternal(handle)
-	points[handle] = nil
+    if points[handle] then
+        points[handle]:remove()
+        points[handle] = nil
+    end
 end
 
 function KW.HidePointInternal(handle, hidden)
-	if points[handle] then
-		points[handle].hidden = hidden
-	end
+    if points[handle] then
+        points[handle].kw_hidden = hidden
+    end
 end
 
 function StartPointsLoop()
-	CreateThread(function()
-		while true do
-			local coords = GetEntityCoords(KW.PlayerData.ped)
-			for handle, point in pairs(points) do
-				if not point.hidden and #(coords - point.coords) <= point.distance then
-					if not point.nearby then
-						points[handle].nearby = true
-						points[handle].enter()
-					end
-				elseif point.nearby then
-					points[handle].nearby = false
-					points[handle].leave()
-				end
-			end
-			Wait(500)
-		end
-	end)
+    -- Deprecated: ox_lib handles all distance calculations at the engine level now.
 end
 
-
 AddEventHandler('onResourceStop', function(resource)
-	for handle, point in pairs(points) do
-		if point.resource == resource then
-			points[handle] = nil
-		end
-	end
+    for handle, point in pairs(points) do
+        if point.kw_resource == resource then
+            point:remove()
+            points[handle] = nil
+        end
+    end
 end)

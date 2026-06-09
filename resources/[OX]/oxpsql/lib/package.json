@@ -1,0 +1,26 @@
+{
+  "name": "@usekiko/oxpsql",
+  "version": "1.0.0",
+  "description": "Exports wrapper for oxpsql",
+  "keywords": [
+    "fivem",
+    "oxpsql",
+    "sql",
+    "postgres"
+  ],
+  "homepage": "https://github.com/usekiko/oxpsql#readme",
+  "bugs": {
+    "url": "https://github.com/usekiko/oxpsql/issues"
+  },
+  "license": "LGPL-3.0",
+  "author": "KWave",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usekiko/oxpsql.git"
+  },
+  "main": "PostgreSQL.js",
+  "types": "PostgreSQL.d.ts",
+  "scripts": {
+    "prepublish": "tsc"
+  }
+}

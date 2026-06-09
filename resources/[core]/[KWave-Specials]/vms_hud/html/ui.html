@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<link href="style.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="../translation.js" type="text/javascript"></script>
+    </head>
+	<body>
+        <div class="damage-effect"></div>
+        <div class="hud-grid-template"></div>
+        <div class="info-hud">
+            <div class="player">
+                <div class="id">
+                    <span class="id-label"></span>
+                    <span class="id-number">0</span>
+                </div>
+                <div class="cash">
+                    <span class="cash-label">CASH</span>
+                    <span class="cash-value">$0</span>
+                </div>
+                <div class="bank">
+                    <span class="bank-label">BANK</span>
+                    <span class="bank-value">$0</span>
+                </div>
+                <div class="black_money">
+                    <span class="black_money-label">BLACK MONEY</span>
+                    <span class="black_money-value">$0</span>
+                </div>
+                <div class="company">
+                    <span class="company_money-label">COMPANY</span>
+                    <span class="company_money-value">$0</span>
+                </div>
+                <div class="job">
+                    <span class="job-label">JOB</span>
+                    <span class="job-value">
+                        <span id="job">-</span>
+                        <span id="job_grade"></span>
+                    </span>
+                </div>
+                <div class="gang">
+                    <span class="gang-label">GANG</span>
+                    <span class="gang-value">
+                        <span id="gang">-</span>
+                        <span id="gang_grade"></span>
+                    </span>
+                </div>
+                <div class="ammo">
+                    <span class="ammo-label"></span>
+                    <span class="ammo-value">0</span>
+                </div>
+            </div>
+            <div class="server">
+                <img src="images/server_logo.png" class="server-logo">
+                <div class="server-name"></div>
+            </div>
+        </div>
+        <div class="status-hud">
+            <div class="health-status non-visible">
+                <div class="health-range">
+                    <div></div>
+                </div>
+                <div class="health-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+            <div class="armor-status non-visible">
+                <div class="armor-range">
+                    <div></div>
+                </div>
+                <div class="armor-icon">
+                    <i class="fa-solid fa-vest"></i>
+                </div>
+            </div>
+            <div class="stamina-status non-visible">
+                <div class="stamina-range">
+                    <div></div>
+                </div>
+                <div class="stamina-icon">
+                    <i class="fa-solid fa-person-running"></i>
+                </div>
+            </div>
+            <div class="hunger-status non-visible">
+                <div class="hunger-range">
+                    <div></div>
+                </div>
+                <div class="hunger-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+            </div>
+            <div class="thirst-status non-visible">
+                <div class="thirst-range">
+                    <div></div>
+                </div>
+                <div class="thirst-icon">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+            </div>
+            <div class="stress-status non-visible">
+                <div class="stress-range">
+                    <div></div>
+                </div>
+                <div class="stress-icon">
+                    <i class="fa-solid fa-face-tired"></i>
+                </div>
+            </div>
+            <div class="voice-status non-visible">
+                <div class="voice-range">
+                    <div></div>
+                </div>
+                <div class="voice-icon">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
+        </div>
+        <div class="vehicle-hud">
+            <div class="streetlabel">
+                <div class="street"></div>
+                <div class="zone"></div>
+            </div>
+            <div class="speedometer-linear">
+                <div class="speed">
+                    <span class="value">0</span>
+                    <span class="unit"></span>
+                </div>
+                <div class="icons">
+                    <div id="doors">
+                        <img src="images/doors.png">
+                    </div>
+                    <div id="lights">
+                        <img src="images/low-beam.png">
+                    </div>
+                    <div id="seatbelt">
+                        <img src="images/seatbelt.png">
+                    </div>
+                </div>
+                <div class="fuel">
+                    <div class="fuel-status">
+                        <div class="fuel-range">
+                            <div></div>
+                        </div>
+                        <div class="fuel-icon">
+                            <i class="fas fa-gas-pump"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="speedometer-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" class="speedometer-part">
+                    <path class="circle" stroke-dasharray="82, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path class="circle rpm-value" stroke-dasharray="82, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" class="speedometer-fuel">
+                    <path class="circle-fuel" stroke-dasharray="82, 100" d="M 19.1288 29.9896 A 11.1155 14.9155 0 0 0 20.0153 4.1179" />
+                    <path class="circle-fuel fuel-value" stroke-dasharray="82, 100" d="M 19.1288 29.9896 A 11.1155 14.9155 0 0 0 20.0153 4.1179" />
+                </svg>
+                <div class="fuel-icon">
+                    <i class="fas fa-gas-pump"></i>
+                </div>
+                <div class="speed">
+                    <div class="value">
+                        
+                    </div>
+                    <div class="unit"></div>
+                </div>
+                <div class="icons">
+                    <div id="doors">
+                        <img src="images/doors.png">
+                    </div>
+                    <div id="lights">
+                        <img src="images/lights.png">
+                    </div>
+                    <div id="seatbelt">
+                        <img src="images/seatbelt.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cinematic-hud">
+            <div class="top-cinematic"></div>
+            <div class="bottom-cinematic"></div>
+        </div>
+        <div class="customize-hud-menu">
+            <div>
+                <div class="customize-title"></div>
+                <div class="customize-options">
+                    <div class="draggable_help"><i class="fa-solid fa-circle-info"></i> <span></span></div>
+                    <br>
+                    <div id="vertial-hud">
+                        <div class="settings">
+                            <input data-option="status-direction" data-name="vertical" type="checkbox">
+                        </div>
+                        <div class="option-label"><span></span></div>
+                    </div>
+                    <div id="horizontal-hud">
+                        <div class="settings">
+                            <input data-option="status-direction" data-name="horizontal" type="checkbox">
+                        </div>
+                        <div class="option-label"><span></span></div>
+                    </div>
+                    <div id="no-stack-hud">
+                        <div class="settings">
+                            <input data-option="status-direction" data-name="no-stack" type="checkbox">
+                        </div>
+                        <div class="option-label"><span></span></div>
+                    </div>
+                    <br>
+                    <div id="health-hud">
+                        <div class="settings">
+                            <input data-option="health" type="color" >
+                            <input data-option="health" type="checkbox">
+                        </div>
+                        <div class="option-label"><i class="fa-solid fa-heart"></i> <span></span></div>
+                    </div>
+                    <div id="armor-hud">
+                        <div class="settings">
+                            <input data-option="armor" type="color" >
+                            <input data-option="armor" type="checkbox">
+                        </div>
+                        <div class="option-label"><i class="fa-solid fa-vest"></i> <span></span></div>
+                    </div>
+                    <div id="stamina-hud">
+                        <div class="settings">
+                            <input data-option="stamina" type="color" >
+                            <input data-option="stamina" type="checkbox">
+                        </div>
+                        <div class="option-label"><i class="fa-solid fa-person-running"></i> <span></span></div>
+                    </div>
+                    <div id="hunger-hud">
+                        <div class="settings">
+                            <input data-option="hunger" type="color" >
+                            <input data-option="hunger" type="checkbox">
+                        </div>
+                        <div class="option-label"><i class="fa-solid fa-utensils"></i> <span></span></div>
+                    </div>
+                    <div id="thirst-hud">
+                        <div class="settings">
+                            <input data-option="thirst" type="color" >
+                            <input data-option="thirst" type="checkbox">
+                        </div>
+                        <div class="option-label"><i class="fa-solid fa-droplet"></i> <span></span></div>
+                    </div>
+                    <div id="stress-hud">
+                        <div class="settings">
+                            <input data-option="stress" type="color" >
+                            <input data-option="stress" type="checkbox">
+                        </div>
+                        <div class="option-label"><i class="fa-solid fa-face-tired"></i> <span></span></div>
+                    </div>
+                    <div id="voice-hud">
+                        <div class="settings">
+                            <input data-option="voice" type="color" >
+                            <input data-option="voice" type="checkbox">
+                        </div>
+                        <div class="option-label"><i class="fa-solid fa-microphone"></i> <span></span></div>
+                    </div>
+                    <br>
+                    <div id="speedometer-scale-hud">
+                        <div class="settings">
+                            <input type="button" data-option="speedometer-scale" data-scale="1.0" value="1.0">
+                            <input type="button" data-option="speedometer-scale" data-scale="0.8" value="0.8">
+                            <input type="button" data-option="speedometer-scale" data-scale="0.5" value="0.5">
+                            <input type="button" data-option="speedometer-scale" data-scale="0.25" value="0.25">
+                        </div>
+                        <div class="option-label"></div>
+                    </div>
+                    <div id="speedometer-linear-hud">
+                        <div class="settings">
+                            <input data-option="speedometer-linear" type="color">
+                            <input type="checkbox" data-name="speedometer" data-type="linear">
+                        </div>
+                        <div class="option-label"><span></span></div>
+                    </div>
+                    <div id="speedometer-circle-hud">
+                        <div class="settings">
+                            <input data-option="speedometer-circle" type="color">
+                            <input type="checkbox" data-name="speedometer" data-type="circle">
+                        </div>
+                        <div class="option-label"><span></span></div>
+                    </div>
+                    <br>
+                    <div id="minimap-circle" style="display:none;">
+                        <div class="settings">
+                            <input type="checkbox" data-option="minimap" data-name="circle">
+                        </div>
+                        <div class="option-label"><span></span></div>
+                    </div>
+                    <div id="minimap-square" style="display:none;">
+                        <div class="settings">
+                            <input type="checkbox" data-option="minimap" data-name="square">
+                        </div>
+                        <div class="option-label"><span></span></div>
+                    </div>
+                    <br>
+                    <div id="cinematic-hud">
+                        <div class="settings">
+                            <input type="checkbox" data-name="cinematic-mode">
+                        </div>
+                        <div class="option-label"></div>
+                    </div>
+                    <div class="reset-settings">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<script src="script.js" type="text/javascript"></script>
+    </body>
+</html>

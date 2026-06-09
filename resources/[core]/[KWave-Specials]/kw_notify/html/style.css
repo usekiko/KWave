@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: hidden;
+    user-select: none;
+    background: transparent !important;
+}
+
+/* Notification Container - Top Right */
+#notification-container {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Individual Notification - Admin Menu Toast Style */
+.notification {
+    min-width: 300px;
+    max-width: 400px;
+    padding: 16px 20px;
+    background: rgba(20, 20, 20, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    pointer-events: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.notification.removing {
+    animation: slideOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Circular Progress Container */
+.notification-icon-wrap {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+/* Circular Progress SVG */
+.circular-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    transform: rotate(-90deg);
+}
+
+.circular-progress-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 3;
+}
+
+.circular-progress-fill {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 66;
+    stroke-dashoffset: 66;
+    animation: fillProgress linear forwards;
+}
+
+@keyframes fillProgress {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Icon - Hidden since we use clean circle */
+.notification-icon {
+    display: none;
+}
+
+.notification.success .circular-progress-fill {
+    stroke: #22c55e;
+}
+
+.notification.error .circular-progress-fill {
+    stroke: #ef4444;
+}
+
+.notification.warning .circular-progress-fill {
+    stroke: #eab308;
+}
+
+.notification.info .circular-progress-fill {
+    stroke: #3b82f6;
+}
+
+/* Content */
+.notification-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.notification-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2px;
+}
+
+.notification-description {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    #notification-container {
+        top: 15px;
+        right: 15px;
+        left: 15px;
+    }
+    
+    .notification {
+        min-width: unset;
+        max-width: 100%;
+        width: 100%;
+    }
+}

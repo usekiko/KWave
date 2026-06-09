@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTF PvP - FPS Boost</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Toggle Indicator -->
+        <div id="toggle-indicator" class="hidden">
+            <div class="indicator-dot"></div>
+            <span>MAX FPS</span>
+        </div>
+
+        <!-- Main Menu -->
+        <div id="menu" class="hidden">
+            <div class="menu-header">
+                <h1>DTF PvP</h1>
+                <span class="subtitle">ULTRA FPS MODE</span>
+                <button id="close-btn">×</button>
+            </div>
+            
+            <div class="menu-content">
+                <div class="status-section">
+                    <span class="label">Status</span>
+                    <div id="status-badge" class="badge disabled">DISABLED</div>
+                </div>
+
+                <div class="features-list">
+                    <div class="feature-item"><span class="feature-name">Trees & Bushes</span><span class="feature-value">DELETED</span></div>
+                    <div class="feature-item"><span class="feature-name">Grass & Plants</span><span class="feature-value">DELETED</span></div>
+                    <div class="feature-item"><span class="feature-name">Beach Props</span><span class="feature-value">DELETED</span></div>
+                    <div class="feature-item"><span class="feature-name">Street Props</span><span class="feature-value">DELETED</span></div>
+                    <div class="feature-item"><span class="feature-name">Trash & Boxes</span><span class="feature-value">DELETED</span></div>
+                    <div class="feature-item"><span class="feature-name">NPC Vehicles</span><span class="feature-value">DELETED</span></div>
+                    <div class="feature-item"><span class="feature-name">NPC Peds</span><span class="feature-value">DELETED</span></div>
+                    <div class="feature-item"><span class="feature-name">Shadows</span><span class="feature-value">REMOVED</span></div>
+                    <div class="feature-item"><span class="feature-name">Fog</span><span class="feature-value">DISABLED</span></div>
+                    <div class="feature-item"><span class="feature-name">Reflections</span><span class="feature-value">MINIMAL</span></div>
+                    <div class="feature-item"><span class="feature-name">Particles</span><span class="feature-value">CLEARED</span></div>
+                    <div class="feature-item"><span class="feature-name">Decals</span><span class="feature-value">REMOVED</span></div>
+                    <div class="feature-item"><span class="feature-name">Wetness</span><span class="feature-value">DISABLED</span></div>
+                    <div class="feature-item"><span class="feature-name">Sky</span><span class="feature-value">BLACK</span></div>
+                    <div class="feature-item"><span class="feature-name">Density</span><span class="feature-value">0%</span></div>
+                </div>
+
+                <button id="toggle-btn" class="btn-toggle disabled">
+                    <span class="btn-icon">⚡</span>
+                    <span class="btn-text">ENABLE ULTRA MODE</span>
+                </button>
+
+                <div class="hint">
+                    Press <kbd>F8</kbd> for menu | Type <kbd>/pvp</kbd> or <kbd>/fps</kbd>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
