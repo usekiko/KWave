@@ -1,3 +1,9 @@
+> **KWave Refactor Notice**
+> This resource has been refactored and ported to **KWave Framework** and **PostgreSQL (oxpsql)** for improved performance and native database support. 
+> 
+> *Credit & Disclaimer: This code is based on original works from the ESX and OX projects. All original copyright, licenses, and mentions of ESX/OX are preserved below for full legal compliance and respect for the original authors.*
+
+---
 <h1 align='center'>[KW] Identity</a></h1><p align='center'><b><a href='https://discord.kwave.org/'>Discord</a> - <a href='https://docs.kwave.org/legacy/installation'>Documentation</a></b></h5>
 
 A Core Resource that Allows the player to Pick their characters, Name, Gender, Height and Date-of-birth.

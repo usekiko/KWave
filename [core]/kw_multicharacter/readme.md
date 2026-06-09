@@ -1,3 +1,9 @@
+> **KWave Refactor Notice**
+> This resource has been refactored and ported to **KWave Framework** and **PostgreSQL (oxpsql)** for improved performance and native database support. 
+> 
+> *Credit & Disclaimer: This code is based on original works from the ESX and OX projects. All original copyright, licenses, and mentions of ESX/OX are preserved below for full legal compliance and respect for the original authors.*
+
+---
 <h1 align='center'>[KW] Multi-Character</a></h1><p align='center'><b><a href='https://discord.kwave.org/'>Discord</a> - <a href='https://kwave.org/'>Website</a> - <a href='https://docs.kwave.org/'>Documentation</a></b></h5>
 
 A Simplistic system, that allows Players to have multiple Characters, which can be customised for all player with `Config.Slots` or personally set a players character count using `setslots`, `remslots`, `enablechar` and `disablechar` Commands :)
