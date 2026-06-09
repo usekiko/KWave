@@ -1,6 +1,6 @@
 Config = {}
 
-Config.Locale = GetConvar("esx:locale", "en")
+Config.Locale = GetConvar("kw:locale", "en")
 
 Config.Components = {
     {
