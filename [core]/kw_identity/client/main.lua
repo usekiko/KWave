@@ -59,17 +59,16 @@ RegisterNUICallback("register", function(data, cb)
             return
         end
 
-        KW.TriggerServerCallback("kw_identity:registerIdentity", function(callback)
-            if not callback then
-                return
-            end
+        local success = lib.callback.await("kw_identity:registerIdentity", false, data)
+        if not success then
+            return
+        end
 
-            KW.ShowNotification(TranslateCap("thank_you_for_registering"))
-            setGuiState(false)
+        KW.ShowNotification(TranslateCap("thank_you_for_registering"))
+        setGuiState(false)
 
-            if not KW.GetConfig().Multichar then
-                TriggerEvent("kw_skin:playerRegistered")
-            end
-        end, data)
+        if not KW.GetConfig().Multichar then
+            TriggerEvent("kw_skin:playerRegistered")
+        end
         cb(1)
 end)

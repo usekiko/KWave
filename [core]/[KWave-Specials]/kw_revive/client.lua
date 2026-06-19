@@ -13,12 +13,11 @@ CreateThread(function()
     end
     
     -- Check death status on spawn
-    KW.TriggerServerCallback('revive_system:getDeathStatus', function(isDeadStatus)
-        if isDeadStatus then
-            -- Player was dead when they disconnected, revive them
-            TriggerEvent('revive_system:revive')
-        end
-    end)
+    local isDeadStatus = lib.callback.await('revive_system:getDeathStatus', false)
+    if isDeadStatus then
+        -- Player was dead when they disconnected, revive them
+        TriggerEvent('revive_system:revive')
+    end
 end)
 
 -- Main revive function (same logic as kw_ambulancejob)

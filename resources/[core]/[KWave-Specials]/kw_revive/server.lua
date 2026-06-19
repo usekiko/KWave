@@ -115,11 +115,10 @@ KW.RegisterCommand('reviveall', 'admin', function(xPlayer, args, showError)
 end, false, { help = 'Revive all dead players' })
 
 -- Get death status callback (same as kw_ambulancejob)
-KW.RegisterServerCallback('revive_system:getDeathStatus', function(source, cb)
+lib.callback.register('revive_system:getDeathStatus', function(source)
     local xPlayer = KW.GetPlayerFromId(source)
-    PostgreSQL.scalar('SELECT is_dead FROM users WHERE identifier = ?', { xPlayer.identifier }, function(isDead)
-        cb(isDead)
-    end)
+    if not xPlayer then return false end
+    return PostgreSQL.scalar.await('SELECT is_dead FROM users WHERE identifier = ?', { xPlayer.identifier })
 end)
 
 -- Set death status manually

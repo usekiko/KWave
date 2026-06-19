@@ -72,9 +72,10 @@ end
 -- === PLAYER LIST ===
 function RefreshPlayerList()
     if not KW then return end
-    KW.TriggerServerCallback('kw_admin:getPlayers', function(players)
+    local players = lib.callback.await('kw_admin:getPlayers', false)
+    if players then
         SendNUIMessage({ type = 'updatePlayers', players = players })
-    end)
+    end
 end
 
 -- === SELF ACTIONS ===

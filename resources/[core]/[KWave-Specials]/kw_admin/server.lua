@@ -39,15 +39,15 @@ AddEventHandler('kw_admin:stopSpectate', function()
 end)
 
 -- === TELEPORT ===
-KW.RegisterServerCallback('kw_admin:getPlayerCoords', function(source, cb, targetId)
-    if not IsAdmin(source) then cb(nil) return end
+lib.callback.register('kw_admin:getPlayerCoords', function(source, targetId)
+    if not IsAdmin(source) then return nil end
     
     local targetPed = GetPlayerPed(targetId)
     if targetPed and targetPed ~= 0 then
         local coords = GetEntityCoords(targetPed)
-        cb({ x = coords.x, y = coords.y, z = coords.z })
+        return { x = coords.x, y = coords.y, z = coords.z }
     else
-        cb(nil)
+        return nil
     end
 end)
 
@@ -211,9 +211,9 @@ end)
 
 -- === PLAYER LIST CALLBACK ===
 -- Register the callback for getting player list
-KW.RegisterServerCallback('kw_admin:getPlayers', function(source, cb)
+lib.callback.register('kw_admin:getPlayers', function(source)
     local src = source
-    if not IsAdmin(src) then cb({}) return end
+    if not IsAdmin(src) then return {} end
     
     local players = {}
     local xPlayers = KW.GetExtendedPlayers()
@@ -228,7 +228,7 @@ KW.RegisterServerCallback('kw_admin:getPlayers', function(source, cb)
     -- Sort by ID
     table.sort(players, function(a, b) return a.id < b.id end)
     
-    cb(players)
+    return players
 end)
 
 

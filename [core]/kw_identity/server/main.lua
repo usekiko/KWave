@@ -251,35 +251,35 @@ if not multichar then
     end)
 end
 
-KW.RegisterServerCallback("kw_identity:registerIdentity", function(source, cb, data)
+lib.callback.register("kw_identity:registerIdentity", function(source, data)
     local xPlayer = KW.Player(source)
 
     if not checkNameFormat(data.firstname) then
         TriggerClientEvent("kw:showNotification", source, TranslateCap("invalid_firstname_format"), "error")
-        return cb(false)
+        return false
     end
     if not checkNameFormat(data.lastname) then
         TriggerClientEvent("kw:showNotification", source, TranslateCap("invalid_lastname_format"), "error")
-        return cb(false)
+        return false
     end
     if not checkSexFormat(data.sex) then
         TriggerClientEvent("kw:showNotification", source, TranslateCap("invalid_sex_format"), "error")
-        return cb(false)
+        return false
     end
     if not checkDOBFormat(data.dateofbirth) then
         TriggerClientEvent("kw:showNotification", source, TranslateCap("invalid_dob_format"), "error")
-        return cb(false)
+        return false
     end
     if not checkHeightFormat(data.height) then
         TriggerClientEvent("kw:showNotification", source, TranslateCap("invalid_height_format"), "error")
-        return cb(false)
+        return false
     end
 
     if xPlayer then
         local identifier = xPlayer.getIdentifier()
         if alreadyRegistered[identifier] then
             xPlayer.showNotification(TranslateCap("already_registered"), "error")
-            return cb(false)
+            return false
         end
 
         playerIdentity[identifier] = {
@@ -298,12 +298,12 @@ KW.RegisterServerCallback("kw_identity:registerIdentity", function(source, cb, d
         saveIdentityToDatabase(identifier, currentIdentity)
         alreadyRegistered[identifier] = true
         playerIdentity[identifier] = nil
-        return cb(true)
+        return true
     end
 
     if not multichar then
         TriggerClientEvent("kw:showNotification", source, TranslateCap("data_incorrect"), "error")
-        return cb(false)
+        return false
     end
 
     local formattedFirstName = formatName(data.firstname)
