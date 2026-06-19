@@ -22,6 +22,10 @@ local function StartDBSync()
 end
 
 PostgreSQL.ready(function()
+    -- Run schema migrations before anything else
+    local Migrations = require 'server.modules.migrations'
+    Migrations.Run()
+
     Core.DatabaseConnected = true
 
     if not Config.CustomInventory then

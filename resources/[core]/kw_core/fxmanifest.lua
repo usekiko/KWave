@@ -26,6 +26,10 @@ server_scripts {
 	'server/core.lua',
 	'server/functions.lua',
 	'server/common.lua',
+	'server/modules/migrations.lua',
+	'server/modules/ready.lua',
+	'server/modules/economy.lua',
+	'server/modules/guard.lua',
 	'server/modules/callback.lua',
 	'server/classes/player.lua',
 	'server/classes/vehicle.lua',
@@ -80,6 +84,8 @@ files {
 	'html/fonts/pdown.ttf',
 	'html/fonts/bankgothic.ttf',
     "client/imports/*.lua",
+
+    'migrations/*.sql',
 }
 
 dependencies {
