@@ -60,8 +60,8 @@ CreateThread(function()
     while true do
         local status = KW.GetPlayerData()
         if status and status.metadata then
-            hunger = status.metadata.hunger or 100
-            thirst = status.metadata.thirst or 100
+            hunger = 100
+            thirst = 100
         end
         Wait(Config.LoopTimeoutStatus or 2500)
     end

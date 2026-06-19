@@ -88,20 +88,6 @@ function App() {
           </div>
         )}
 
-        <div className="hud-item">
-          <span className="material-symbols-rounded hud-icon">restaurant</span>
-          <div className="hud-bar-bg">
-            <div className="hud-bar-fill" style={{ width: `${status.hunger}%` }}></div>
-          </div>
-        </div>
-
-        <div className="hud-item">
-          <span className="material-symbols-rounded hud-icon">water_drop</span>
-          <div className="hud-bar-bg">
-            <div className="hud-bar-fill" style={{ width: `${status.thirst}%` }}></div>
-          </div>
-        </div>
-
       </div>
 
       {/* Vehicle Speedometer */}
