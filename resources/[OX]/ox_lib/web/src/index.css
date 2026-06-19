@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 /* Thin 100 */
 @font-face {
   font-family: 'Roboto';
@@ -343,3 +345,60 @@ code {
 .toast-error {
   background-color: #c0392b;
 }
+
+/* KWave Global Overrides */
+
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Force Notification Styles */
+.mantine-Notification-root {
+  background-color: #111111 !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  padding: 14px 16px !important;
+}
+
+.mantine-Notification-title {
+  color: #ffffff !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+}
+
+.mantine-Notification-description {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+}
+
+/* Flat Progress Bar */
+.mantine-Progress-root {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0px !important;
+  height: 3px !important;
+  border: none !important;
+}
+
+.mantine-Progress-bar {
+  border-radius: 0px !important;
+}
+
+.mantine-Text-root {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Force TextUI Styles */
+.mantine-Paper-root {
+  background-color: #111111 !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
