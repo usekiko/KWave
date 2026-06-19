@@ -106,54 +106,17 @@ html, body {
     overflow: hidden;
 }
 
-.message::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: var(--border-color);
-    transition: var(--transition);
-}
+/* Removed left-side colored accents for pure minimalist style */
 
 @keyframes messageIn {
     0% {
         opacity: 0;
-        transform: translateX(-20px) scale(0.98);
-    }
-    60% {
-        transform: translateX(4px) scale(1.01);
+        transform: translateY(-4px) scale(0.98);
     }
     100% {
         opacity: 1;
-        transform: translateX(0) scale(1);
+        transform: translateY(0) scale(1);
     }
-}
-
-.message:hover {
-    border-color: var(--border-hover);
-}
-
-.message:hover::before {
-    width: 4px;
-}
-
-/* Message Types with accent colors */
-.message.system::before {
-    background: var(--accent-blue);
-}
-
-.message.admin::before {
-    background: var(--accent-red);
-}
-
-.message.error::before {
-    background: var(--accent-yellow);
-}
-
-.message.normal::before {
-    background: var(--accent-green);
 }
 
 .message-header {
