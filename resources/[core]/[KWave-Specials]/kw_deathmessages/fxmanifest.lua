@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-description 'DTF Death Messages - Custom kill feed with weapon icons, headshots, distance, multi-kills'
-author 'DTF'
+description 'KW Death Messages - Custom kill feed with weapon icons, headshots, distance, multi-kills'
+author 'Kiko'
 version '1.0.0'
 
 shared_scripts {
