@@ -6,6 +6,7 @@ lua54 'yes'
 version '1.13.5'
 
 shared_scripts {
+	'@ox_lib/init.lua',
 	'@kw_core/imports.lua',
 	'@kw_core/locale.lua',
 }

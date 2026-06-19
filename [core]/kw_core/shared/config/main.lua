@@ -5,7 +5,7 @@ local esxLocale = GetConvar("kw:locale", "invalid")
 Config.Locale = (esxLocale ~= "invalid") and esxLocale or (txAdminLocale ~= "custom" and txAdminLocale) or "en"
 
 -- For ox inventory, this will automatically be adjusted, do not change! For other inventories, leave as false unless specifically instructed to change.
-Config.CustomInventory = false
+Config.CustomInventory = "ox"
 
 Config.Accounts = {
     bank = {
@@ -67,9 +67,5 @@ Config.AdminLogging = false -- Logs the usage of certain commands by those with 
 -------------------------------------
 -- DO NOT CHANGE BELOW THIS LINE !!!
 -------------------------------------
-if GetResourceState("ox_inventory") ~= "missing" then
-    Config.CustomInventory = "ox"
-end
-
-Config.EnableDefaultInventory = Config.CustomInventory == false -- Display the default Inventory ( F2 )
+Config.EnableDefaultInventory = false -- Display the default Inventory ( F2 )
 Config.Identifier = GetConvar("kw:identifier", "license")

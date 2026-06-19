@@ -6,6 +6,10 @@ description 'DTF Admin - Tablet-style admin menu with kick, ban, teleport, give 
 author 'DTF'
 version '1.0.0'
 
+shared_scripts {
+    '@ox_lib/init.lua'
+}
+
 server_scripts {
     '@oxpsql/lib/PostgreSQL.lua',
     'server.lua'
