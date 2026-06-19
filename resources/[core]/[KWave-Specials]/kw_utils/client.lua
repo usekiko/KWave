@@ -331,10 +331,7 @@ end
 -- === PVP OVERRIDES ===
 CreateThread(function()
     while true do
-        Wait(0)
-        
-        -- Infinite Stamina
-        RestorePlayerStamina(PlayerId(), 1.0)
+        Wait(500)
         
         -- Weather and Time Lock
         SetWeatherTypePersist("EXTRASUNNY")
@@ -351,13 +348,15 @@ CreateThread(function()
         SetCreateRandomCopsNotOnScenarios(false)
         SetCreateRandomCopsOnScenarios(false)
         SetMaxWantedLevel(0)
+    end
+end)
+
+CreateThread(function()
+    while true do
+        Wait(100)
         
-        -- Remove NPC Population
-        SetVehicleDensityMultiplierThisFrame(0.0)
-        SetPedDensityMultiplierThisFrame(0.0)
-        SetRandomVehicleDensityMultiplierThisFrame(0.0)
-        SetParkedVehicleDensityMultiplierThisFrame(0.0)
-        SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0)
+        -- Infinite Stamina
+        RestorePlayerStamina(PlayerId(), 1.0)
     end
 end)
 
