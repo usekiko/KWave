@@ -421,10 +421,10 @@ RegisterNetEvent("kw:tpm", function()
     local GetBlipInfoIdCoord = GetBlipInfoIdCoord
     local GetVehiclePedIsIn = GetVehiclePedIsIn
 
-    KW.TriggerServerCallback("kw:isUserAdmin", function(admin)
-        if not admin then
-            return
-        end
+    local admin = lib.callback.await("kw:isUserAdmin", false)
+    if not admin then
+        return
+    end
         local blipMarker = GetFirstBlipInfoId(8)
         if not DoesBlipExist(blipMarker) then
             KW.ShowNotification(TranslateCap("tpm_nowaypoint"), "error")
@@ -497,7 +497,6 @@ RegisterNetEvent("kw:tpm", function()
         SetPedCoordsKeepVehicle(ped, x, y, groundZ)
         KW.ShowNotification(TranslateCap("tpm_success"), "success")
     end)
-end)
 
 local noclip = false
 local noclip_pos = vector3(0, 0, 70)
@@ -545,10 +544,10 @@ local function noclipThread()
 end
 
 RegisterNetEvent("kw:noclip", function()
-    KW.TriggerServerCallback("kw:isUserAdmin", function(admin)
-        if not admin then
-            return
-        end
+    local admin = lib.callback.await("kw:isUserAdmin", false)
+    if not admin then
+        return
+    end
 
         if not noclip then
             noclip_pos = GetEntityCoords(KW.PlayerData.ped, false)
@@ -565,7 +564,6 @@ RegisterNetEvent("kw:noclip", function()
         else
             KW.ShowNotification(TranslateCap("noclip_message", Translate("disabled")), "error")
         end
-    end)
 end)
 
 RegisterNetEvent("kw:killPlayer", function()
