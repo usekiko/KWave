@@ -96,7 +96,7 @@ window.addEventListener('message', function(event) {
             
         case 'hitmarker':
             let audio = new Audio('headshot.mp3');
-            audio.volume = 0.7; // User requested 60%+
+            audio.volume = 0.5; // User requested 50%
             audio.play();
             break;
     }
