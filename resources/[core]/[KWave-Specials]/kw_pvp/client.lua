@@ -457,9 +457,7 @@ AddEventHandler('gameEventTriggered', function(name, args)
         local playerPed = PlayerPedId()
         
         if attacker == playerPed and victim ~= playerPed and IsEntityAPed(victim) then
-            if IsPedAPlayer(victim) then
-                SendNUIMessage({ type = 'hitmarker' })
-            end
+            SendNUIMessage({ type = 'hitmarker' })
         end
     end
 end)

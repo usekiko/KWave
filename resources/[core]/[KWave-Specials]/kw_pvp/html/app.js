@@ -96,7 +96,7 @@ window.addEventListener('message', function(event) {
             
         case 'hitmarker':
             let audio = new Audio('headshot.mp3');
-            audio.volume = 0.25; // User requested not that loud
+            audio.volume = 0.7; // User requested 60%+
             audio.play();
             break;
     }
