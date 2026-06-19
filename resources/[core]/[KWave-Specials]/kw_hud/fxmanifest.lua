@@ -2,9 +2,9 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-author 'vames™️'
-description 'vms_hud'
-version '1.0.4'
+author 'KWave'
+description 'KWave Modern HUD'
+version '2.0.0'
 
 shared_script 'config/config.lua'
 
@@ -19,12 +19,12 @@ server_scripts {
 	'server/version_check.lua',
 }
 
-ui_page 'html/ui.html'
+ui_page 'web/dist/index.html'
 
 files {
-	'html/*.*',
-	'html/images/*.*',
-	'translation.js'
+	'web/dist/index.html',
+	'web/dist/assets/*.*',
+	'web/dist/**/*.*'
 }
 
 escrow_ignore {

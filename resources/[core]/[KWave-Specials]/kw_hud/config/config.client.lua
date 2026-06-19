@@ -94,8 +94,6 @@ AddEventHandler('kw:playerLoaded', function(xPlayer, isNew, skin)
     --         })
     --     end
     -- end
-    loadPlayerMinimap()
-    loadPlayerSpeedometer()
 end)
 
 AddStateBagChangeHandler('accounts', '', function(bagName, _, value, _, _)
