@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-description 'DTF Kits - Daily kit system with ox_inventory and oxpsql'
-author 'DTF'
+description 'KW Kits - Daily kit system with ox_inventory and oxpsql'
+author 'Kiko'
 version '1.0.0'
 
 server_scripts {
