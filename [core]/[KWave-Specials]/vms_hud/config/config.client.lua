@@ -98,28 +98,29 @@ AddEventHandler('kw:playerLoaded', function(xPlayer, isNew, skin)
     loadPlayerSpeedometer()
 end)
 
-RegisterNetEvent('kw:setAccountMoney')
-AddEventHandler('kw:setAccountMoney', function(account)
-    if account.name == 'money' then
-        SendNUIMessage({
-            action = 'updateHud',
-            cash = tostring(account.money)
-        })
-    elseif account.name == 'bank' then
-        SendNUIMessage({
-            action = 'updateHud',
-            bank = tostring(account.money)
-        })
-    elseif account.name == 'black_money' then
-        SendNUIMessage({
-            action = 'updateHud',
-            black_money = tostring(account.money)
-        })
+AddStateBagChangeHandler('accounts', '', function(bagName, _, value, _, _)
+    local ply = PlayerId()
+    if bagName ~= ('player:%s'):format(GetPlayerServerId(ply)) then return end
+    if not value then return end
+
+    for _, account in ipairs(value) do
+        if account.name == 'money' then
+            SendNUIMessage({ action = 'updateHud', cash = tostring(account.money) })
+        elseif account.name == 'bank' then
+            SendNUIMessage({ action = 'updateHud', bank = tostring(account.money) })
+        elseif account.name == 'black_money' then
+            SendNUIMessage({ action = 'updateHud', black_money = tostring(account.money) })
+        end
     end
 end)
 
 if Config.EnablePlayerJob then
-    RegisterNetEvent('kw:setJob', function(PlayerJob)
+    AddStateBagChangeHandler('job', '', function(bagName, _, value, _, _)
+        local ply = PlayerId()
+        if bagName ~= ('player:%s'):format(GetPlayerServerId(ply)) then return end
+        if not value then return end
+        local PlayerJob = value
+
         if PlayerJob and PlayerJob.label then
             SendNUIMessage({
                 action = 'updateHud',

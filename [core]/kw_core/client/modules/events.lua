@@ -156,15 +156,11 @@ AddStateBagChangeHandler("VehicleProperties", nil, function(bagName, _, value)
     KW.Game.SetVehicleProperties(vehicle, value)
 end)
 
-KW.SecureNetEvent("kw:setAccountMoney", function(account)
-    for i = 1, #KW.PlayerData.accounts do
-        if KW.PlayerData.accounts[i].name == account.name then
-            KW.PlayerData.accounts[i] = account
-            break
-        end
-    end
-
-    KW.SetPlayerData("accounts", KW.PlayerData.accounts)
+AddStateBagChangeHandler("accounts", "", function(bagName, _, value, _, _)
+    local ply = PlayerId()
+    if bagName ~= ("player:%s"):format(GetPlayerServerId(ply)) then return end
+    if not value then return end
+    KW.SetPlayerData("accounts", value)
 end)
 
 if not Config.CustomInventory then
@@ -242,12 +238,18 @@ if not Config.CustomInventory then
     end)
 end
 
-KW.SecureNetEvent("kw:setJob", function(Job)
-    KW.SetPlayerData("job", Job)
+AddStateBagChangeHandler("job", "", function(bagName, _, value, _, _)
+    local ply = PlayerId()
+    if bagName ~= ("player:%s"):format(GetPlayerServerId(ply)) then return end
+    if not value then return end
+    KW.SetPlayerData("job", value)
 end)
 
-KW.SecureNetEvent("kw:setGroup", function(group)
-    KW.SetPlayerData("group", group)
+AddStateBagChangeHandler("group", "", function(bagName, _, value, _, _)
+    local ply = PlayerId()
+    if bagName ~= ("player:%s"):format(GetPlayerServerId(ply)) then return end
+    if not value then return end
+    KW.SetPlayerData("group", value)
 end)
 
 if not Config.CustomInventory then

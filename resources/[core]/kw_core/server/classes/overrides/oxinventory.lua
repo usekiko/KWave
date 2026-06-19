@@ -53,7 +53,7 @@ Core.PlayerFunctionOverrides.OxInventory = {
             money = account.round and KW.Math.Round(money) or money
             self.accounts[account.index].money = money
 
-            self.triggerEvent("kw:setAccountMoney", account)
+            Player(self.source).state:set("accounts", self.accounts, true)
             TriggerEvent("kw:setAccountMoney", self.source, accountName, money, reason)
             if Inventory.accounts[accountName] then
                 Inventory.SetItem(self.source, accountName, money)
@@ -71,7 +71,7 @@ Core.PlayerFunctionOverrides.OxInventory = {
 
             money = account.round and KW.Math.Round(money) or money
             self.accounts[account.index].money = self.accounts[account.index].money + money
-            self.triggerEvent("kw:setAccountMoney", account)
+            Player(self.source).state:set("accounts", self.accounts, true)
             TriggerEvent("kw:addAccountMoney", self.source, accountName, money, reason)
             if Inventory.accounts[accountName] then
                 Inventory.AddItem(self.source, accountName, money)
@@ -89,7 +89,7 @@ Core.PlayerFunctionOverrides.OxInventory = {
 
             money = account.round and KW.Math.Round(money) or money
             self.accounts[account.index].money = self.accounts[account.index].money - money
-            self.triggerEvent("kw:setAccountMoney", account)
+            Player(self.source).state:set("accounts", self.accounts, true)
             TriggerEvent("kw:removeAccountMoney", self.source, accountName, money, reason)
             if Inventory.accounts[accountName] then
                 Inventory.RemoveItem(self.source, accountName, money)
@@ -210,7 +210,7 @@ Core.PlayerFunctionOverrides.OxInventory = {
 
                 if account and KW.Math.Round(account.money) ~= amount then
                     account.money = amount
-                    self.triggerEvent("kw:setAccountMoney", account)
+                    Player(self.source).state:set("accounts", self.accounts, true)
                     TriggerEvent("kw:setAccountMoney", self.source, accountName, amount, "Sync account with item")
                 end
             end

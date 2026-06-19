@@ -283,7 +283,6 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
         self.group = newGroup
 
         TriggerEvent("kw:setGroup", self.source, self.group, lastGroup)
-        self.triggerEvent("kw:setGroup", self.group, lastGroup)
         Player(self.source).state:set("group", self.group, true)
 
         ExecuteCommand(("add_principal identifier.%s group.%s"):format(self.license, self.group))
@@ -401,7 +400,6 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
                 money = account.round and KW.Math.Round(money) or money
                 self.accounts[account.index].money = money
 
-                self.triggerEvent("kw:setAccountMoney", account)
                 Player(self.source).state:set("accounts", self.accounts, true)
                 TriggerEvent("kw:setAccountMoney", self.source, accountName, money, reason)
             else
@@ -424,7 +422,6 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
                 money = account.round and KW.Math.Round(money) or money
                 self.accounts[account.index].money = self.accounts[account.index].money + money
 
-                self.triggerEvent("kw:setAccountMoney", account)
                 Player(self.source).state:set("accounts", self.accounts, true)
                 TriggerEvent("kw:addAccountMoney", self.source, accountName, money, reason)
             else
@@ -452,7 +449,6 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
                 end
                 self.accounts[account.index].money = self.accounts[account.index].money - money
 
-                self.triggerEvent("kw:setAccountMoney", account)
                 Player(self.source).state:set("accounts", self.accounts, true)
                 TriggerEvent("kw:removeAccountMoney", self.source, accountName, money, reason)
             else
@@ -607,7 +603,6 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
 
         self.metadata.jobDuty = onDuty
         TriggerEvent("kw:setJob", self.source, self.job, lastJob)
-        self.triggerEvent("kw:setJob", self.job, lastJob)
         Player(self.source).state:set("job", self.job, true)
     end
 
