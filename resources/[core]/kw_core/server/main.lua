@@ -678,14 +678,14 @@ if not Config.CustomInventory then
     end)
 end
 
-KW.RegisterServerCallback("kw:getPlayerData", function(source, cb)
+lib.callback.register("kw:getPlayerData", function(source)
     local xPlayer = KW.GetPlayerFromId(source)
 
     if not xPlayer then
-        return
+        return nil
     end
 
-    cb({
+    return {
         identifier = xPlayer.identifier,
         accounts = xPlayer.getAccounts(),
         inventory = xPlayer.getInventory(),
@@ -694,28 +694,28 @@ KW.RegisterServerCallback("kw:getPlayerData", function(source, cb)
         money = xPlayer.getMoney(),
         position = xPlayer.getCoords(true),
         metadata = xPlayer.getMeta(),
-    })
+    }
 end)
 
-KW.RegisterServerCallback("kw:isUserAdmin", function(source, cb)
-    cb(Core.IsPlayerAdmin(source))
+lib.callback.register("kw:isUserAdmin", function(source)
+    return Core.IsPlayerAdmin(source)
 end)
 
-KW.RegisterServerCallback("kw:getGameBuild", function(_, cb)
-    cb(tonumber(GetConvar("sv_enforceGameBuild", "1604")))
+lib.callback.register("kw:getGameBuild", function(source)
+    return tonumber(GetConvar("sv_enforceGameBuild", "1604"))
 end)
 
-KW.RegisterServerCallback("kw:getOtherPlayerData", function(source, cb, target)
+lib.callback.register("kw:getOtherPlayerData", function(source, target)
     if not Core.IsPlayerAdmin(source) then
-        return cb(false)
+        return false
     end
     local xPlayer = KW.GetPlayerFromId(target)
 
     if not xPlayer then
-        return
+        return nil
     end
 
-    cb({
+    return {
         identifier = xPlayer.identifier,
         accounts = xPlayer.getAccounts(),
         inventory = xPlayer.getInventory(),
@@ -724,10 +724,10 @@ KW.RegisterServerCallback("kw:getOtherPlayerData", function(source, cb, target)
         money = xPlayer.getMoney(),
         position = xPlayer.getCoords(true),
         metadata = xPlayer.getMeta(),
-    })
+    }
 end)
 
-KW.RegisterServerCallback("kw:getPlayerNames", function(source, cb, players)
+lib.callback.register("kw:getPlayerNames", function(source, players)
     players[source] = nil
 
     for playerId, _ in pairs(players) do
@@ -740,7 +740,7 @@ KW.RegisterServerCallback("kw:getPlayerNames", function(source, cb, players)
         end
     end
 
-    cb(players)
+    return players
 end)
 
 

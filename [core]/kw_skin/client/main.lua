@@ -56,14 +56,13 @@ AddEventHandler("kw_skin:playerRegistered", function()
         end
 
         if Skin.firstSpawn then
-            KW.TriggerServerCallback("kw_skin:getPlayerSkin", function(skin)
-                if skin == nil then
-                    exports["skinchanger"]:LoadSkin({ sex = 0 })
-                    Menu:Saveable()
-                else
-                    exports["skinchanger"]:LoadSkin(skin)
-                end
-            end)
+            local skin = lib.callback.await("kw_skin:getPlayerSkin", false)
+            if skin == nil then
+                exports["skinchanger"]:LoadSkin({ sex = 0 })
+                Menu:Saveable()
+            else
+                exports["skinchanger"]:LoadSkin(skin)
+            end
 
             Skin.firstSpawn = false
         end

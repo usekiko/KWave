@@ -36,25 +36,25 @@ RegisterNetEvent("kw_skin:setWeight", function(skin)
     end
 end)
 
-KW.RegisterServerCallback("kw_skin:getPlayerSkin", function(source, cb)
+lib.callback.register("kw_skin:getPlayerSkin", function(source)
     local xPlayer = KW.Player(source)
 
-    PostgreSQL.query("SELECT skin FROM users WHERE identifier = ?", {
+    local users = PostgreSQL.query.await("SELECT skin FROM users WHERE identifier = ?", {
         xPlayer.getIdentifier(),
-    }, function(users)
-        local user, skin = users[1], nil
+    })
 
-        local jobSkin = {
-            skin_male = xPlayer.getJob().skin_male,
-            skin_female = xPlayer.getJob().skin_female,
-        }
+    local user, skin = users[1], nil
 
-        if user.skin then
-            skin = type(user.skin) == "string" and json.decode(user.skin) or user.skin
-        end
+    local jobSkin = {
+        skin_male = xPlayer.getJob().skin_male,
+        skin_female = xPlayer.getJob().skin_female,
+    }
 
-        cb(skin, jobSkin)
-    end)
+    if user and user.skin then
+        skin = type(user.skin) == "string" and json.decode(user.skin) or user.skin
+    end
+
+    return skin, jobSkin
 end)
 
 KW.RegisterCommand("skin", "admin", function(xPlayer, args)
