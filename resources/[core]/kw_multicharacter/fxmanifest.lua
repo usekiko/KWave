@@ -5,7 +5,7 @@ description 'Allows players to have multiple characters on the same account.'
 version '1.13.5'
 lua54 'yes'
 
-dependencies { 'kw_core', 'kw_context', 'kw_identity', 'kw_skin' }
+dependencies { 'kw_core', 'kw_context', 'kw_identity', 'illenium-appearance' }
 
 shared_scripts { '@kw_core/imports.lua', '@kw_core/locale.lua', 'locales/*.lua', 'config.lua' }
 
