@@ -443,3 +443,23 @@ CreateThread(function()
 end)
 
 print('[^3DTF PvP^7] Optimized ADS & Recoil systems loaded')
+
+-- ============================================
+-- HITMARKER SYSTEM
+-- ============================================
+
+AddEventHandler('gameEventTriggered', function(name, args)
+    if name == 'CEventNetworkEntityDamage' then
+        local victim = args[1]
+        local attacker = args[2]
+        local isFatal = args[6] == 1
+
+        local playerPed = PlayerPedId()
+        
+        if attacker == playerPed and victim ~= playerPed and IsEntityAPed(victim) then
+            if IsPedAPlayer(victim) then
+                SendNUIMessage({ type = 'hitmarker' })
+            end
+        end
+    end
+end)

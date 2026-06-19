@@ -93,6 +93,12 @@ window.addEventListener('message', function(event) {
             isEnabled = data.enabled;
             updateUI();
             break;
+            
+        case 'hitmarker':
+            let audio = new Audio('headshot.mp3');
+            audio.volume = 0.25; // User requested not that loud
+            audio.play();
+            break;
     }
 });
 
