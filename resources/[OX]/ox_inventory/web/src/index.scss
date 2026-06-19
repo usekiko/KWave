@@ -11,7 +11,7 @@ $secondaryColorDark: #0a0a0a;
 
 $gridCols: 5;
 $gridRows: 5;
-$gridSize: 10.2vh;
+$gridSize: 7.5vh;
 $gridGap: 2px;
 $containerSize: calc(#{$gridRows} * #{$gridSize + 0.22vh} + #{$gridRows} * #{$gridGap});
 
@@ -129,12 +129,26 @@ body.inv-dragging {
 
 .inventory-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-
+  height: fit-content;
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #111111;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
   gap: 20px;
+}
+
+.inventory-grids-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .inventory-control {
@@ -142,15 +156,16 @@ body.inv-dragging {
 
   .inventory-control-wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    gap: 8px;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    width: 100%;
   }
 
   .inventory-control-input {
     transition: 200ms;
-    padding: 16px 8px;
+    padding: 8px;
     border-radius: 4px;
     font-family: $mainFont;
     font-size: 16px;
@@ -169,7 +184,7 @@ body.inv-dragging {
     color: #fff;
     background-color: $secondaryColor;
     transition: 200ms;
-    padding: 12px 8px;
+    padding: 8px;
     border-radius: 4px;
     border: none;
     text-transform: uppercase;
@@ -329,14 +344,15 @@ body.inv-dragging {
 }
 
 .inventory-slot-number {
-  background-color: white;
-  color: black;
+  background-color: #3B82F6;
+  color: white;
   height: 12px;
-  border-top-left-radius: 0.25vh;
-  border-bottom-right-radius: 0.25vh;
-  padding: 3px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 3px 5px;
   font-size: 12px;
   font-family: $mainFont;
+  font-weight: 600;
 }
 
 .item-slot-wrapper {
@@ -358,6 +374,9 @@ body.inv-dragging {
 .item-hotslot-header-wrapper {
   @extend .item-slot-header-wrapper;
   justify-content: space-between !important;
+  background-color: rgba(59, 130, 246, 0.15);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .item-slot-info-wrapper {
@@ -523,8 +542,12 @@ body.inv-dragging {
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.05);
   height: 0.8vh;
-  border-radius: 4px;
   overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .transition-fade-enter {
