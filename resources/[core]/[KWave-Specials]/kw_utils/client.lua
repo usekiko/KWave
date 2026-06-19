@@ -328,5 +328,49 @@ if cfg.EngineToggle and cfg.EngineToggle.Enabled then
 
 end
 
+-- === PVP OVERRIDES ===
+CreateThread(function()
+    while true do
+        Wait(0)
+        
+        -- Infinite Stamina
+        RestorePlayerStamina(PlayerId(), 1.0)
+        
+        -- Weather and Time Lock
+        SetWeatherTypePersist("EXTRASUNNY")
+        SetWeatherTypeNowPersist("EXTRASUNNY")
+        SetWeatherTypeNow("EXTRASUNNY")
+        SetOverrideWeather("EXTRASUNNY")
+        NetworkOverrideClockTime(12, 0, 0)
+        
+        -- Disable Cops and Emergency Dispatch
+        for i = 1, 15 do
+            EnableDispatchService(i, false)
+        end
+        SetCreateRandomCops(false)
+        SetCreateRandomCopsNotOnScenarios(false)
+        SetCreateRandomCopsOnScenarios(false)
+        SetMaxWantedLevel(0)
+        
+        -- Remove NPC Population
+        SetVehicleDensityMultiplierThisFrame(0.0)
+        SetPedDensityMultiplierThisFrame(0.0)
+        SetRandomVehicleDensityMultiplierThisFrame(0.0)
+        SetParkedVehicleDensityMultiplierThisFrame(0.0)
+        SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0)
+    end
+end)
+
+CreateThread(function()
+    while true do
+        Wait(1000)
+        local ped = PlayerPedId()
+        local vehicle = GetVehiclePedIsIn(ped, false)
+        if vehicle and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, -1) == ped then
+            SetVehicleFuelLevel(vehicle, 100.0)
+        end
+    end
+end)
+
 -- === RESOURCE START ===
-print('[^3DTF Core^7] Client loaded - Configurable features active')
+print('[^3DTF Core^7] Client loaded - PvP Overrides active')
