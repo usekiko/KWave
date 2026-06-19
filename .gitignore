@@ -3,3 +3,7 @@ artifacts/
 cache/
 db/
 .vscode/
+
+# KWAnticheat - private, not for public repo
+kw_anticheat_rs/
+resources/[core]/[KWave-Specials]/kw_anticheat/
