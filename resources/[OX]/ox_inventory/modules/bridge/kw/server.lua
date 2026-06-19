@@ -23,6 +23,8 @@ SetTimeout(500, function()
         error('kw_core has not been configured to enable support for ox_inventory!\nEnsure Config.CustomInventory has been set to "ox" in your kw_core resource config.')
     end
 
+    ESX = shared
+
 	server.UseItem = ESX.UseItem
 	server.GetPlayerFromId = ESX.GetPlayerFromId
 

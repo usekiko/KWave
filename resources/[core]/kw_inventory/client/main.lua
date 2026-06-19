@@ -14,7 +14,8 @@
 ---@alias InventoryAction "use" | "give" | "remove" | "give_ammo" | "return"
 
 if not KW.GetConfig("EnableDefaultInventory") then
-    error("KW Default Inventory is disabled in config, please enable it to use this resource.")
+    -- ox_inventory is active, skip loading the default inventory UI
+    return
 end
 
 --------------------------------
