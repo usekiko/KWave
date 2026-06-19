@@ -12,7 +12,7 @@ shared_scripts {
 }
 
 server_scripts {
-	'@pgsql/lib/PostgreSQL.lua',
+	'@oxpsql/lib/PostgreSQL.lua',
 	'locales/*.lua',
 	'config.lua',
 	'server/main.lua'

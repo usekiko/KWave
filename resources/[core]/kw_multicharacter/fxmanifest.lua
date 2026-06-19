@@ -10,7 +10,7 @@ dependencies { 'kw_core', 'kw_context', 'kw_identity', 'kw_skin' }
 shared_scripts { '@kw_core/imports.lua', '@kw_core/locale.lua', 'locales/*.lua', 'config.lua' }
 
 server_scripts {
-    '@pgsql/lib/PostgreSQL.lua',
+    '@oxpsql/lib/PostgreSQL.lua',
     'server/*.lua',
     'server/modules/*.lua'
 }

@@ -84,7 +84,7 @@ function KW.CreateJob(name, label, grades, jobType)
         }
     end
 
-    success = exports.pgsql:transaction_async(queries)
+    success = exports.oxpsql:transaction_async(queries)
 
     if not success then
         notify("ERROR", currentResourceName, 'Failed to insert one or more grades for job: `%s`', name)

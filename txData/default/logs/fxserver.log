@@ -465,3 +465,120 @@
 [       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
 [       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
 [ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [3376] FXServer Starting - 19.06.2026, 16:38:31        
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 33 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[ citizen-server-impl] Couldn't find resource oxpsql.
+[ citizen-server-impl] Couldn't find resource ox_lib.
+[ citizen-server-impl] Couldn't find resource ox_inventory.
+[    c-resources-core] Could not find dependency pgsql for resource kw_core.
+[ citizen-server-impl] Couldn't start resource kw_core.
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[    c-scripting-core] Failed to load script @ox_lib/init.lua.
+[    c-scripting-core] Failed to load script @oxpsql/lib/PostgreSQL.lua.
+[script:illenium-appe] SCRIPT ERROR: @illenium-appearance/server/framework/esx/main.lua:3: No such export getSharedObject in resource kw_core
+[script:illenium-appe] SCRIPT ERROR: @illenium-appearance/server/framework/esx/migrate.lua:132: attempt to index a nil value (global 'lib')
+[script:illenium-appe] > fn (@illenium-appearance/server/framework/esx/migrate.lua:132)
+[script:illenium-appe] SCRIPT ERROR: @illenium-appearance/server/framework/esx/callbacks.lua:3: No such export getSharedObject in resource kw_core
+[script:illenium-appe] SCRIPT ERROR: @illenium-appearance/server/server.lua:44: attempt to index a nil value (global 'lib')
+[script:illenium-appe] > fn (@illenium-appearance/server/server.lua:44)
+[script:illenium-appe] SCRIPT ERROR: @illenium-appearance/server/permissions.lua:1: attempt to index a nil value (global 'lib')
+[script:illenium-appe] > fn (@illenium-appearance/server/permissions.lua:1)
+[           resources] Started resource illenium-appearance
+[    c-resources-core] Could not find dependency pgsql for resource kw_core.
+[    c-resources-core] Could not start dependency kw_core for resource kw_admin.
+[ citizen-server-impl] Couldn't start resource kw_admin.
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-resources-core] Could not find dependency pgsql for resource kw_core.
+[    c-resources-core] Could not start dependency kw_core for resource kw_context.
+[ citizen-server-impl] Couldn't start resource kw_context.
+[    c-resources-core] Could not find dependency pgsql for resource kw_core.
+[ citizen-server-impl] Couldn't start resource kw_core.
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-resources-core] Could not find dependency pgsql for resource kw_core.
+[    c-resources-core] Could not start dependency kw_core for resource kw_identity.
+[ citizen-server-impl] Couldn't start resource kw_identity.
+[    c-resources-core] Could not find dependency ox_inventory for resource kw_kits.
+[ citizen-server-impl] Couldn't start resource kw_kits.
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-resources-core] Could not find dependency pgsql for resource kw_core.
+[    c-resources-core] Could not start dependency kw_core for resource kw_multicharacter.
+[ citizen-server-impl] Couldn't start resource kw_multicharacter.
+[    c-scripting-core] Creating script environments for kw_progressbar
+[script:kw_progressba] SCRIPT ERROR: @kw_core/imports.lua:1: No such export getSharedObject in resource kw_core
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-resources-core] Could not find dependency ox_inventory for resource kw_redbull.
+[ citizen-server-impl] Couldn't start resource kw_redbull.
+[    c-scripting-core] Creating script environments for kw_revive
+[    c-scripting-core] Failed to load script @ox_lib/init.lua.
+[    script:kw_revive] SCRIPT ERROR: @kw_core/imports.lua:1: No such export getSharedObject in resource kw_core
+[    c-scripting-core] Failed to load script @oxpsql/lib/PostgreSQL.lua.
+[    script:kw_revive] SCRIPT ERROR: @kw_revive/server.lua:67: attempt to index a nil value (global 'KW')
+[    script:kw_revive] > fn (@kw_revive/server.lua:67)
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[    script:kw_textui] SCRIPT ERROR: @kw_core/imports.lua:1: No such export getSharedObject in resource kw_core
+[           resources] Started resource kw_textui
+[    c-resources-core] Could not find dependency pgsql for resource kw_core.
+[    c-resources-core] Could not start dependency kw_core for resource kw_utils.
+[ citizen-server-impl] Couldn't start resource kw_utils.
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+[    c-scripting-core] Creating script environments for vms_hud
+[    c-scripting-core] Failed to load script @oxpsql/lib/PostgreSQL.lua.
+[      script:vms_hud] SCRIPT ERROR: @vms_hud/config/config.lua:5: No such export getSharedObject in resource kw_core
+[           resources] Started resource vms_hud
+[ citizen-server-impl] Couldn't find resource category [OX].
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[      script:vms_hud] ---------------------------------
+[      script:vms_hud] [vms_hud] - New update available now!
+[      script:vms_hud] Current Version: 1.0.4.
+[      script:vms_hud] New Version: 1.1.4.
+[      script:vms_hud] News: Important fix for pause menu bug.
+[      script:vms_hud] 
+[      script:vms_hud] Download it now on your keymaster.fivem.net.
+[      script:vms_hud] ---------------------------------
