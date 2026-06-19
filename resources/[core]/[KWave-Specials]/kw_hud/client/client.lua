@@ -1,6 +1,5 @@
 local KW = exports['kw_core']:getSharedObject()
 
-local seatbelt = false
 local isInVehicle = false
 local myVehicle = nil
 local hudVisible = false
@@ -127,8 +126,6 @@ CreateThread(function()
             vehHudVisible = false
             isInVehicle = false
             myVehicle = nil
-            seatbelt = false
-            LocalPlayer.state:set('seatbelt', false, false)
             SendNUIMessage({ action = "hideCarHud" })
         end
     end
@@ -150,73 +147,14 @@ CreateThread(function()
                 data = {
                     speed = speed,
                     rpm = rpm,
-                    gear = gear,
-                    seatbelt = seatbelt
+                    gear = gear
                 }
             })
-
-            -- Seatbelt Physics (Collision based)
-            local currentSpeed = speed
-            if Config.EnableSeatBelt and not seatbelt then
-                local collided = HasEntityCollidedWithAnything(myVehicle)
-                local speedDiff = lastSpeed - currentSpeed
-                
-                -- Only eject if speed drops suddenly and the car physically hit something
-                if speedDiff > (Config.SeatBeltMinimumSpeedToRagdoll or 50) and collided and lastSpeed > 100 then
-                    local velocity = GetEntityVelocity(myVehicle)
-                    local ped = PlayerPedId()
-                    local coords = GetEntityCoords(ped)
-                    
-                    SetEntityCoords(ped, coords.x, coords.y, coords.z + 1.0, true, true, true)
-                    SetPedToRagdoll(ped, 1000, 1000, 0, 0, 0, 0)
-                    SetEntityVelocity(ped, velocity.x * 1.5, velocity.y * 1.5, velocity.z * 1.5)
-                    ShakeGameplayCam("SMALL_EXPLOSION_SHAKE", 0.25)
-                    
-                    if math.random(1, 100) <= (Config.SeatBeltChanceForInstantDeath or 50) then
-                        SetEntityHealth(ped, 0)
-                    end
-                end
-            end
             
-            lastSpeed = currentSpeed
+            lastSpeed = speed
             Wait(50)
         else
             Wait(1000)
         end
     end
 end)
-
-local lastSeatbeltToggle = 0
-
-if Config.EnableSeatBelt then
-    RegisterCommand(Config.SeatBeltCommand or 'seatbelt', function()
-        if not isInVehicle then return end
-        
-        local class = GetVehicleClass(myVehicle)
-        if Config.SeatBeltVehiclesClasses and not Config.SeatBeltVehiclesClasses[class] then return end
-
-        local currentTime = GetGameTimer()
-        if currentTime - lastSeatbeltToggle < 1000 then
-            return -- Rate limit: 1 second cooldown
-        end
-        lastSeatbeltToggle = currentTime
-
-        seatbelt = not seatbelt
-        LocalPlayer.state:set('seatbelt', seatbelt, false)
-        if seatbelt then
-            lib.notify({ description = 'Seatbelt Buckled', type = 'success' })
-            CreateThread(function()
-                while seatbelt do
-                    DisableControlAction(0, 75, true) -- Disable Exit Vehicle
-                    Wait(0)
-                end
-            end)
-        else
-            lib.notify({ description = 'Seatbelt Unbuckled', type = 'error' })
-        end
-    end, false)
-
-    if Config.SeatBeltKey then
-        RegisterKeyMapping(Config.SeatBeltCommand or 'seatbelt', 'Toggle Seatbelt', 'keyboard', Config.SeatBeltKey)
-    end
-end

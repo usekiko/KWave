@@ -123,11 +123,6 @@ function App() {
             </div>
           </div>
 
-          <div className={`seatbelt-icon ${veh.seatbelt ? 'seatbelt-on' : 'seatbelt-off'}`}>
-            <span className="material-symbols-rounded" style={{ fontSize: '24px' }}>
-              {veh.seatbelt ? 'airline_seat_recline_normal' : 'airline_seat_recline_extra'}
-            </span>
-          </div>
         </>
       )}
     </div>
