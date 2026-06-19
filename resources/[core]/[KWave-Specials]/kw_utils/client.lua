@@ -251,6 +251,10 @@ if cfg.EngineToggle and cfg.EngineToggle.Enabled then
             local ped = PlayerPedId()
             local vehicle = GetVehiclePedIsIn(ped, false)
             if vehicle ~= 0 then
+                if LocalPlayer.state.seatbelt then
+                    exports['kw_notify']:ShowNotification('You must unbuckle your seatbelt first!', 'error')
+                    return
+                end
                 TaskLeaveVehicle(ped, vehicle, 16)
             else
                 local tryingToEnter = GetVehiclePedIsTryingToEnter(ped)
@@ -272,6 +276,7 @@ if cfg.EngineToggle and cfg.EngineToggle.Enabled then
                 end
             end
         end, false)
+        RegisterCommand('-kw_quickleave', function() end, false)
         RegisterKeyMapping('+kw_quickleave', 'Quick Leave/Enter Vehicle', 'keyboard', 'F')
     end
 
@@ -290,6 +295,7 @@ if cfg.EngineToggle and cfg.EngineToggle.Enabled then
                 end
             end
         end, false)
+        RegisterCommand('-kw_enginetoggle', function() end, false)
         RegisterKeyMapping('+kw_enginetoggle', 'Toggle Vehicle Engine', 'keyboard', cfg.EngineToggle.Key or 'Y')
 
         -- We still need a loop to force the engine off and disable throttle if it's off,
