@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-description 'DTF'
-author 'DTF'
+description 'KW'
+author 'Kiko'
 version '1.0.0'
 
 loadscreen 'index.html'
