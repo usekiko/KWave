@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-description 'DTF Admin - Tablet-style admin menu with kick, ban, teleport, give items'
-author 'DTF'
+description 'KW Admin - Tablet-style admin menu with kick, ban, teleport, give items'
+author 'Kiko'
 version '1.0.0'
 
 shared_scripts {
