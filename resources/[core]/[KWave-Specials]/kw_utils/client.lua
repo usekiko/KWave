@@ -321,5 +321,7 @@ if cfg.EngineToggle and cfg.EngineToggle.Enabled then
         end
     end)
 
+end
+
 -- === RESOURCE START ===
 print('[^3DTF Core^7] Client loaded - Configurable features active')
