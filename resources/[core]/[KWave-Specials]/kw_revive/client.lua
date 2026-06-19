@@ -97,7 +97,9 @@ end)
 
 -- Death loop - disable controls while dead
 function StartDeathLoop()
+    local deathTime = GetGameTimer()
     CreateThread(function()
+        local textShown = false
         while isDead do
             Wait(0)
             
@@ -110,7 +112,30 @@ function StartDeathLoop()
             EnableControlAction(0, 1, true)    -- Look left/right
             EnableControlAction(0, 2, true)    -- Look up/down
             EnableControlAction(0, 245, true)  -- T (chat)
-            EnableControlAction(0, 38, true)   -- E (use)
+            
+            -- Timer logic
+            local timePassed = GetGameTimer() - deathTime
+            local secondsLeft = math.ceil((30000 - timePassed) / 1000)
+            
+            if secondsLeft > 0 then
+                if not textShown then
+                    lib.showTextUI('Respawning in ' .. secondsLeft .. 's...', { icon = 'skull', position = 'top-center' })
+                    textShown = true
+                else
+                    if secondsLeft % 5 == 0 then
+                        -- Just update silently or rely on it, we can just update every frame but textUI might flash. 
+                        -- Actually ox_lib textUI is fine updating.
+                        lib.showTextUI('Respawning in ' .. secondsLeft .. 's...', { icon = 'skull', position = 'top-center' })
+                    end
+                end
+            else
+                lib.showTextUI('[E] - Respawn', { icon = 'heart', position = 'top-center' })
+                EnableControlAction(0, 38, true)   -- E (use)
+                if IsControlJustReleased(0, 38) then
+                    lib.hideTextUI()
+                    TriggerEvent('revive_system:revive')
+                end
+            end
             
             -- Force death animation if not playing
             if not IsEntityPlayingAnim(playerPed, 'dead', 'dead_a', 3) then
@@ -127,6 +152,7 @@ function StartDeathLoop()
         -- Clear animation when revived
         ClearPedTasks(PlayerPedId())
         RemoveAnimDict('dead')
+        lib.hideTextUI()
     end)
 end
 
