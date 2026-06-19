@@ -389,74 +389,51 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
 
     function self.setAccountMoney(accountName, money, reason)
         reason = reason or "unknown"
-        if type(money) ~= "number" or money ~= money or money == math.huge then
-            error(("Tried To Set Account ^5%s^1 For Player ^5%s^1 To An Invalid Number -> ^5%s^1"):format(accountName, self.playerId, money))
+        local Economy = require 'server.modules.economy'
+        local newBalance = Economy.SetAccountMoney(self.identifier, self.name, accountName, money, reason)
+        if newBalance == nil then
+            error(("Economy.SetAccountMoney failed for ^5%s^1 account ^5%s^1"):format(self.playerId, accountName))
             return
         end
-        if money >= 0 then
-            local account = self.getAccount(accountName)
-
-            if account then
-                money = account.round and KW.Math.Round(money) or money
-                self.accounts[account.index].money = money
-
-                Player(self.source).state:set("accounts", self.accounts, true)
-                TriggerEvent("kw:setAccountMoney", self.source, accountName, money, reason)
-            else
-                error(("Tried To Set Invalid Account ^5%s^1 For Player ^5%s^1!"):format(accountName, self.playerId))
-            end
-        else
-            error(("Tried To Set Account ^5%s^1 For Player ^5%s^1 To An Invalid Number -> ^5%s^1"):format(accountName, self.playerId, money))
+        local account = self.getAccount(accountName)
+        if account then
+            self.accounts[account.index].money = newBalance
+            Player(self.source).state:set("accounts", self.accounts, true)
+            TriggerEvent("kw:setAccountMoney", self.source, accountName, newBalance, reason)
         end
     end
 
     function self.addAccountMoney(accountName, money, reason)
         reason = reason or "Unknown"
-        if type(money) ~= "number" or money ~= money or money == math.huge then
-            error(("Tried To Set Account ^5%s^1 For Player ^5%s^1 To An Invalid Number -> ^5%s^1"):format(accountName, self.playerId, money))
+        local Economy = require 'server.modules.economy'
+        local newBalance = Economy.AddAccountMoney(self.identifier, self.name, accountName, money, reason)
+        if newBalance == nil then
+            error(("Economy.AddAccountMoney failed for ^5%s^1 account ^5%s^1"):format(self.playerId, accountName))
             return
         end
-        if money > 0 then
-            local account = self.getAccount(accountName)
-            if account then
-                money = account.round and KW.Math.Round(money) or money
-                self.accounts[account.index].money = self.accounts[account.index].money + money
-
-                Player(self.source).state:set("accounts", self.accounts, true)
-                TriggerEvent("kw:addAccountMoney", self.source, accountName, money, reason)
-            else
-                error(("Tried To Set Add To Invalid Account ^5%s^1 For Player ^5%s^1!"):format(accountName, self.playerId))
-            end
-        else
-            error(("Tried To Set Account ^5%s^1 For Player ^5%s^1 To An Invalid Number -> ^5%s^1"):format(accountName, self.playerId, money))
+        local account = self.getAccount(accountName)
+        if account then
+            self.accounts[account.index].money = newBalance
+            Player(self.source).state:set("accounts", self.accounts, true)
+            TriggerEvent("kw:addAccountMoney", self.source, accountName, money, reason)
         end
     end
 
     function self.removeAccountMoney(accountName, money, reason)
         reason = reason or "Unknown"
-        if type(money) ~= "number" or money ~= money or money == math.huge then
-            error(("Tried To Set Account ^5%s^1 For Player ^5%s^1 To An Invalid Number -> ^5%s^1"):format(accountName, self.playerId, money))
-            return
+        local Economy = require 'server.modules.economy'
+        local newBalance = Economy.RemoveAccountMoney(self.identifier, self.name, accountName, money, reason)
+        if newBalance == nil then
+            -- nil = insufficient funds (atomic check in DB prevented underflow)
+            return false
         end
-        if money > 0 then
-            local account = self.getAccount(accountName)
-
-            if account then
-                money = account.round and KW.Math.Round(money) or money
-                if self.accounts[account.index].money - money > self.accounts[account.index].money then
-                    error(("Tried To Underflow Account ^5%s^1 For Player ^5%s^1!"):format(accountName, self.playerId))
-                    return
-                end
-                self.accounts[account.index].money = self.accounts[account.index].money - money
-
-                Player(self.source).state:set("accounts", self.accounts, true)
-                TriggerEvent("kw:removeAccountMoney", self.source, accountName, money, reason)
-            else
-                error(("Tried To Set Add To Invalid Account ^5%s^1 For Player ^5%s^1!"):format(accountName, self.playerId))
-            end
-        else
-            error(("Tried To Set Account ^5%s^1 For Player ^5%s^1 To An Invalid Number -> ^5%s^1"):format(accountName, self.playerId, money))
+        local account = self.getAccount(accountName)
+        if account then
+            self.accounts[account.index].money = newBalance
+            Player(self.source).state:set("accounts", self.accounts, true)
+            TriggerEvent("kw:removeAccountMoney", self.source, accountName, money, reason)
         end
+        return true
     end
 
     function self.getInventoryItem(itemName)
