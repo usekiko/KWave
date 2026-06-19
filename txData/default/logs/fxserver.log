@@ -420,3 +420,5 @@
 [      script:kw_core] > process.processTicksAndRejections (node:internal/process/task_queues:105)
 [      script:kw_core] [INFO] Saved player "Ughjg Kjh"
 [ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/players.json (Get "https://89.228.233.88:30120/players.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/dynamic.json (Get "https://89.228.233.88:30120/dynamic.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
