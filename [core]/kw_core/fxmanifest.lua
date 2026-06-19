@@ -13,6 +13,7 @@ shared_scripts {
     'shared/config/weapons.lua',
     'shared/config/adjustments.lua',
 
+    'shared/types.lua',
     'shared/main.lua',
     'shared/functions.lua',
     'shared/modules/*.lua',

@@ -1,7 +1,23 @@
 {
+    "Lua.workspace.library": [
+        "resources/[core]/kw_core/shared",
+        "resources/[OX]/ox_lib"
+    ],
     "Lua.diagnostics.globals": [
         "PostgreSQL",
         "GetPlayerTimeOnline",
-        "SetEntityOrphanMode"
+        "SetEntityOrphanMode",
+        "KW",
+        "lib",
+        "Citizen",
+        "CreateThread",
+        "Wait",
+        "TriggerEvent",
+        "TriggerClientEvent",
+        "TriggerServerEvent",
+        "GetPlayerPed",
+        "PlayerPedId",
+        "Player",
+        "source"
     ]
 }
