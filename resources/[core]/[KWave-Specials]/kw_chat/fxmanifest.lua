@@ -2,9 +2,10 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-description 'DTF Chat - Enhanced Black & White Chat System'
+description 'KW Chat - Enhanced Black & White Chat System'
 version '2.0.0'
-author 'DTF'
+author 'Kiko'
+provide 'chat'
 
 shared_scripts {
     'config.lua'
