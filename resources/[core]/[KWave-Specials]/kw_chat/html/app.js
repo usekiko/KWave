@@ -1,4 +1,4 @@
-// DTF Chat - Enhanced Client JavaScript
+// KW Chat - Enhanced Client JavaScript
 // Improved animations, reliability, and error handling
 
 (function() {
@@ -49,7 +49,7 @@
                 body: JSON.stringify(data)
             });
         } catch (e) {
-            console.error('[^6DTF Chat^7] NUI Error:', e);
+            console.error('[^6KW Chat^7] NUI Error:', e);
         }
     }
 
@@ -442,5 +442,5 @@
     elements.container.classList.add('hidden');
     sendNUI('loaded', {});
     
-    console.log('[^6DTF Chat^7] Enhanced Edition loaded');
+    console.log('[^6KW Chat^7] Enhanced Edition loaded');
 })();

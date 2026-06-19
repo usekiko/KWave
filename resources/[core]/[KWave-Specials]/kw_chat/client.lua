@@ -1,4 +1,4 @@
--- DTF Chat Client - Enhanced Edition
+-- KW Chat Client - Enhanced Edition
 -- Improved reliability and error handling
 
 local chatInputActive = false
@@ -200,4 +200,4 @@ CreateThread(function()
     end
 end)
 
-print('[^6DTF Chat^7] Client loaded. Press T to open chat.')
+print('[^6KW Chat^7] Client loaded. Press T to open chat.')

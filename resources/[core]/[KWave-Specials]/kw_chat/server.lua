@@ -1,4 +1,4 @@
--- DTF Chat Server - Enhanced Edition
+-- KW Chat Server - Enhanced Edition
 -- Improved reliability and error handling
 
 -- Register server events
@@ -132,4 +132,4 @@ AddEventHandler('onServerResourceStop', function(resName)
     end
 end)
 
-print('[^6DTF Chat^7] Server loaded - Enhanced Edition')
+print('[^6KW Chat^7] Server loaded - Enhanced Edition')
