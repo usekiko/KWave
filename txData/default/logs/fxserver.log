@@ -422,3 +422,46 @@
 [ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/players.json (Get "https://89.228.233.88:30120/players.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
 [ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
 [ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/dynamic.json (Get "https://89.228.233.88:30120/dynamic.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [1380] FXServer Starting - 19.06.2026, 16:35:26        
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[           resources] Found 11 resources.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[ citizen-server-impl] Couldn't find resource kw_core.
+[ citizen-server-impl] Couldn't find resource category [core].
+║              STDERR║ (node:1380) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[       script:ox_lib] ox_inventory requires version '1.6.0' of 'kw_core' (current version: unknown)
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
