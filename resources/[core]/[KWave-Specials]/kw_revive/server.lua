@@ -22,7 +22,8 @@ AddEventHandler('kw:onPlayerDeath', function(data)
     -- Update database (same query as kw_ambulancejob)
     local xPlayer = KW.GetPlayerFromId(source)
     if xPlayer then
-        PostgreSQL.update('UPDATE users SET is_dead = ? WHERE identifier = ?', { 1, xPlayer.identifier })
+        xPlayer.setMeta('isDead', 1)
+        -- The core will automatically save this into the JSONB metadata column on player drop
     end
 end)
 
@@ -56,8 +57,8 @@ AddEventHandler('revive_system:revive', function(playerId)
     deadPlayers[playerId] = nil
     setDeadState(playerId, false)
     
-    -- Update database (same query as kw_ambulancejob)
-    PostgreSQL.update('UPDATE users SET is_dead = ? WHERE identifier = ?', { 0, xTarget.identifier })
+    -- Update metadata
+    xTarget.setMeta('isDead', 0)
     
     -- Trigger client revive
     TriggerClientEvent('revive_system:revive', playerId)
@@ -100,7 +101,7 @@ KW.RegisterCommand('reviveall', 'admin', function(xPlayer, args, showError)
             setDeadState(playerId, false)
             
             -- Update database
-            PostgreSQL.update('UPDATE users SET is_dead = ? WHERE identifier = ?', { 0, player.identifier })
+            player.setMeta('isDead', 0)
             
             -- Trigger client revive
             TriggerClientEvent('revive_system:revive', playerId)
@@ -126,7 +127,7 @@ RegisterNetEvent('revive_system:setDeathStatus')
 AddEventHandler('revive_system:setDeathStatus', function(isDead)
     local xPlayer = KW.GetPlayerFromId(source)
     if type(isDead) == 'boolean' and xPlayer then
-        PostgreSQL.update('UPDATE users SET is_dead = ? WHERE identifier = ?', { isDead and 1 or 0, xPlayer.identifier })
+        xPlayer.setMeta('isDead', isDead and 1 or 0)
         setDeadState(source, isDead)
     end
 end)
@@ -152,7 +153,7 @@ AddEventHandler('txAdmin:events:healedPlayer', function(eventData)
         
         local xPlayer = KW.GetPlayerFromId(playerId)
         if xPlayer then
-            PostgreSQL.update('UPDATE users SET is_dead = ? WHERE identifier = ?', { 0, xPlayer.identifier })
+            xPlayer.setMeta('isDead', 0)
         end
         
         TriggerClientEvent('revive_system:revive', playerId)
