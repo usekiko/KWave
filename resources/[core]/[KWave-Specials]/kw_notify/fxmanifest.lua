@@ -2,9 +2,9 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-description 'DTF Notify - Modern Black & White Notification System'
+description 'KW Notify - Modern Black & White Notification System'
 version '1.0.0'
-author 'DTF'
+author 'Kiko'
 
 client_scripts {
     'client.lua'
