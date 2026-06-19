@@ -2,9 +2,9 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-description 'DTF PvP - FPS Boost Optimizer'
+description 'KW PvP - FPS Boost Optimizer'
 version '1.0.0'
-author 'DTF'
+author 'Kiko'
 
 client_scripts {
     'client.lua'
