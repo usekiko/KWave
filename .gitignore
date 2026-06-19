@@ -6,4 +6,4 @@ db/
 
 # KWAnticheat - private, not for public repo
 kw_anticheat_rs/
-resources/[core]/[KWave-Specials]/kw_anticheat/
+**/kw_anticheat/
