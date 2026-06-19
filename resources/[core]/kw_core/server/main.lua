@@ -111,30 +111,26 @@ AddEventHandler("kw:onPlayerDropped", onPlayerDropped)
 
 if Config.Multichar then
     AddEventHandler("kw:onPlayerJoined", function(src, char, data)
-        while not next(KW.Jobs) do
-            Wait(50)
-        end
-
-        if not KW.Players[src] then
-            local identifier = char .. ":" .. KW.GetIdentifier(src)
-            if data then
-                createKWPlayer(identifier, src, data)
-            else
-                loadKWPlayer(identifier, src, false)
+        require('server.modules.ready').OnJobsReady(function()
+            if not KW.Players[src] then
+                local identifier = char .. ":" .. KW.GetIdentifier(src)
+                if data then
+                    createKWPlayer(identifier, src, data)
+                else
+                    loadKWPlayer(identifier, src, false)
+                end
             end
-        end
+        end)
     end)
 else
     RegisterNetEvent("kw:onPlayerJoined", function()
         local _source = source
         if not Guard.RateLimit(_source, "onPlayerJoined", 1) then return end
-        while not next(KW.Jobs) do
-            Wait(50)
-        end
-
-        if not KW.Players[_source] then
-            onPlayerJoined(_source)
-        end
+        require('server.modules.ready').OnJobsReady(function()
+            if not KW.Players[_source] then
+                onPlayerJoined(_source)
+            end
+        end)
     end)
 end
 

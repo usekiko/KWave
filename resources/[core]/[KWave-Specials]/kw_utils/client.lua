@@ -244,70 +244,70 @@ if cfg.EngineToggle and cfg.EngineToggle.Enabled then
         keyCode = keyMap[cfg.EngineToggle.Key] or 246
     end
 
-    -- === MASTER OPTIMIZED THREAD ===
+    -- === MASTER OPTIMIZED THREAD (Event Driven) ===
     -- Consolidates Engine Toggle, Engine Force Off, Quick Leave, and Quick Enter
-    CreateThread(function()
-        while true do
-            local sleep = 500
+    if cfg.QuickLeave and cfg.QuickLeave.Enabled then
+        RegisterCommand('+kw_quickleave', function()
             local ped = PlayerPedId()
             local vehicle = GetVehiclePedIsIn(ped, false)
-            local inVehicle = vehicle ~= 0
-            
-            -- Quick Leave & Enter Check
-            if cfg.QuickLeave and cfg.QuickLeave.Enabled then
-                sleep = 0
-                if inVehicle then
-                    if IsControlJustPressed(0, 75) then -- F key
-                        TaskLeaveVehicle(ped, vehicle, 16)
-                    end
-                else
-                    if IsControlJustPressed(0, 23) then -- F key
-                        local tryingToEnter = GetVehiclePedIsTryingToEnter(ped)
-                        if not tryingToEnter or tryingToEnter == 0 then
-                            local coords = GetEntityCoords(ped)
-                            tryingToEnter = GetClosestVehicle(coords.x, coords.y, coords.z, 5.0, 0, 71)
-                        end
-                        if tryingToEnter and tryingToEnter ~= 0 then
-                            local seat = -1
-                            if not IsVehicleSeatFree(tryingToEnter, -1) then
-                                for i = 0, GetVehicleModelNumberOfSeats(GetEntityModel(tryingToEnter)) - 2 do
-                                    if IsVehicleSeatFree(tryingToEnter, i) then
-                                        seat = i
-                                        break
-                                    end
-                                end
+            if vehicle ~= 0 then
+                TaskLeaveVehicle(ped, vehicle, 16)
+            else
+                local tryingToEnter = GetVehiclePedIsTryingToEnter(ped)
+                if not tryingToEnter or tryingToEnter == 0 then
+                    local coords = GetEntityCoords(ped)
+                    tryingToEnter = GetClosestVehicle(coords.x, coords.y, coords.z, 5.0, 0, 71)
+                end
+                if tryingToEnter and tryingToEnter ~= 0 then
+                    local seat = -1
+                    if not IsVehicleSeatFree(tryingToEnter, -1) then
+                        for i = 0, GetVehicleModelNumberOfSeats(GetEntityModel(tryingToEnter)) - 2 do
+                            if IsVehicleSeatFree(tryingToEnter, i) then
+                                seat = i
+                                break
                             end
-                            SetPedIntoVehicle(ped, tryingToEnter, seat)
                         end
                     end
+                    SetPedIntoVehicle(ped, tryingToEnter, seat)
                 end
             end
-            
-            -- Engine Toggle Check
-            if cfg.EngineToggle and cfg.EngineToggle.Enabled then
-                if inVehicle and GetPedInVehicleSeat(vehicle, -1) == ped then
-                    sleep = 0
-                    
-                    -- Start/Stop logic
-                    if IsControlJustPressed(0, keyCode) then
-                        engineOn = not engineOn
-                        SetVehicleEngineOn(vehicle, engineOn, false, true)
-                        lastVehicle = vehicle
-                        
-                        if engineOn then
-                            exports['kw_notify']:ShowNotification('^2Engine started', 'success')
-                        else
-                            exports['kw_notify']:ShowNotification('^1Engine stopped', 'info')
-                        end
-                    end
-                    
-                    -- Force off logic
+        end, false)
+        RegisterKeyMapping('+kw_quickleave', 'Quick Leave/Enter Vehicle', 'keyboard', 'F')
+    end
+
+    if cfg.EngineToggle and cfg.EngineToggle.Enabled then
+        RegisterCommand('+kw_enginetoggle', function()
+            local ped = PlayerPedId()
+            local vehicle = GetVehiclePedIsIn(ped, false)
+            if vehicle ~= 0 and GetPedInVehicleSeat(vehicle, -1) == ped then
+                engineOn = not engineOn
+                SetVehicleEngineOn(vehicle, engineOn, false, true)
+                lastVehicle = vehicle
+                if engineOn then
+                    exports['kw_notify']:ShowNotification('^2Engine started', 'success')
+                else
+                    exports['kw_notify']:ShowNotification('^1Engine stopped', 'info')
+                end
+            end
+        end, false)
+        RegisterKeyMapping('+kw_enginetoggle', 'Toggle Vehicle Engine', 'keyboard', cfg.EngineToggle.Key or 'Y')
+
+        -- We still need a loop to force the engine off and disable throttle if it's off,
+        -- but ONLY when the player is actually driving a vehicle with the engine off.
+        CreateThread(function()
+            while true do
+                local sleep = 500
+                local ped = PlayerPedId()
+                local vehicle = GetVehiclePedIsIn(ped, false)
+                
+                if vehicle ~= 0 and GetPedInVehicleSeat(vehicle, -1) == ped then
                     if lastVehicle ~= vehicle then
                         lastVehicle = vehicle
                         engineOn = GetIsVehicleEngineRunning(vehicle)
                     end
                     
                     if not engineOn then
+                        sleep = 0
                         SetVehicleEngineOn(vehicle, false, true, true)
                         DisableControlAction(0, 71, true) -- Throttle
                         DisableControlAction(0, 72, true) -- Brake
@@ -315,11 +315,10 @@ if cfg.EngineToggle and cfg.EngineToggle.Enabled then
                 else
                     lastVehicle = nil
                 end
+                Wait(sleep)
             end
-            
-            Wait(sleep)
-        end
-    end)
+        end)
+    end
 
 end
 

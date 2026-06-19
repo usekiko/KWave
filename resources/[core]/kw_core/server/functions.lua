@@ -578,6 +578,7 @@ function KW.RefreshJobs()
 
     TriggerEvent("kw:jobsRefreshed")
     Core.JobsLoaded = true
+    require('server.modules.ready').SetJobsReady()
 end
 
 ---@param item string
