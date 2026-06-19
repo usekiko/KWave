@@ -143,11 +143,37 @@ end
 ---@param options? ProgressBarOptions
 ---@return boolean Success Whether the progress bar was successfully created or not
 function KW.Progressbar(message, length, options)
-	return IsResourceFound('kw_progressbar') and exports['kw_progressbar']:Progressbar(message, length, options)
+    local libOptions = {
+        duration = length or 3000,
+        label = message or 'Progressing...',
+        useWhileDead = false,
+        canCancel = true,
+        disable = {
+            car = true,
+            move = true,
+            combat = true,
+        }
+    }
+    
+    if type(options) == 'table' then
+        for k, v in pairs(options) do
+            libOptions[k] = v
+        end
+    end
+
+    if exports.ox_lib then
+        return lib.progressBar(libOptions)
+    else
+        return false
+    end
 end
 
 function KW.CancelProgressbar()
-    return IsResourceFound('kw_progressbar') and exports['kw_progressbar']:CancelProgressbar()
+    if exports.ox_lib then
+        lib.cancelProgress()
+        return true
+    end
+    return false
 end
 
 ---@param message string The message to show
@@ -164,22 +190,31 @@ function KW.ShowNotification(message, notifyType, length, title, position)
         notifyType = "info"
     end
     
-	return IsResourceFound('kw_notify') and exports['kw_notify']:Notify({
-        description = tostring(message),
-        type = notifyType or "info",
-        duration = length or 5000,
-        title = title or "",
-        position = position
-    })
+    if exports.ox_lib then
+        lib.notify({
+            description = tostring(message),
+            type = notifyType or "info",
+            duration = length or 5000,
+            title = title or "",
+            position = position
+        })
+    end
 end
 
-function KW.TextUI(...)
-	return IsResourceFound('kw_textui') and exports['kw_textui']:TextUI(...)
+function KW.TextUI(message, icon)
+    if exports.ox_lib then
+        lib.showTextUI(message, {
+            icon = icon or 'hand',
+            position = "right-center"
+        })
+    end
 end
 
 ---@return nil
 function KW.HideUI()
-	return IsResourceFound('kw_textui') and exports['kw_textui']:HideUI()
+    if exports.ox_lib then
+        lib.hideTextUI()
+    end
 end
 
 ---@param sender string
