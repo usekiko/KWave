@@ -2,6 +2,7 @@ SetMapName("San Andreas")
 SetGameType("KW Legacy")
 
 local oneSyncState = GetConvar("onesync", "off")
+local Guard = require 'server.modules.guard'
 local newPlayer = "INSERT INTO users (accounts, identifier, ssn, \"group\") VALUES (?, ?, ?, ?)"
 local loadPlayer = "SELECT accounts, ssn, job, job_grade, \"group\", position, inventory, skin, loadout, metadata"
 
@@ -126,6 +127,7 @@ if Config.Multichar then
 else
     RegisterNetEvent("kw:onPlayerJoined", function()
         local _source = source
+        if not Guard.RateLimit(_source, "onPlayerJoined", 1) then return end
         while not next(KW.Jobs) do
             Wait(50)
         end
@@ -405,7 +407,14 @@ end)
 
 if not Config.CustomInventory then
     RegisterNetEvent("kw:updateWeaponAmmo", function(weaponName, ammoCount)
-        local xPlayer = KW.GetPlayerFromId(source)
+        local playerId = source
+        if not Guard.RateLimit(playerId, "updateWeaponAmmo", 10) then return end
+        if not Guard.Validate(playerId, {
+            { type = "string", maxlen = 64, notempty = true },
+            { type = "integer", min = 0, max = 9999 }
+        }, { weaponName, ammoCount }) then return end
+
+        local xPlayer = KW.GetPlayerFromId(playerId)
 
         if xPlayer then
             xPlayer.updateWeaponAmmo(weaponName, ammoCount)
@@ -414,6 +423,14 @@ if not Config.CustomInventory then
 
     RegisterNetEvent("kw:giveInventoryItem", function(target, itemType, itemName, itemCount)
         local playerId = source
+        if not Guard.RateLimit(playerId, "giveInventoryItem", 5) then return end
+        if not Guard.Validate(playerId, {
+            { type = "integer", min = 1 },
+            { type = "string", enum = {"item_standard", "item_account", "item_weapon", "item_ammo"} },
+            { type = "string", maxlen = 64, notempty = true },
+            { type = "integer", min = 1, max = 1000000 }
+        }, { target, itemType, itemName, itemCount }) then return end
+
         if type(target) ~= "number" or math.type(target) ~= "integer" then
             print(("[^3WARNING^7] Player Detected Cheating (Invalid Target): ^5%s^7"):format(GetPlayerName(playerId)))
             return
@@ -536,6 +553,13 @@ if not Config.CustomInventory then
 
     RegisterNetEvent("kw:removeInventoryItem", function(itemType, itemName, itemCount)
         local playerId = source
+        if not Guard.RateLimit(playerId, "removeInventoryItem", 5) then return end
+        if not Guard.Validate(playerId, {
+            { type = "string", enum = {"item_standard", "item_account", "item_weapon", "item_ammo"} },
+            { type = "string", maxlen = 64, notempty = true },
+            { type = "integer", min = 1, max = 1000000 }
+        }, { itemType, itemName, itemCount }) then return end
+
         local xPlayer = KW.GetPlayerFromId(playerId)
 
         if not xPlayer then
