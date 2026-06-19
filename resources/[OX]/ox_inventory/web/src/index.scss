@@ -11,7 +11,7 @@ $secondaryColorDark: #1e1e1e;
 
 $gridCols: 5;
 $gridRows: 5;
-$gridSize: 9vh;
+$gridSize: 6vh;
 $gridGap: 2px;
 $containerSize: calc(#{$gridRows} * #{$gridSize + 0.22vh} + #{$gridRows} * #{$gridGap});
 
@@ -138,7 +138,7 @@ body.inv-dragging {
   top: 50%;
   transform: translateY(-50%);
   background-color: #111111;
-  padding: 32px 40px;
+  padding: 16px 24px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 20px 60px rgba(0,0,0,0.9);
@@ -312,10 +312,10 @@ body.inv-dragging {
   background-color: $secondaryColor;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 8px;
+  border-radius: 6px;
   image-rendering: -webkit-optimize-contrast;
   position: relative;
-  background-size: 4.5vh;
+  background-size: 3.5vh;
   color: $textColor;
   border-color: rgba(255, 255, 255, 0.08);
   border-style: solid;
