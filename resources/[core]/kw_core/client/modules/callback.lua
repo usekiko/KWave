@@ -1,2 +1,0 @@
--- Legacy Callback system has been entirely replaced by ox_lib `lib.callback`
--- This file intentionally left blank.

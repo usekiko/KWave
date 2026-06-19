@@ -1,0 +1,27 @@
+CREATE TABLE IF NOT EXISTS player_outfits (
+  id SERIAL PRIMARY KEY,
+  citizenid VARCHAR(50) DEFAULT NULL,
+  outfitname VARCHAR(50) NOT NULL DEFAULT '0',
+  model VARCHAR(50) DEFAULT NULL,
+  props TEXT DEFAULT NULL,
+  components TEXT DEFAULT NULL,
+  UNIQUE (citizenid, outfitname, model)
+);
+
+CREATE TABLE IF NOT EXISTS management_outfits (
+  id SERIAL PRIMARY KEY,
+  job_name VARCHAR(50) NOT NULL,
+  type VARCHAR(50) NOT NULL,
+  minrank INTEGER NOT NULL DEFAULT 0,
+  name VARCHAR(50) NOT NULL DEFAULT 'Cool Outfit',
+  gender VARCHAR(50) NOT NULL DEFAULT 'male',
+  model VARCHAR(50) DEFAULT NULL,
+  props TEXT DEFAULT NULL,
+  components TEXT DEFAULT NULL
+);
+
+CREATE TABLE IF NOT EXISTS player_outfit_codes (
+  id SERIAL PRIMARY KEY,
+  outfitid INTEGER NOT NULL,
+  code VARCHAR(50) NOT NULL DEFAULT ''
+);
