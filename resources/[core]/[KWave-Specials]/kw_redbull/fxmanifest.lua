@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-description 'DTF Red Bull - Speed boost effect for Red Bull item'
-author 'DTF'
+description 'KW Red Bull - Speed boost effect for Red Bull item'
+author 'Kiko'
 version '1.0.0'
 
 server_scripts {
