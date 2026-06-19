@@ -180,9 +180,42 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
     end
 
     if type(self.metadata.jobDuty) ~= "boolean" then
-        self.metadata.jobDuty = self.job.name ~= "unemployed" and Config.DefaultJobDuty or false
+        self.metadata.jobDuty = job.name ~= "unemployed" and Config.DefaultJobDuty or false
     end
-    job.onDuty = self.metadata.jobDuty
+
+    -- Job System 2.0 Initialization
+    self.jobs = {}
+    local storedJobs = self.metadata.jobs or {}
+    
+    -- Ensure legacy primary job is in the list
+    if not storedJobs[job.name] then
+        storedJobs[job.name] = tonumber(job.grade) or 0
+    end
+
+    for jobName, gradeNum in pairs(storedJobs) do
+        local gradeStr = tostring(gradeNum)
+        if KW.DoesJobExist(jobName, gradeStr) then
+            local jobObject, gradeObject = KW.Jobs[jobName], KW.Jobs[jobName].grades[gradeStr]
+            self.jobs[jobName] = {
+                id = jobObject.id,
+                name = jobObject.name,
+                label = jobObject.label,
+                type = jobObject.type,
+                onDuty = false,
+                grade = tonumber(gradeNum) or 0,
+                grade_name = gradeObject.name,
+                grade_label = gradeObject.label,
+                grade_salary = gradeObject.salary,
+                permissions = type(gradeObject.permissions) == "string" and json.decode(gradeObject.permissions) or gradeObject.permissions or {},
+                skin_male = type(gradeObject.skin_male) == "string" and json.decode(gradeObject.skin_male) or gradeObject.skin_male or {},
+                skin_female = type(gradeObject.skin_female) == "string" and json.decode(gradeObject.skin_female) or gradeObject.skin_female or {},
+            }
+        end
+    end
+    
+    -- Set primary job object
+    self.job = self.jobs[job.name] or job
+    self.job.onDuty = self.metadata.jobDuty
 
     ExecuteCommand(("add_principal identifier.%s group.%s"):format(self.license, self.group))
 
@@ -190,6 +223,7 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
     stateBag:set("identifier", self.identifier, false)
     stateBag:set("license", self.license, false)
     stateBag:set("job", self.job, true)
+    stateBag:set("jobs", self.jobs, true)
     stateBag:set("group", self.group, true)
     stateBag:set("name", self.name, true)
     stateBag:set("accounts", self.accounts, true)
@@ -345,6 +379,8 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
     end
 
     function self.getJob()
+        -- [Job System 2.0] Notice: xPlayer.getJob() only returns the active legacy job. 
+        -- Modern scripts should check xPlayer.jobs for multi-job support, and use xPlayer.hasPermission().
         return self.job
     end
 
@@ -562,7 +598,7 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
 
         local jobObject, gradeObject = KW.Jobs[newJob], KW.Jobs[newJob].grades[grade]
 
-        self.job = {
+        self.jobs[newJob] = {
             id = jobObject.id,
             name = jobObject.name,
             label = jobObject.label,
@@ -573,14 +609,79 @@ function CreateExtendedPlayer(playerId, identifier, ssn, group, accounts, invent
             grade_name = gradeObject.name,
             grade_label = gradeObject.label,
             grade_salary = gradeObject.salary,
-
+            
+            permissions = type(gradeObject.permissions) == "string" and json.decode(gradeObject.permissions) or gradeObject.permissions or {},
             skin_male = type(gradeObject.skin_male) == "string" and json.decode(gradeObject.skin_male) or gradeObject.skin_male or {},
             skin_female = type(gradeObject.skin_female) == "string" and json.decode(gradeObject.skin_female) or gradeObject.skin_female or {},
         }
+        
+        self.metadata.jobs = self.metadata.jobs or {}
+        self.metadata.jobs[newJob] = tonumber(grade) or 0
+
+        self.job = self.jobs[newJob]
 
         self.metadata.jobDuty = onDuty
         TriggerEvent("kw:setJob", self.source, self.job, lastJob)
-        Player(self.source).state:set("job", self.job, true)
+        local stateBag = Player(self.source).state
+        stateBag:set("job", self.job, true)
+        stateBag:set("jobs", self.jobs, true)
+        stateBag:set("metadata", self.metadata, true)
+    end
+    
+    function self.addJob(jobName, grade)
+        grade = tostring(grade)
+        if not KW.DoesJobExist(jobName, grade) then return end
+        
+        local jobObject, gradeObject = KW.Jobs[jobName], KW.Jobs[jobName].grades[grade]
+        self.jobs[jobName] = {
+            id = jobObject.id,
+            name = jobObject.name,
+            label = jobObject.label,
+            type = jobObject.type,
+            onDuty = false,
+            grade = tonumber(grade) or 0,
+            grade_name = gradeObject.name,
+            grade_label = gradeObject.label,
+            grade_salary = gradeObject.salary,
+            permissions = type(gradeObject.permissions) == "string" and json.decode(gradeObject.permissions) or gradeObject.permissions or {},
+            skin_male = type(gradeObject.skin_male) == "string" and json.decode(gradeObject.skin_male) or gradeObject.skin_male or {},
+            skin_female = type(gradeObject.skin_female) == "string" and json.decode(gradeObject.skin_female) or gradeObject.skin_female or {},
+        }
+        
+        self.metadata.jobs = self.metadata.jobs or {}
+        self.metadata.jobs[jobName] = tonumber(grade) or 0
+        local stateBag = Player(self.source).state
+        stateBag:set("jobs", self.jobs, true)
+        stateBag:set("metadata", self.metadata, true)
+    end
+    
+    function self.removeJob(jobName)
+        if jobName == "unemployed" then return end
+        if self.jobs[jobName] then
+            self.jobs[jobName] = nil
+            self.metadata.jobs[jobName] = nil
+            if self.job.name == jobName then
+                self.setJob("unemployed", 0, false)
+            else
+                local stateBag = Player(self.source).state
+                stateBag:set("jobs", self.jobs, true)
+                stateBag:set("metadata", self.metadata, true)
+            end
+        end
+    end
+    
+    function self.setActiveJob(jobName)
+        if not self.jobs[jobName] then return false end
+        self.setJob(jobName, self.jobs[jobName].grade, false)
+        return true
+    end
+    
+    function self.hasPermission(permissionName)
+        if not self.job or not self.job.permissions then return false end
+        for i=1, #self.job.permissions do
+            if self.job.permissions[i] == permissionName then return true end
+        end
+        return false
     end
 
     function self.addWeapon(weaponName, ammo)

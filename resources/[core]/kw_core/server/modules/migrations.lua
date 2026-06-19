@@ -17,13 +17,14 @@ local CREATE_TABLE = [[
 local MIGRATIONS = {
     "001_fresh_schema.sql",
     "002_ox_inventory.sql",
+    "003_jobs_2.sql",
 }
 
 ---@param name string migration filename
 ---@return boolean already applied
 local function isApplied(name)
     local result = PostgreSQL.scalar.await(
-        "SELECT 1 FROM kw_migrations WHERE name = $1",
+        "SELECT 1 FROM kw_migrations WHERE name = ?",
         { name }
     )
     return result == 1
@@ -46,7 +47,7 @@ local function applyMigration(name, sql)
     end
 
     PostgreSQL.query.await(
-        "INSERT INTO kw_migrations (name) VALUES ($1) ON CONFLICT DO NOTHING",
+        "INSERT INTO kw_migrations (name) VALUES (?) ON CONFLICT DO NOTHING",
         { name }
     )
     print(("[^2INFO^7] Migration applied: ^5%s^7"):format(name))

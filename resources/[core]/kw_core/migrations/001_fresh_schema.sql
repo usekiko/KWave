@@ -95,9 +95,14 @@ CREATE INDEX IF NOT EXISTS idx_audit_log_action     ON kw_audit_log (action);
 CREATE INDEX IF NOT EXISTS idx_audit_log_created_at ON kw_audit_log (created_at DESC);
 
 -- ─── Seed: Unemployed Job ────────────────────────────────────────────────────
-INSERT INTO jobs (name, label, type) VALUES ('unemployed', 'Civilian', 'job')
-    ON CONFLICT (name) DO NOTHING;
+INSERT INTO jobs (name, label, type)
+SELECT 'unemployed', 'Civilian', 'job'
+WHERE NOT EXISTS (
+    SELECT 1 FROM jobs WHERE name = 'unemployed'
+);
 
 INSERT INTO job_grades (job_name, grade, name, label, salary)
-    VALUES ('unemployed', 0, 'unemployed', 'Civilian', 0)
-    ON CONFLICT (job_name, grade) DO NOTHING;
+SELECT 'unemployed', 0, 'unemployed', 'Civilian', 0
+WHERE NOT EXISTS (
+    SELECT 1 FROM job_grades WHERE job_name = 'unemployed' AND grade = 0
+);

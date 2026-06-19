@@ -807,6 +807,17 @@ AddEventHandler("onResourceStart", function(key)
             end
         end)
     end
+    
+    -- The client automatically triggers kw:onPlayerJoined if they are already active during a resource restart.
+    -- We don't need a server loop here to load players, as it would cause a race condition with the client's trigger.
+end)
+
+AddEventHandler("onResourceStop", function(key)
+    if key == GetCurrentResourceName() then
+        print("[DTF HMR] kw_core stopping! Synchronously saving all player sessions...")
+        Core.SavePlayers()
+        print("[DTF HMR] All sessions saved.")
+    end
 end)
 
 for key in pairs(DoNotUse) do

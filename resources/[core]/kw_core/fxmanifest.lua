@@ -48,6 +48,7 @@ server_scripts {
 }
 
 client_scripts {
+    'client/loadtest.lua',
     'client/main.lua',
 	'client/functions.lua',
 	'client/modules/wrapper.lua',

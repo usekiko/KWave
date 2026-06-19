@@ -12,7 +12,7 @@ local Economy = {}
 ---@param data table
 local function auditLog(identifier, playerName, action, data)
     PostgreSQL.query(
-        "INSERT INTO kw_audit_log (identifier, player_name, action, data) VALUES ($1, $2, $3, $4)",
+        "INSERT INTO kw_audit_log (identifier, player_name, action, data) VALUES (?, ?, ?, ?)",
         { identifier, playerName, action, json.encode(data) }
     )
 end
@@ -38,9 +38,9 @@ function Economy.AddAccountMoney(identifier, playerName, account, amount, reason
         SET accounts = jsonb_set(
             accounts,
             '{%s}',
-            to_jsonb(COALESCE((accounts->>'%s')::numeric, 0) + $1)
+            to_jsonb(COALESCE((accounts->>'%s')::numeric, 0) + ?)
         )
-        WHERE identifier = $2
+        WHERE identifier = ?
         RETURNING (accounts->>'%s')::numeric AS new_balance
     ]]):format(account, account, account), { amount, identifier })
 
@@ -76,12 +76,12 @@ function Economy.RemoveAccountMoney(identifier, playerName, account, amount, rea
         SET accounts = jsonb_set(
             accounts,
             '{%s}',
-            to_jsonb((accounts->>'%s')::numeric - $1)
+            to_jsonb((accounts->>'%s')::numeric - ?)
         )
-        WHERE identifier = $2
-          AND (accounts->>'%s')::numeric >= $1
+        WHERE identifier = ?
+          AND (accounts->>'%s')::numeric >= ?
         RETURNING (accounts->>'%s')::numeric AS new_balance
-    ]]):format(account, account, account, account), { amount, identifier })
+    ]]):format(account, account, account, account), { amount, identifier, amount })
 
     if not result or not result[1] then
         -- No row updated = insufficient funds
@@ -110,8 +110,8 @@ function Economy.SetAccountMoney(identifier, playerName, account, amount, reason
 
     local result = PostgreSQL.rawQuery.await(([[
         UPDATE users
-        SET accounts = jsonb_set(accounts, '{%s}', to_jsonb($1::numeric))
-        WHERE identifier = $2
+        SET accounts = jsonb_set(accounts, '{%s}', to_jsonb(?::numeric))
+        WHERE identifier = ?
         RETURNING (accounts->>'%s')::numeric AS new_balance
     ]]):format(account, account), { amount, identifier })
 
