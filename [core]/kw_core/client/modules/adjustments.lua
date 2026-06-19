@@ -94,12 +94,6 @@ function Adjustments:Load()
     self:SeatShuffle()
     self:HealthRegeneration()
     self:AmmoAndVehicleRewards()
-    self:EnablePvP()
-    self:DispatchServices()
-    self:NPCScenarios()
-    self:LicensePlates()
-    self:DiscordPresence()
-    self:WantedLevel()
-    self:DisableRadio()
+    -- Legacy methods removed to improve performance
     self:Multipliers()
 end

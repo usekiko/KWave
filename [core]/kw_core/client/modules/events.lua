@@ -504,8 +504,8 @@ RegisterNetEvent("kw:freezePlayer", function(input)
     end
 end)
 
-KW.RegisterClientCallback("kw:GetVehicleType", function(cb, model)
-    cb(KW.GetVehicleTypeClient(model))
+lib.callback.register("kw:GetVehicleType", function(model)
+    return KW.GetVehicleTypeClient(model)
 end)
 
 KW.SecureNetEvent('kw:updatePlayerData', function(key, val)
