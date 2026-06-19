@@ -23,7 +23,7 @@ end
 RegisterNetEvent('esx:onPlayerLogout', client.onLogout)
 
 AddEventHandler('esx:setPlayerData', function(key, value)
-	if not PlayerData.loaded or GetInvokingResource() ~= 'es_extended' then return end
+	if not PlayerData.loaded or GetInvokingResource() ~= 'kw_core' then return end
 
 	if key == 'job' then
 		key = 'groups'

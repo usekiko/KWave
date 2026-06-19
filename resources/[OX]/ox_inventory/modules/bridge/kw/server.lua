@@ -13,13 +13,14 @@ end)
 local ESX
 
 SetTimeout(500, function()
-    lib.checkDependency('es_extended', '1.6.0', true)
+    lib.checkDependency('kw_core', '1.6.0', true)
 
-	ESX = exports.kw_core:getSharedObject()
-    local customInventory = ESX.GetConfig().CustomInventory
+    if GetResourceState('kw_core') ~= 'started' then return end
 
-	if customInventory ~= nil and customInventory ~= "ox" then
-        error('es_extended has not been configured to enable support for ox_inventory!\nEnsure Config.CustomInventory has been set to "ox" in your es_extended resource config.')
+    local shared = exports.kw_core:getSharedObject()
+
+    if shared.Config?.CustomInventory ~= 'ox' then
+        error('kw_core has not been configured to enable support for ox_inventory!\nEnsure Config.CustomInventory has been set to "ox" in your kw_core resource config.')
     end
 
 	server.UseItem = ESX.UseItem
