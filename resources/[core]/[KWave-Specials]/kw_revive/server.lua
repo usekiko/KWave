@@ -4,6 +4,7 @@
     Uses same database queries: UPDATE users SET is_dead = ? WHERE identifier = ?
 ]]
 
+local KW = exports['kw_core']:getSharedObject()
 local deadPlayers = {}
 
 -- Helper function to set player state
