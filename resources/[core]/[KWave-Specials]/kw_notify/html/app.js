@@ -2,12 +2,11 @@
 
 const container = document.getElementById('notification-container');
 
-// No icons - clean circular progress only
 const icons = {
-    success: '',
-    error: '',
-    warning: '',
-    info: ''
+    success: 'check_circle',
+    error: 'error',
+    warning: 'warning_amber',
+    info: 'info'
 };
 
 // GTA Color codes to CSS colors
@@ -98,22 +97,14 @@ function createNotification(data) {
     notification.className = `notification ${type}`;
     notification.id = `notification-${id}`;
     
-    // SVG circular progress - circumference of circle with r=10.5 is ~66
-    const svgProgress = `
-        <svg class="circular-progress" viewBox="0 0 24 24">
-            <circle class="circular-progress-bg" cx="12" cy="12" r="10.5"/>
-            <circle class="circular-progress-fill" cx="12" cy="12" r="10.5" style="animation-duration: ${duration}ms;"/>
-        </svg>
-    `;
-    
     notification.innerHTML = `
         <div class="notification-icon-wrap">
-            ${svgProgress}
-            <div class="notification-icon">${icon}</div>
+            <span class="material-symbols-rounded">${icon}</span>
         </div>
         <div class="notification-content">
             <div class="notification-title">${parsedTitle}</div>
             <div class="notification-description">${parsedDescription}</div>
+            <div class="notification-progress" style="animation-duration: ${duration}ms;"></div>
         </div>
     `;
     

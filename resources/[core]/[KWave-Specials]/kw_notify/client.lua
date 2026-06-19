@@ -2,6 +2,9 @@
 -- Modern black & white notifications, middle-right position
 
 -- Main export function
+Config = Config or {}
+Config.Position = 'top-right' -- Options: top-right, top-left, top-middle, bottom-right, bottom-left, bottom-middle, middle-right, middle-left
+
 function Notify(data)
     local notificationData = {
         type = data.type or 'info',
@@ -15,7 +18,8 @@ function Notify(data)
     
     SendNUIMessage({
         action = 'notify',
-        data = notificationData
+        data = notificationData,
+        position = Config.Position
     })
 end
 

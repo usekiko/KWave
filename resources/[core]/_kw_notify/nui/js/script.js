@@ -164,9 +164,7 @@ const notification = (data) => {
 	const notificationElement = $(`
     <div id="${id}" class="notify notify-${data.type} fadeIn">
       <div class="notify-icon-container">
-        <div class="hexagon" style="--icon-color: ${typeInfo.color}; --border-color: ${typeInfo.borderColor}">
-          <span class="material-symbols-outlined">${typeInfo.icon}</span>
-        </div>
+        <span class="material-symbols-rounded">${typeInfo.icon}</span>
       </div>
       <div class="notify-content">
         <h3 class="notify-title">${sanitizedTitle}</h3>
