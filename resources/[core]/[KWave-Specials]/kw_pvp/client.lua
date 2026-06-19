@@ -457,7 +457,10 @@ AddEventHandler('gameEventTriggered', function(name, args)
         local playerPed = PlayerPedId()
         
         if attacker == playerPed and victim ~= playerPed and IsEntityAPed(victim) then
-            SendNUIMessage({ type = 'hitmarker' })
+            local found, bone = GetPedLastDamageBone(victim)
+            if found and bone == 31086 then -- 31086 is SKEL_Head
+                SendNUIMessage({ type = 'hitmarker' })
+            end
         end
     end
 end)
