@@ -208,7 +208,7 @@ Core.PlayerFunctionOverrides.OxInventory = {
             for accountName, amount in pairs(money) do
                 local account = self.getAccount(accountName)
 
-                if account and Core.Math.Round(account.money) ~= amount then
+                if account and math.floor(account.money) ~= amount then
                     account.money = amount
                     Player(self.source).state:set("accounts", self.accounts, true)
                     TriggerEvent("kw:setAccountMoney", self.source, accountName, amount, "Sync account with item")
