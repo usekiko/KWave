@@ -6,6 +6,10 @@ description 'KW PvP - FPS Boost Optimizer'
 version '1.0.0'
 author 'Kiko'
 
+shared_scripts {
+    '@ox_lib/init.lua'
+}
+
 client_scripts {
     'client.lua'
 }

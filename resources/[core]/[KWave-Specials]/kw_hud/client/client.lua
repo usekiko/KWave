@@ -156,13 +156,13 @@ CreateThread(function()
             })
 
             -- Seatbelt Physics (Collision based)
+            local currentSpeed = speed
             if Config.EnableSeatBelt and not seatbelt then
-                local currentBodyHealth = GetVehicleBodyHealth(myVehicle)
-                local bodyDamage = lastBodyHealth - currentBodyHealth
                 local collided = HasEntityCollidedWithAnything(myVehicle)
+                local speedDiff = lastSpeed - currentSpeed
                 
-                -- Only eject if speed was high, the car physically hit something, and took sudden body damage.
-                if lastSpeed > (Config.SeatBeltMinimumSpeedToRagdoll or 100) and collided and bodyDamage > 20.0 then
+                -- Only eject if speed drops suddenly and the car physically hit something
+                if speedDiff > (Config.SeatBeltMinimumSpeedToRagdoll or 50) and collided and lastSpeed > 100 then
                     local velocity = GetEntityVelocity(myVehicle)
                     local ped = PlayerPedId()
                     local coords = GetEntityCoords(ped)
@@ -176,11 +176,9 @@ CreateThread(function()
                         SetEntityHealth(ped, 0)
                     end
                 end
-                
-                lastBodyHealth = currentBodyHealth
             end
             
-            lastSpeed = speed
+            lastSpeed = currentSpeed
             Wait(50)
         else
             Wait(1000)

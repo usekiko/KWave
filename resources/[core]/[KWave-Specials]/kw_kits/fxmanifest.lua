@@ -6,6 +6,10 @@ description 'KW Kits - Daily kit system with ox_inventory and oxpsql'
 author 'Kiko'
 version '1.0.0'
 
+shared_scripts {
+    '@ox_lib/init.lua'
+}
+
 server_scripts {
     '@oxpsql/lib/PostgreSQL.lua',
     'server.lua'

@@ -6,7 +6,10 @@ author 'KWave'
 description 'KWave Modern HUD'
 version '2.0.0'
 
-shared_script 'config/config.lua'
+shared_script {
+	'@ox_lib/init.lua',
+	'config/config.lua'
+}
 
 client_scripts {
 	'client/*.lua',
