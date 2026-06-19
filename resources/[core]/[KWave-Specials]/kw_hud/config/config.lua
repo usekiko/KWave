@@ -8,11 +8,11 @@ end
 
 Config.Notification = function(title, message, type)
     if type == 'success' then
-        exports['kw_notify']:ShowNotification(message, 'success')
+        lib.notify({ description = message, type = 'success' })
     elseif type == 'error' then
-        exports['kw_notify']:ShowNotification(message, 'error')
+        lib.notify({ description = message, type = 'error' })
     else
-        exports['kw_notify']:ShowNotification(message, 'info')
+        lib.notify({ description = message, type = 'info' })
     end
 end
 

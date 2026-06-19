@@ -109,7 +109,7 @@ AddEventHandler('kw_deathmessages:playerKilled', function(data)
     end
     
     -- Broadcast to all clients via kw_notify
-    TriggerClientEvent('kw_notify:client:Notify', -1, {
+    TriggerClientEvent('ox_lib:notify', -1, {
         type = notifyType,
         title = title,
         description = description,
@@ -166,7 +166,7 @@ AddEventHandler('kw_deathmessages:npckilled', function(data)
     end
     
     -- Broadcast to all clients via kw_notify
-    TriggerClientEvent('kw_notify:client:Notify', -1, {
+    TriggerClientEvent('ox_lib:notify', -1, {
         type = notifyType,
         title = title,
         description = description,
@@ -192,7 +192,7 @@ AddEventHandler('kw_deathmessages:playerDied', function(data)
     ResetKillStreak(src)
     
     -- Broadcast to all clients via kw_notify
-    TriggerClientEvent('kw_notify:client:Notify', -1, {
+    TriggerClientEvent('ox_lib:notify', -1, {
         type = 'error',
         title = 'Death',
         description = victimName .. ' died',
@@ -216,7 +216,7 @@ RegisterCommand('resetstreaks', function(source, args, rawCommand)
         killStreakTimeouts = {}
         print('[^7DTF Death Messages^7] All kill streaks reset')
         if source ~= 0 then
-            TriggerClientEvent('kw_notify:client:Notify', source, {
+            TriggerClientEvent('ox_lib:notify', source, {
                 type = 'success',
                 title = 'Streaks Reset',
                 description = 'All kill streaks have been reset',
@@ -233,7 +233,7 @@ RegisterCommand('togglenpckills', function(source, args, rawCommand)
         local status = Config.EnableNPCDeaths and 'ENABLED' or 'DISABLED'
         print('[^7DTF Death Messages^7] NPC kills ' .. status)
         if source ~= 0 then
-            TriggerClientEvent('kw_notify:client:Notify', source, {
+            TriggerClientEvent('ox_lib:notify', source, {
                 type = 'info',
                 title = 'NPC Kills ' .. status,
                 description = 'NPC kill tracking is now ' .. status:lower(),

@@ -35,12 +35,12 @@ end
 
 function OpenAdminMenu()
     if not KW or not KW.PlayerData then
-        exports['kw_notify']:ShowNotification('^1Loading... please wait', 'warning')
+        lib.notify({ description = '^1Loading... please wait', type = 'warning' })
         return
     end
     
     if not IsAdmin() then
-        exports['kw_notify']:ShowNotification('^1You don\'t have permission', 'error')
+        lib.notify({ description = '^1You don\'t have permission', type = 'error' })
         return
     end
     

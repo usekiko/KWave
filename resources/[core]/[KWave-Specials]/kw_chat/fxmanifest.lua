@@ -28,5 +28,4 @@ files {
 }
 
 dependencies {
-    'kw_notify'
 }

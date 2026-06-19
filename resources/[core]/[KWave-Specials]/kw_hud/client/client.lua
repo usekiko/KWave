@@ -206,7 +206,7 @@ if Config.EnableSeatBelt then
         seatbelt = not seatbelt
         LocalPlayer.state:set('seatbelt', seatbelt, false)
         if seatbelt then
-            exports['kw_notify']:ShowNotification('Seatbelt Buckled', 'success')
+            lib.notify({ description = 'Seatbelt Buckled', type = 'success' })
             CreateThread(function()
                 while seatbelt do
                     DisableControlAction(0, 75, true) -- Disable Exit Vehicle
@@ -214,7 +214,7 @@ if Config.EnableSeatBelt then
                 end
             end)
         else
-            exports['kw_notify']:ShowNotification('Seatbelt Unbuckled', 'error')
+            lib.notify({ description = 'Seatbelt Unbuckled', type = 'error' })
         end
     end, false)
 

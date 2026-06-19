@@ -330,7 +330,7 @@ RegisterNetEvent('kw_deathmessages:showKillFeed')
 AddEventHandler('kw_deathmessages:showKillFeed', function(data)
     -- Use kw_notify to display the death message (silent - no sound)
     local message = data.title .. ' - ' .. data.message
-    exports['kw_notify']:ShowNotification(message, 'error', true)
+    lib.notify({ description = message, type = 'error', true })
 end)
 
 print('[^7DTF Death Messages^7] Client loaded - Improved detection active')

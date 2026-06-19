@@ -16,5 +16,4 @@ client_scripts {
 
 dependencies {
     'ox_inventory',
-    'kw_notify'
 }

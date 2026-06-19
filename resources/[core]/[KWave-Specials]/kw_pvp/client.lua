@@ -55,7 +55,7 @@ local function StartPvPMode()
     SendNUIMessage({ type = 'toggle', enabled = true })
     
     -- Notification
-    exports['kw_notify']:ShowNotification('PvP Mode ENABLED - Maximum FPS Boost active', 'success')
+    lib.notify({ description = 'PvP Mode ENABLED - Maximum FPS Boost active', type = 'success' })
     
     -- ONE-TIME setup
     SetTimecycleModifier("rply_saturation_neg")
@@ -265,7 +265,7 @@ local function StopPvPMode()
     
     SendNUIMessage({ type = 'toggle', enabled = false })
     
-    exports['kw_notify']:ShowNotification('PvP Mode DISABLED - Settings restored', 'info')
+    lib.notify({ description = 'PvP Mode DISABLED - Settings restored', type = 'info' })
     
     -- Restore
     ClearTimecycleModifier()

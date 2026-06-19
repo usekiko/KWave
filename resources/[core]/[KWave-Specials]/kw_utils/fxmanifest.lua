@@ -20,5 +20,4 @@ server_scripts {
 
 dependencies {
     'kw_core',
-    'kw_notify'
 }

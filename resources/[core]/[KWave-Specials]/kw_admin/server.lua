@@ -148,9 +148,9 @@ AddEventHandler('kw_admin:giveItem', function(targetId, item, count)
         LogAction('GIVE ITEM', adminName, xTarget.getName() .. ' [' .. targetId .. ']', 
             string.format('%s x%d', item, count))
         
-        TriggerClientEvent('kw_notify:ShowNotification', src, string.format('^2Gave %s x%d', item, count), 'success')
+        TriggerClientEvent('ox_lib:notify', src, { description = string.format('^2Gave %s x%d', type = item, count }), 'success')
     else
-        TriggerClientEvent('kw_notify:ShowNotification', src, '^1Player can\'t carry that', 'error')
+        TriggerClientEvent('ox_lib:notify', src, { description = '^1Player can\'t carry that', type = 'error' })
     end
 end)
 
@@ -172,7 +172,7 @@ AddEventHandler('kw_admin:giveWeapon', function(targetId, weapon)
     local adminName = GetAdminName(src)
     LogAction('GIVE WEAPON', adminName, xTarget.getName() .. ' [' .. targetId .. ']', weapon)
     
-    TriggerClientEvent('kw_notify:ShowNotification', src, '^2Gave ' .. weapon, 'success')
+    TriggerClientEvent('ox_lib:notify', src, { description = '^2Gave ' .. weapon, type = 'success' })
 end)
 
 RegisterNetEvent('kw_admin:giveMoney')
@@ -191,7 +191,7 @@ AddEventHandler('kw_admin:giveMoney', function(targetId, amount)
     local adminName = GetAdminName(src)
     LogAction('GIVE MONEY', adminName, xTarget.getName() .. ' [' .. targetId .. ']', '$' .. amount)
     
-    TriggerClientEvent('kw_notify:ShowNotification', src, string.format('^2Gave $%d', amount), 'success')
+    TriggerClientEvent('ox_lib:notify', src, { description = string.format('^2Gave $%d', type = amount }), 'success')
 end)
 
 -- === SLAY ===

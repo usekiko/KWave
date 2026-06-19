@@ -11,7 +11,6 @@ client_scripts {
 }
 
 dependencies {
-    'kw_notify'
 }
 
 ui_page 'html/index.html'

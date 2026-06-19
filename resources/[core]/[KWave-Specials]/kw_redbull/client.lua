@@ -61,19 +61,19 @@ local function ApplyEnergyCrash()
     if roll <= CRASH_CHANCE_RAGDOLL then
         -- 40% chance - ragdoll
         print('[^3DTF Red Bull^7] Triggering ragdoll effect')
-        exports['kw_notify']:ShowNotification("Energy crash! You'll feel worse for a moment, drink another one to feel better!", 'warning')
+        lib.notify({ description = "Energy crash! You'll feel worse for a moment, type = drink another one to feel better!", 'warning' })
         Wait(1000)
         ApplyRagdollEffect()
     elseif roll <= CRASH_CHANCE_RAGDOLL + CRASH_CHANCE_DRUNK then
         -- 30% chance - drunk effect
         print('[^3DTF Red Bull^7] Triggering drunk effect')
-        exports['kw_notify']:ShowNotification("Energy crash! You'll feel worse for a moment, drink another one to feel better!", 'warning')
+        lib.notify({ description = "Energy crash! You'll feel worse for a moment, type = drink another one to feel better!", 'warning' })
         Wait(1000)
         ApplyDrunkEffect()
     else
         -- 30% chance - no effect
         print('[^3DTF Red Bull^7] No effect this time')
-        exports['kw_notify']:ShowNotification("The crash wasn't too bad this time...", 'info')
+        lib.notify({ description = "The crash wasn't too bad this time...", type = 'info' })
     end
 end
 
@@ -86,7 +86,7 @@ local function StartSpeedBoost()
     speedBoostActive = true
     boostEndTime = GetGameTimer() + 120000 -- 2 minutes
     
-    exports['kw_notify']:ShowNotification('You drank a redbull! You got an energy boost.', 'success')
+    lib.notify({ description = 'You drank a redbull! You got an energy boost.', type = 'success' })
     
     -- Create thread for speed boost
     speedBoostThread = CreateThread(function()
@@ -123,7 +123,7 @@ end
 -- Export for ox_inventory (this MUST be at the end after all functions are defined)
 exports('UseRedBull', function(data, slot)
     if speedBoostActive then
-        exports['kw_notify']:ShowNotification('You already drank one, wait till it finishes!', 'warning')
+        lib.notify({ description = 'You already drank one, type = wait till it finishes!', 'warning' })
         return false
     end
     

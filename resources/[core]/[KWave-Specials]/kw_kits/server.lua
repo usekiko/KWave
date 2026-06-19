@@ -45,7 +45,7 @@ AddEventHandler('kw_kits:claimKit', function(kitName)
     local identifier = GetPlayerIdentifier(src)
     
     if not identifier then
-        TriggerClientEvent('kw_notify:client:Notify', src, {
+        TriggerClientEvent('ox_lib:notify', src, {
             type = 'error',
             title = 'Error',
             description = 'Unable to identify player',
@@ -56,7 +56,7 @@ AddEventHandler('kw_kits:claimKit', function(kitName)
     
     -- Only 'pvp' kit available for now
     if kitName ~= 'pvp' then
-        TriggerClientEvent('kw_notify:client:Notify', src, {
+        TriggerClientEvent('ox_lib:notify', src, {
             type = 'error',
             title = 'Error',
             description = 'Invalid kit name',
@@ -88,7 +88,7 @@ AddEventHandler('kw_kits:claimKit', function(kitName)
                     timeString = minutes .. ' minutes'
                 end
                 
-                TriggerClientEvent('kw_notify:client:Notify', src, {
+                TriggerClientEvent('ox_lib:notify', src, {
                     type = 'warning',
                     title = 'Kit Cooldown',
                     description = 'Wait ' .. timeString .. ' to claim again',
@@ -103,7 +103,7 @@ AddEventHandler('kw_kits:claimKit', function(kitName)
         local canGiveAmmo = exports.ox_inventory:CanCarryItem(src, 'ammo-9', 100)
         
         if not canGivePistol or not canGiveAmmo then
-            TriggerClientEvent('kw_notify:client:Notify', src, {
+            TriggerClientEvent('ox_lib:notify', src, {
                 type = 'error',
                 title = 'Inventory Full',
                 description = 'You do not have enough space in your inventory!',
@@ -121,7 +121,7 @@ AddEventHandler('kw_kits:claimKit', function(kitName)
             PostgreSQL.query('INSERT INTO kw_kits (identifier, kit_name, last_claimed) VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT (identifier, kit_name) DO UPDATE SET last_claimed = CURRENT_TIMESTAMP', {
                 identifier, kitName
             }, function()
-                TriggerClientEvent('kw_notify:client:Notify', src, {
+                TriggerClientEvent('ox_lib:notify', src, {
                     type = 'success',
                     title = 'Claimed daily kit',
                     description = "You've claimed your daily kit, enjoy!",
@@ -130,7 +130,7 @@ AddEventHandler('kw_kits:claimKit', function(kitName)
                 print('[^6DTF Kits^7] Player ' .. GetPlayerName(src) .. ' claimed PvP kit')
             end)
         else
-            TriggerClientEvent('kw_notify:client:Notify', src, {
+            TriggerClientEvent('ox_lib:notify', src, {
                 type = 'error',
                 title = 'Error',
                 description = 'Failed to add items to inventory!',
@@ -148,7 +148,7 @@ RegisterCommand('resetkit', function(source, args, rawCommand)
     if src ~= 0 then
         local xPlayer = KW.GetPlayerFromId(src)
         if not xPlayer or (xPlayer.getGroup() ~= 'admin' and xPlayer.getGroup() ~= 'superadmin') then
-            TriggerClientEvent('kw_notify:client:Notify', src, {
+            TriggerClientEvent('ox_lib:notify', src, {
                 type = 'error',
                 title = 'No Permission',
                 description = 'You do not have permission to use this command!',
@@ -164,7 +164,7 @@ RegisterCommand('resetkit', function(source, args, rawCommand)
     if not targetId then
         print('[^6DTF Kits^7] Usage: /resetkit [playerId] [kitName]')
         if src ~= 0 then
-            TriggerClientEvent('kw_notify:client:Notify', src, {
+            TriggerClientEvent('ox_lib:notify', src, {
                 type = 'warning',
                 title = 'Invalid Usage',
                 description = 'Usage: /resetkit [playerId] [kitName]',
@@ -178,7 +178,7 @@ RegisterCommand('resetkit', function(source, args, rawCommand)
     if not targetPlayer then
         print('[^6DTF Kits^7] Player not found: ' .. targetId)
         if src ~= 0 then
-            TriggerClientEvent('kw_notify:client:Notify', src, {
+            TriggerClientEvent('ox_lib:notify', src, {
                 type = 'error',
                 title = 'Player Not Found',
                 description = 'Player with ID ' .. targetId .. ' not found!',
@@ -194,14 +194,14 @@ RegisterCommand('resetkit', function(source, args, rawCommand)
     }, function()
         print('[^6DTF Kits^7] Reset ' .. kitName .. ' kit for ' .. targetPlayer.name)
         if src ~= 0 then
-            TriggerClientEvent('kw_notify:client:Notify', src, {
+            TriggerClientEvent('ox_lib:notify', src, {
                 type = 'success',
                 title = 'Kit Reset',
                 description = 'Reset ' .. kitName .. ' kit for ' .. targetPlayer.name,
                 duration = 5000
             })
         end
-        TriggerClientEvent('kw_notify:client:Notify', targetId, {
+        TriggerClientEvent('ox_lib:notify', targetId, {
             type = 'success',
             title = 'Kit Available',
             description = 'Your ' .. kitName .. ' kit cooldown has been reset!',

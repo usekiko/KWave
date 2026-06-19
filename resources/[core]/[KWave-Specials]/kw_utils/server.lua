@@ -15,7 +15,7 @@ AddEventHandler('playerDropped', function(reason)
     local playerName = GetPlayerName(src)
     if playerName then
         -- Notify all players someone left
-        TriggerClientEvent('kw_notify:client:Notify', -1, {
+        TriggerClientEvent('ox_lib:notify', -1, {
             type = 'info',
             title = 'Player Left',
             description = playerName .. ' disconnected',
@@ -37,7 +37,7 @@ AddEventHandler('kw_core:adminAlert', function(message)
     local xPlayers = KW.GetExtendedPlayers()
     for _, xPlayer in pairs(xPlayers) do
         if xPlayer.getGroup() == 'admin' or xPlayer.getGroup() == 'superadmin' or xPlayer.getGroup() == 'mod' then
-            TriggerClientEvent('kw_notify:client:Notify', xPlayer.source, {
+            TriggerClientEvent('ox_lib:notify', xPlayer.source, {
                 type = 'warning',
                 title = 'Admin Alert',
                 description = message,
@@ -61,7 +61,7 @@ RegisterCommand('svannounce', function(source, args, rawCommand)
     
     local message = table.concat(args, ' ')
     if message:len() > 0 then
-        TriggerClientEvent('kw_notify:client:Notify', -1, {
+        TriggerClientEvent('ox_lib:notify', -1, {
             type = 'info',
             title = 'Server announcement!',
             description = message,

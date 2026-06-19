@@ -48,7 +48,7 @@ AddEventHandler('revive_system:revive', function(playerId)
         -- Player offline, notify admin
         local xPlayer = KW.GetPlayerFromId(source)
         if xPlayer then
-            TriggerClientEvent('kw_notify:ShowNotification', xPlayer.source, '^1Player is offline', 'error')
+            TriggerClientEvent('ox_lib:notify', xPlayer.source, { description = '^1Player is offline', type = 'error' })
         end
         return
     end
@@ -71,13 +71,13 @@ KW.RegisterCommand('revive', 'admin', function(xPlayer, args, showError)
         if targetId then
             -- Revive specific player
             TriggerEvent('revive_system:revive', targetId)
-            TriggerClientEvent('kw_notify:ShowNotification', xPlayer.source, '^2Revived player ' .. targetId, 'success')
+            TriggerClientEvent('ox_lib:notify', xPlayer.source, { description = '^2Revived player ' .. targetId, type = 'success' })
         end
     else
         -- Revive self
         local playerId = xPlayer.source
         TriggerEvent('revive_system:revive', playerId)
-        TriggerClientEvent('kw_notify:ShowNotification', xPlayer.source, '^2You revived yourself', 'success')
+        TriggerClientEvent('ox_lib:notify', xPlayer.source, { description = '^2You revived yourself', type = 'success' })
     end
 end, true, { 
     help = 'Revive a player (or yourself if no ID provided)', 
@@ -112,7 +112,7 @@ KW.RegisterCommand('reviveall', 'admin', function(xPlayer, args, showError)
     -- Also revive any player who requests it (safety net)
     TriggerClientEvent('revive_system:revive', -1)
     
-    TriggerClientEvent('kw_notify:ShowNotification', xPlayer.source, '^2Revived ' .. revivedCount .. ' dead players', 'success')
+    TriggerClientEvent('ox_lib:notify', xPlayer.source, { description = '^2Revived ' .. revivedCount .. ' dead players', type = 'success' })
 end, false, { help = 'Revive all dead players' })
 
 -- Get death status callback (same as kw_ambulancejob)

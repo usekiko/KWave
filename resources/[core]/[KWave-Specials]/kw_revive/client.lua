@@ -65,7 +65,7 @@ AddEventHandler('revive_system:revive', function()
     DoScreenFadeIn(800)
     
     -- Notification
-    exports['kw_notify']:ShowNotification('You have been revived!', 'success')
+    lib.notify({ description = 'You have been revived!', type = 'success' })
 end)
 
 -- Death detection (triggers when player dies)

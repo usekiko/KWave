@@ -20,5 +20,4 @@ client_scripts {
 }
 
 dependencies {
-    'kw_notify'
 }

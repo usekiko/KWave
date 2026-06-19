@@ -1100,3 +1100,1594 @@
 [ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/dynamic.json (Get "https://89.228.233.88:30120/dynamic.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
 [ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
 [      script:kw_core] [INFO] Saved 1 player over 0.0 ms
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/dynamic.json (Get "https://89.228.233.88:30120/dynamic.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/dynamic.json (Get "https://89.228.233.88:30120/dynamic.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/players.json (Get "https://89.228.233.88:30120/players.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[      script:kw_core] [INFO] Saved 1 player over 0.0 ms
+[      script:kw_core] [INFO] Saved player "Ughjg Kjh"
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [10520] FXServer Starting - 19.06.2026, 17:25:09       
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+[    c-scripting-core] Creating script environments for vms_hud
+[           resources] Started resource vms_hud
+║              STDERR║ (node:10520) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[      script:kw_core] SCRIPT ERROR: @kw_core/server/modules/migrations.lua:25: kw_core was unable to execute a query!
+[      script:kw_core] Query: SELECT 1 FROM kw_migrations WHERE name = $1
+[      script:kw_core] []
+[      script:kw_core] brak parametru $1
+[      script:kw_core] > isApplied (@kw_core/server/modules/migrations.lua:25)
+[      script:kw_core] > Run (@kw_core/server/modules/migrations.lua:64)
+[      script:kw_core] > cb (@kw_core/server/common.lua:27)
+[      script:kw_core] > onReady (@oxpsql/lib/PostgreSQL.lua:140)
+[      script:kw_core] > fn (@oxpsql/lib/PostgreSQL.lua:147)
+[      script:kw_core] > new StackDumpError (@oxpsql/citizen:/scripting/v8/main.js:416)
+[      script:kw_core] > <unknown> (@oxpsql/citizen:/scripting/v8/main.js:436)
+[      script:kw_core] > <unknown> (@oxpsql/citizen:/scripting/v8/main.js:97)
+[      script:kw_core] > Number.__cfx_wrap_102 (@oxpsql/citizen:/scripting/v8/main.js:24)
+[      script:kw_core] > <unknown> (@oxpsql/citizen:/scripting/v8/main.js:30)
+[      script:kw_core] > <unknown> (@oxpsql/citizen:/scripting/v8/main.js:94)
+[      script:kw_core] > logError (@oxpsql/dist/build.js:12501)
+[      script:kw_core] > rawQuery (@oxpsql/dist/build.js:12673)
+[      script:kw_core] > process.processTicksAndRejections (node:internal/process/task_queues:105)
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [22704] FXServer Starting - 19.06.2026, 17:25:16       
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+[    c-scripting-core] Creating script environments for vms_hud
+[           resources] Started resource vms_hud
+║              STDERR║ (node:22704) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[      script:kw_core] SCRIPT ERROR: @kw_core/server/modules/migrations.lua:25: kw_core was unable to execute a query!
+[      script:kw_core] Query: SELECT 1 FROM kw_migrations WHERE name = $1
+[      script:kw_core] []
+[      script:kw_core] brak parametru $1
+[      script:kw_core] > isApplied (@kw_core/server/modules/migrations.lua:25)
+[      script:kw_core] > Run (@kw_core/server/modules/migrations.lua:64)
+[      script:kw_core] > cb (@kw_core/server/common.lua:27)
+[      script:kw_core] > onReady (@oxpsql/lib/PostgreSQL.lua:140)
+[      script:kw_core] > fn (@oxpsql/lib/PostgreSQL.lua:147)
+[      script:kw_core] > new StackDumpError (@oxpsql/citizen:/scripting/v8/main.js:416)
+[      script:kw_core] > <unknown> (@oxpsql/citizen:/scripting/v8/main.js:436)
+[      script:kw_core] > <unknown> (@oxpsql/citizen:/scripting/v8/main.js:97)
+[      script:kw_core] > Number.__cfx_wrap_95 (@oxpsql/citizen:/scripting/v8/main.js:24)
+[      script:kw_core] > <unknown> (@oxpsql/citizen:/scripting/v8/main.js:30)
+[      script:kw_core] > <unknown> (@oxpsql/citizen:/scripting/v8/main.js:94)
+[      script:kw_core] > logError (@oxpsql/dist/build.js:12501)
+[      script:kw_core] > rawQuery (@oxpsql/dist/build.js:12673)
+[      script:kw_core] > process.processTicksAndRejections (node:internal/process/task_queues:105)
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+[      script:vms_hud] ---------------------------------
+[      script:vms_hud] [vms_hud] - New update available now!
+[      script:vms_hud] Current Version: 1.0.4.
+[      script:vms_hud] New Version: 1.1.4.
+[      script:vms_hud] News: Important fix for pause menu bug.
+[      script:vms_hud] 
+[      script:vms_hud] Download it now on your keymaster.fivem.net.
+[      script:vms_hud] ---------------------------------
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [19928] FXServer Starting - 19.06.2026, 17:26:59       
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+[    c-scripting-core] Creating script environments for vms_hud
+[           resources] Started resource vms_hud
+║              STDERR║ (node:19928) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[      script:kw_core] [ERROR] Migration 001_fresh_schema.sql FAILED:
+[      script:kw_core] @kw_core/server/modules/migrations.lua:38: kw_core was unable to execute a query!
+[      script:kw_core] Query: -- KWave Fresh Schema — Migration 001
+[      script:kw_core] -- Safe to run on existing DB: uses IF NOT EXISTS and IF EXISTS guards
+[      script:kw_core] 
+[      script:kw_core] -- ─── Core Users Table ───────────────────────────────────────────────────────
+[      script:kw_core] CREATE TABLE IF NOT EXISTS users (
+[      script:kw_core]     id            SERIAL PRIMARY KEY,
+[      script:kw_core]     identifier    VARCHAR(60)  UNIQUE NOT NULL,
+[      script:kw_core]     ssn           VARCHAR(11)  DEFAULT '',
+[      script:kw_core]     accounts      JSONB        NOT NULL DEFAULT '{}',
+[      script:kw_core]     job           VARCHAR(50)  NOT NULL DEFAULT 'unemployed',
+[      script:kw_core]     job_grade     INTEGER      NOT NULL DEFAULT 0,
+[      script:kw_core]     "group"       VARCHAR(50)  NOT NULL DEFAULT 'user',
+[      script:kw_core]     position      JSONB        DEFAULT NULL,
+[      script:kw_core]     inventory     JSONB        DEFAULT NULL,
+[      script:kw_core]     loadout       JSONB        DEFAULT NULL,
+[      script:kw_core]     skin          JSONB        DEFAULT NULL,
+[      script:kw_core]     metadata      JSONB        NOT NULL DEFAULT '{}',
+[      script:kw_core]     firstname     VARCHAR(50)  DEFAULT NULL,
+[      script:kw_core]     lastname      VARCHAR(50)  DEFAULT NULL,
+[      script:kw_core]     dateofbirth   VARCHAR(10)  DEFAULT NULL,
+[      script:kw_core]     sex           VARCHAR(1)   DEFAULT NULL,
+[      script:kw_core]     height        INTEGER      DEFAULT NULL,
+[      script:kw_core]     created_at    TIMESTAMPTZ  NOT NULL DEFAULT NOW(),
+[      script:kw_core]     updated_at    TIMESTAMPTZ  NOT NULL DEFAULT NOW()
+[      script:kw_core] );
+[      script:kw_core] 
+[      script:kw_core] -- Ensure JSONB types (safe on fresh DB, also fixes any old TEXT columns)
+[      script:kw_core] DO $$ BEGIN
+[      script:kw_core]     IF EXISTS (
+[      script:kw_core]         SELECT 1 FROM information_schema.columns
+[      script:kw_core]         WHERE table_name = 'users' AND column_name = 'accounts'
+[      script:kw_core]         AND data_type = 'text'
+[      script:kw_core]     ) THEN
+[      script:kw_core]         ALTER TABLE users
+[      script:kw_core]             ALTER COLUMN accounts    TYPE JSONB USING accounts::JSONB,
+[      script:kw_core]             ALTER COLUMN metadata    TYPE JSONB USING COALESCE(NULLIF(metadata,''),'{}')::JSONB,
+[      script:kw_core]             ALTER COLUMN inventory   TYPE JSONB USING COALESCE(NULLIF(inventory,''),'null')::JSONB,
+[      script:kw_core]             ALTER COLUMN loadout     TYPE JSONB USING COALESCE(NULLIF(loadout,''),'null')::JSONB,
+[      script:kw_core]             ALTER COLUMN skin        TYPE JSONB USING COALESCE(NULLIF(skin,''),'null')::JSONB,
+[      script:kw_core]             ALTER COLUMN position    TYPE JSONB USING COALESCE(NULLIF(position,''),'null')::JSONB;
+[      script:kw_core]     END IF;
+[      script:kw_core] END $$;
+[      script:kw_core] 
+[      script:kw_core] -- Index for fast identifier lookups
+[      script:kw_core] CREATE INDEX IF NOT EXISTS idx_users_identifier ON users (identifier);
+[      script:kw_core] 
+[      script:kw_core] -- ─── Jobs Table ─────────────────────────────────────────────────────────────
+[      script:kw_core] CREATE TABLE IF NOT EXISTS jobs (
+[      script:kw_core]     id        SERIAL       PRIMARY KEY,
+[      script:kw_core]     name      VARCHAR(50)  UNIQUE NOT NULL,
+[      script:kw_core]     label     VARCHAR(100) NOT NULL DEFAULT '',
+[      script:kw_core]     type      VARCHAR(50)  NOT NULL DEFAULT 'job'
+[      script:kw_core] );
+[      script:kw_core] 
+[      script:kw_core] CREATE TABLE IF NOT EXISTS job_grades (
+[      script:kw_core]     id          SERIAL       PRIMARY KEY,
+[      script:kw_core]     job_name    VARCHAR(50)  NOT NULL REFERENCES jobs(name) ON DELETE CASCADE,
+[      script:kw_core]     grade       INTEGER      NOT NULL DEFAULT 0,
+[      script:kw_core]     name        VARCHAR(50)  NOT NULL,
+[      script:kw_core]     label       VARCHAR(100) NOT NULL DEFAULT '',
+[      script:kw_core]     salary      INTEGER      NOT NULL DEFAULT 0,
+[      script:kw_core]     skin_male   JSONB        DEFAULT NULL,
+[      script:kw_core]     skin_female JSONB        DEFAULT NULL,
+[      script:kw_core]     UNIQUE (job_name, grade)
+[      script:kw_core] );
+[      script:kw_core] 
+[      script:kw_core] CREATE INDEX IF NOT EXISTS idx_job_grades_job_name ON job_grades (job_name);
+[      script:kw_core] 
+[      script:kw_core] -- ─── User Licenses ──────────────────────────────────────────────────────────
+[      script:kw_core] CREATE TABLE IF NOT EXISTS user_licenses (
+[      script:kw_core]     id         SERIAL      PRIMARY KEY,
+[      script:kw_core]     type       VARCHAR(60) NOT NULL,
+[      script:kw_core]     owner      VARCHAR(60) NOT NULL REFERENCES users(identifier) ON DELETE CASCADE,
+[      script:kw_core]     UNIQUE (type, owner)
+[      script:kw_core] );
+[      script:kw_core] 
+[      script:kw_core] -- ─── Licenses (ox_inventory reference table) ────────────────────────────────
+[      script:kw_core] CREATE TABLE IF NOT EXISTS licenses (
+[      script:kw_core]     type  VARCHAR(60) PRIMARY KEY,
+[      script:kw_core]     label VARCHAR(100) NOT NULL DEFAULT ''
+[      script:kw_core] );
+[      script:kw_core] 
+[      script:kw_core] -- ─── Audit Log ──────────────────────────────────────────────────────────────
+[      script:kw_core] CREATE TABLE IF NOT EXISTS kw_audit_log (
+[      script:kw_core]     id          BIGSERIAL    PRIMARY KEY,
+[      script:kw_core]     identifier  VARCHAR(60)  DEFAULT NULL,
+[      script:kw_core]     player_name VARCHAR(100) DEFAULT NULL,
+[      script:kw_core]     action      VARCHAR(100) NOT NULL,
+[      script:kw_core]     data        JSONB        DEFAULT NULL,
+[      script:kw_core]     created_at  TIMESTAMPTZ  NOT NULL DEFAULT NOW()
+[      script:kw_core] );
+[      script:kw_core] 
+[      script:kw_core] CREATE INDEX IF NOT EXISTS idx_audit_log_identifier ON kw_audit_log (identifier);
+[      script:kw_core] CREATE INDEX IF NOT EXISTS idx_audit_log_action     ON kw_audit_log (action);
+[      script:kw_core] CREATE INDEX IF NOT EXISTS idx_audit_log_created_at ON kw_audit_log (created_at DESC);
+[      script:kw_core] 
+[      script:kw_core] -- ─── Seed: Unemployed Job ────────────────────────────────────────────────────
+[      script:kw_core] INSERT INTO jobs (name, label, type) VALUES ('unemployed', 'Civilian', 'job')
+[      script:kw_core]     ON CONFLICT (name) DO NOTHING;
+[      script:kw_core] 
+[      script:kw_core] INSERT INTO job_grades (job_name, grade, name, label, salary)
+[      script:kw_core]     VALUES ('unemployed', 0, 'unemployed', 'Civilian', 0)
+[      script:kw_core]     ON CONFLICT (job_name, grade) DO NOTHING;
+[      script:kw_core] 
+[      script:kw_core] []
+[      script:kw_core] brak ograniczenia unikalnego ani wykluczającego pasującego do specyfikacji ON CONFLICT
+[      script:kw_core] [INFO] Migration applied: 002_ox_inventory.sql
+[      script:kw_core] [INFO] 2 migration(s) applied successfully.
+[      script:kw_core] [INFO] KW Legacy 1.13.5 initialized!
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+[      script:vms_hud] ---------------------------------
+[      script:vms_hud] [vms_hud] - New update available now!
+[      script:vms_hud] Current Version: 1.0.4.
+[      script:vms_hud] New Version: 1.1.4.
+[      script:vms_hud] News: Important fix for pause menu bug.
+[      script:vms_hud] 
+[      script:vms_hud] Download it now on your keymaster.fivem.net.
+[      script:vms_hud] ---------------------------------
+[      script:hardcap] Connecting: ShyLizard8543
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/players.json (Get "https://89.228.233.88:30120/players.json": read tcp 10.0.16.174:58084->89.228.233.88:30120: read: connection reset by peer)
+[      script:kw_core] [INFO] Player "Ughjg Kjh" has connected to the server. ID: 1
+[      script:kw_core] [INFO] Saved player "Ughjg Kjh"
+║             TXADMIN║ txaEvent "serverShuttingDown" "{\"delay\":5000,\"author\":\"real1kiko\",\"message\":\"Server restarting (admin request).\"}"
+[      script:monitor] [txAdmin] Server shutting down. Kicking all players.
+
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [2836] FXServer Starting - 19.06.2026, 17:29:55        
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+[    c-scripting-core] Creating script environments for vms_hud
+[           resources] Started resource vms_hud
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+║              STDERR║ (node:2836) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[      script:kw_core] [INFO] Migration applied: 001_fresh_schema.sql
+[      script:kw_core] [INFO] 1 migration(s) applied successfully.
+[      script:kw_core] [INFO] KW Legacy 1.13.5 initialized!
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+[      script:vms_hud] ---------------------------------
+[      script:vms_hud] [vms_hud] - New update available now!
+[      script:vms_hud] Current Version: 1.0.4.
+[      script:vms_hud] New Version: 1.1.4.
+[      script:vms_hud] News: Important fix for pause menu bug.
+[      script:vms_hud] 
+[      script:vms_hud] Download it now on your keymaster.fivem.net.
+[      script:vms_hud] ---------------------------------
+[      script:hardcap] Connecting: ShyLizard8543
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[      script:kw_core] [INFO] Player "Ughjg Kjh" has connected to the server. ID: 1
+║           real1kiko║ lua "CreateThread(function() while true do TriggerServerEvent('kw:updateWeaponAmmo', 'WEAPON_PISTOL', 100) end end)"
+[                 cmd] No such command lua.
+║             TXADMIN║ txaEvent "serverShuttingDown" "{\"delay\":5000,\"author\":\"real1kiko\",\"message\":\"Server restarting (admin request).\"}"
+[      script:monitor] [txAdmin] Server shutting down. Kicking all players.
+[      script:kw_core] [INFO] Saved 1 player over 0.0 ms
+[      script:kw_core] [INFO] Saved player "Ughjg Kjh"
+
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [2888] FXServer Starting - 19.06.2026, 17:33:25        
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+[    c-scripting-core] Creating script environments for vms_hud
+[           resources] Started resource vms_hud
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+║              STDERR║ (node:2888) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[      script:kw_core] [INFO] Database schema is up to date (2 migrations).
+[      script:kw_core] [INFO] KW Legacy 1.13.5 initialized!
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+[      script:vms_hud] ---------------------------------
+[      script:vms_hud] [vms_hud] - New update available now!
+[      script:vms_hud] Current Version: 1.0.4.
+[      script:vms_hud] New Version: 1.1.4.
+[      script:vms_hud] News: Important fix for pause menu bug.
+[      script:vms_hud] 
+[      script:vms_hud] Download it now on your keymaster.fivem.net.
+[      script:vms_hud] ---------------------------------
+[      script:hardcap] Connecting: ShyLizard8543
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[      script:kw_core] [INFO] Player "Ughjg Kjh" has connected to the server. ID: 1
+[      script:kw_core] [INFO] Saved player "Ughjg Kjh"
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[      script:hardcap] Connecting: ShyLizard8543
+║             TXADMIN║ txaEvent "serverShuttingDown" "{\"delay\":5000,\"author\":\"real1kiko\",\"message\":\"Server restarting (admin request).\"}"
+[      script:monitor] [txAdmin] Server shutting down. Kicking all players.
+
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [19876] FXServer Starting - 19.06.2026, 17:35:19       
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+[    c-scripting-core] Creating script environments for vms_hud
+[           resources] Started resource vms_hud
+║              STDERR║ (node:19876) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[      script:kw_core] [INFO] Database schema is up to date (2 migrations).
+[      script:kw_core] [INFO] KW Legacy 1.13.5 initialized!
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+[      script:vms_hud] ---------------------------------
+[      script:vms_hud] [vms_hud] - New update available now!
+[      script:vms_hud] Current Version: 1.0.4.
+[      script:vms_hud] New Version: 1.1.4.
+[      script:vms_hud] News: Important fix for pause menu bug.
+[      script:vms_hud] 
+[      script:vms_hud] Download it now on your keymaster.fivem.net.
+[      script:vms_hud] ---------------------------------
+[      script:hardcap] Connecting: ShyLizard8543
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[      script:kw_core] [INFO] Player "Ughjg Kjh" has connected to the server. ID: 1
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/players.json (Get "https://89.228.233.88:30120/players.json": read tcp 10.0.16.174:52694->89.228.233.88:30120: read: connection reset by peer)
+[      script:kw_core] [INFO] Saved 1 player over 0.0 ms
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[      script:kw_core] [INFO] Saved player "Ughjg Kjh"
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [15824] FXServer Starting - 19.06.2026, 17:52:26       
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+[    c-scripting-core] Creating script environments for vms_hud
+[           resources] Started resource vms_hud
+║              STDERR║ (node:15824) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[      script:kw_core] [INFO] Migration applied: 003_jobs_2.sql
+[      script:kw_core] [INFO] 1 migration(s) applied successfully.
+[      script:kw_core] [INFO] KW Legacy 1.13.5 initialized!
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+[      script:vms_hud] ---------------------------------
+[      script:vms_hud] [vms_hud] - New update available now!
+[      script:vms_hud] Current Version: 1.0.4.
+[      script:vms_hud] New Version: 1.1.4.
+[      script:vms_hud] News: Important fix for pause menu bug.
+[      script:vms_hud] 
+[      script:vms_hud] Download it now on your keymaster.fivem.net.
+[      script:vms_hud] ---------------------------------
+[      script:hardcap] Connecting: ShyLizard8543
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": read tcp 10.0.16.173:35038->89.228.233.88:30120: read: connection reset by peer)
+[      script:kw_core] [INFO] Player "Ughjg Kjh" has connected to the server. ID: 1
+[      script:kw_core] [INFO] Database schema is up to date (3 migrations).
+[      script:kw_core] [INFO] KW Legacy 1.13.5 initialized!
+[script:kw_deathmessa] [DTF Death Messages] ShyLizard8543 died
+[    script:kw_revive] SCRIPT ERROR: Execution of function reference in script host failed: 
+[    script:kw_revive] > handler (@kw_revive/server.lua:23)
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/players.json (Get "https://89.228.233.88:30120/players.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/players.json (Get "https://89.228.233.88:30120/players.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+║             TXADMIN║ txaEvent "serverShuttingDown" "{\"delay\":5000,\"author\":\"real1kiko\",\"message\":\"Server restarting (admin request).\"}"
+[      script:monitor] [txAdmin] Server shutting down. Kicking all players.
+
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [23548] FXServer Starting - 19.06.2026, 18:03:02       
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_hud
+[    resources:kw_hud] Warning: could not find file `web/dist/index.html` (defined in fxmanifest.lua:24)
+[    resources:kw_hud] Warning: could not find file `web/dist/assets/*.*` (defined in fxmanifest.lua:24)
+[    resources:kw_hud] Warning: could not find file `web/dist/**/*.*` (defined in fxmanifest.lua:24)
+[           resources] Started resource kw_hud (3 warnings)
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+║              STDERR║ (node:23548) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[      script:kw_core] [INFO] Database schema is up to date (3 migrations).
+[      script:kw_core] [INFO] KW Legacy 1.13.5 initialized!
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+[       script:kw_hud] The version check failed, github is down.
+║             TXADMIN║ txaEvent "serverShuttingDown" "{\"delay\":5000,\"author\":\"real1kiko\",\"message\":\"Server restarting (admin request).\"}"
+[      script:monitor] [txAdmin] Server shutting down. Kicking all players.
+
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [10928] FXServer Starting - 19.06.2026, 18:05:27       
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_hud
+[           resources] Started resource kw_hud
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+║              STDERR║ (node:10928) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[      script:kw_core] [INFO] Database schema is up to date (3 migrations).
+[      script:kw_core] [INFO] KW Legacy 1.13.5 initialized!
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+[       script:kw_hud] The version check failed, github is down.
+[      script:hardcap] Connecting: ShyLizard8543
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[      script:kw_core] [INFO] Player "Ughjg Kjh" has connected to the server. ID: 1
+[      script:kw_core] SCRIPT ERROR: @kw_core/server/classes/player.lua:953: xPlayer.setMeta false should be number or string or table!
+[      script:kw_core] > ref (@kw_core/server/classes/player.lua:953)
+[      script:kw_core] > handler (@kw_revive/server.lua:130)
+[    script:kw_revive] SCRIPT ERROR: error object is not a string
+║           real1kiko║ ensure kw_hud
+[           resources] Stopping resource kw_hud
+[    c-scripting-core] Creating script environments for kw_hud
+[           resources] Started resource kw_hud
+[ citizen-server-impl] server thread hitch warning: timer interval of 187 milliseconds
+[       script:kw_hud] The version check failed, github is down.
+║           real1kiko║ ensure kw_revive
+[           resources] Stopping resource kw_revive
+[    c-scripting-core] Creating script environments for kw_revive
+[      script:kw_core] [WARNING] Command "revive" already registered, overriding command
+[      script:kw_core] [WARNING] Command "reviveall" already registered, overriding command
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/players.json (Get "https://89.228.233.88:30120/players.json": read tcp 10.0.16.173:52402->89.228.233.88:30120: read: connection reset by peer)
+[ citizen-server-impl] server thread hitch warning: timer interval of 166 milliseconds
+[       script:kw_hud] The version check failed, github is down.
+[      script:kw_core] [INFO] Saved player "Ughjg Kjh"
+║             TXADMIN║ txaEvent "serverShuttingDown" "{\"delay\":5000,\"author\":\"real1kiko\",\"message\":\"Server restarting (admin request).\"}"
+[      script:monitor] [txAdmin] Server shutting down. Kicking all players.
+
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [21428] FXServer Starting - 19.06.2026, 18:14:15       
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_hud
+[           resources] Started resource kw_hud
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+║              STDERR║ (node:21428) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[      script:kw_core] [INFO] Database schema is up to date (3 migrations).
+[      script:kw_core] [INFO] KW Legacy 1.13.5 initialized!
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+[       script:kw_hud] The version check failed, github is down.
+[      script:hardcap] Connecting: ShyLizard8543
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[      script:kw_core] [INFO] Player "Ughjg Kjh" has connected to the server. ID: 1
+[       script:kw_hud] The version check failed, github is down.
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[       script:kw_hud] The version check failed, github is down.
+[       script:kw_hud] The version check failed, github is down.
+[       script:kw_hud] The version check failed, github is down.
+[       script:kw_hud] The version check failed, github is down.
+[       script:kw_hud] The version check failed, github is down.
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[      script:kw_core] [INFO] Saved 1 player over 0.0 ms
+[       script:kw_hud] The version check failed, github is down.
+[       script:kw_hud] The version check failed, github is down.
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/players.json (Get "https://89.228.233.88:30120/players.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[script:kw_deathmessa] [DTF Death Messages] ShyLizard8543 died
+[script:kw_deathmessa] [DTF Death Messages] ShyLizard8543 died
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/dynamic.json (Get "https://89.228.233.88:30120/dynamic.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[script:kw_deathmessa] [DTF Death Messages] Unknown killed ShyLizard8543 (0m)
+[      script:kw_core] [INFO] Saved player "Ughjg Kjh"
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/players.json (Get "https://89.228.233.88:30120/players.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+║             TXADMIN║ txaEvent "serverShuttingDown" "{\"delay\":5000,\"author\":\"real1kiko\",\"message\":\"Server restarting (admin request).\"}"
+[      script:monitor] [txAdmin] Server shutting down. Kicking all players.
+
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [20932] FXServer Starting - 19.06.2026, 18:33:46       
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_hud
+[           resources] Started resource kw_hud
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+║              STDERR║ (node:20932) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[      script:kw_core] [INFO] Database schema is up to date (3 migrations).
+[      script:kw_core] [INFO] KW Legacy 1.13.5 initialized!
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+[       script:kw_hud] The version check failed, github is down.
+[      script:hardcap] Connecting: ShyLizard8543
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+║             TXADMIN║ txaEvent "serverShuttingDown" "{\"delay\":5000,\"author\":\"real1kiko\",\"message\":\"Server restarting (admin request).\"}"
+[      script:monitor] [txAdmin] Server shutting down. Kicking all players.
+
+║             TXADMIN║ ================================================================
+║             TXADMIN║ ======== [12580] FXServer Starting - 19.06.2026, 18:35:54       
+║             TXADMIN║ ================================================================
+[           resources] Scanning resources.
+[resources:_kw_chat_t] Warning: _kw_chat_theme does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_loadin] Warning: _kw_loadingscreen does not have a resource manifest (fxmanifest.lua)
+[resources:_kw_notify] Warning: _kw_notify does not have a resource manifest (fxmanifest.lua)
+[           resources] Found 37 resources.
+[           resources] 3 warnings were encountered.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdmin] Resource v8.0.1 threads and commands set up. All Ready.
+[           resources] Started resource monitor
+[           resources] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for hardcap
+[           resources] Started resource hardcap
+[    c-scripting-core] Creating script environments for baseevents
+[           resources] Started resource baseevents
+[    c-scripting-core] Creating script environments for sessionmanager
+[           resources] Started resource sessionmanager
+[    c-scripting-core] Creating script environments for oxpsql
+[           resources] Started resource oxpsql
+[    c-scripting-core] Creating script environments for ox_lib
+[           resources] Started resource ox_lib
+[    c-scripting-core] Creating script environments for kw_core
+[           resources] Started resource kw_core
+[    c-scripting-core] Creating script environments for ox_inventory
+[           resources] Started resource ox_inventory
+[    c-scripting-core] Creating script environments for cron
+[           resources] Started resource cron
+[    c-scripting-core] Creating script environments for illenium-appearance
+[       script:ox_lib] Unable to determine current resource version for 'illenium-appearance' 
+[           resources] Started resource illenium-appearance
+[           resources] Started resource kw_notify
+[    c-scripting-core] Creating script environments for kw_admin
+[     script:kw_admin] [DTF Admin] Server loaded
+[           resources] Started resource kw_admin
+[    c-scripting-core] Creating script environments for kw_chat
+[      script:kw_chat] [DTF Chat] Server loaded - Enhanced Edition
+[           resources] Started resource kw_chat
+[    c-scripting-core] Creating script environments for kw_context
+[           resources] Started resource kw_context
+[    c-scripting-core] Creating script environments for kw_deathmessages
+[script:kw_deathmessa] [DTF Death Messages] Server loaded - using kw_notify
+[           resources] Started resource kw_deathmessages
+[    c-scripting-core] Creating script environments for kw_hud
+[           resources] Started resource kw_hud
+[    c-scripting-core] Creating script environments for kw_identity
+[           resources] Started resource kw_identity
+[    c-scripting-core] Creating script environments for kw_inventory
+[           resources] Started resource kw_inventory
+[    c-scripting-core] Creating script environments for kw_kits
+[      script:kw_kits] [DTF Kits] Server loaded
+[           resources] Started resource kw_kits
+[           resources] Started resource kw_loadscreen
+[           resources] Started resource kw_map
+[    c-scripting-core] Creating script environments for kw_multicharacter
+[           resources] Started resource kw_multicharacter
+[    c-scripting-core] Creating script environments for kw_progressbar
+[           resources] Started resource kw_progressbar
+[           resources] Started resource kw_pvp
+[    c-scripting-core] Creating script environments for kw_redbull
+[   script:kw_redbull] [DTF Red Bull] Server loaded
+[           resources] Started resource kw_redbull
+[    c-scripting-core] Creating script environments for kw_revive
+[    script:kw_revive] [Revive System] Loaded successfully
+[           resources] Started resource kw_revive
+[    c-scripting-core] Creating script environments for kw_textui
+[           resources] Started resource kw_textui
+[    c-scripting-core] Creating script environments for kw_utils
+[     script:kw_utils] [DTF Core] Server loaded
+[           resources] Started resource kw_utils
+[   resources:rmodrs6] Warning: could not find file `vehiclelayouts.meta` (defined in __resource.lua:3)
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.yft uses 19.2 MiB of virtual memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6.ytd uses 48.0 MiB of physical memory.
+[resources:rmodrs6:st] Asset rmodrs6/rmodrs6_hi.yft uses 16.5 MiB of virtual memory.
+[           resources] Started resource rmodrs6 (4 warnings)
+[    c-scripting-core] Creating script environments for rsq8mans
+[    c-scripting-core] Failed to load script @event-protection/Server/server.lua.
+[  resources:rsq8mans] Warning: could not find client_script `vehicle_names.lua` (defined in fxmanifest.lua:21)
+[  resources:rsq8mans] Warning: could not find file `vehiclelayouts.meta` (defined in fxmanifest.lua:6)
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.yft uses 31.9 MiB of virtual memory.
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans.ytd uses 67.0 MiB of physical memory. Oversized assets can and WILL lead to streaming issues (such as models not loading/rendering).
+[resources:rsq8mans:s] Asset rsq8mans/rsq8mans_hi.yft uses 31.9 MiB of virtual memory.
+[           resources] Started resource rsq8mans (5 warnings)
+║              STDERR║ (node:12580) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+║              STDERR║ (Use `FXServer --trace-deprecation ...` to show where the warning was created)
+[       script:oxpsql] Database server connection established!
+[       script:oxpsql] PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit
+[ script:ox_inventory] [ox_inventory] [INFO] Database contains 33 items.
+[      script:kw_core] [INFO] Database schema is up to date (3 migrations).
+[      script:kw_core] [INFO] KW Legacy 1.13.5 initialized!
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://real1kiko-3ygd838.users.cfx.re/
+[       script:ox_lib] An update is available for ox_lib (current version: 3.37.2)
+[       script:ox_lib] https://github.com/overextended/ox_lib/releases/tag/v3.38.0
+[       script:ox_lib] An update is available for ox_inventory (current version: 2.47.7)
+[       script:ox_lib] https://github.com/overextended/ox_inventory/releases/tag/v2.47.8
+[ script:ox_inventory] [ox_inventory] [INFO] Inventory has loaded 247 items
+[      script:kw_kits] [DTF Kits] Database table initialized
+[       script:kw_hud] The version check failed, github is down.
+[      script:hardcap] Connecting: ShyLizard8543
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/dynamic.json (Get "https://89.228.233.88:30120/dynamic.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[      script:kw_core] [INFO] Player "Ughjg Kjh" has connected to the server. ID: 1
+[       script:kw_hud] The version check failed, github is down.
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/dynamic.json (Get "https://89.228.233.88:30120/dynamic.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+[ citizen-server-impl] server thread hitch warning: timer interval of 174 milliseconds
+[ citizen-server-impl] Server list query returned an error: server request failed: server request failed for endpoint https://89.228.233.88:30120/info.json (Get "https://89.228.233.88:30120/info.json": context deadline exceeded (Client.Timeout exceeded while awaiting headers))

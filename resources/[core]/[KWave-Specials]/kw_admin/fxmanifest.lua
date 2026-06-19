@@ -30,5 +30,4 @@ files {
 dependencies {
     'kw_core',
     'ox_inventory',
-    'kw_notify'
 }

@@ -42,7 +42,7 @@ AddEventHandler('__cfx_internal:commandFallback', function(command)
     end
     
     -- Show invalid command notification using kw_notify
-    TriggerClientEvent('kw_notify:client:Notify', src, {
+    TriggerClientEvent('ox_lib:notify', src, {
         type = 'error',
         title = 'Invalid Command',
         description = 'Unknown command: /' .. tostring(command),

@@ -28,11 +28,11 @@ if cfg.Notifications and cfg.Notifications.EngineBroken then
                 
                 -- Engine broken (completely dead)
                 if engineHealth <= 0 and lastEngineHealth > 0 then
-                    exports['kw_notify']:ShowNotification('^1Engine broken down!', 'error')
+                    lib.notify({ description = '^1Engine broken down!', type = 'error' })
                     engineNotified = true
                 -- Engine heavily damaged (smoking, about to break)
                 elseif cfg.Notifications.EngineDamaged and engineHealth <= 300 and lastEngineHealth > 300 and not engineNotified then
-                    exports['kw_notify']:ShowNotification('^3Engine critically damaged! Find a mechanic!', 'warning')
+                    lib.notify({ description = '^3Engine critically damaged! Find a mechanic!', type = 'warning' })
                     engineNotified = true
                 -- Engine reset (vehicle repaired)
                 elseif engineHealth > 500 and engineNotified then
@@ -64,7 +64,7 @@ if cfg.Notifications and cfg.Notifications.LowHealth then
             
             -- Critical health (below 25%)
             if healthPercent <= 25 and health > 0 and not lowHealthNotified then
-                exports['kw_notify']:ShowNotification('^1Critical health! Find cover!', 'error')
+                lib.notify({ description = '^1Critical health! Find cover!', type = 'error' })
                 lowHealthNotified = true
             -- Reset notification when health recovers
             elseif healthPercent > 50 and lowHealthNotified then
@@ -109,9 +109,9 @@ if cfg.Notifications and cfg.Notifications.Death then
                 
                 -- Only show killer name if not self and not environment
                 if killerName and not killedBySelf then
-                    exports['kw_notify']:ShowNotification('^1You were killed by ' .. killerName, 'error')
+                    lib.notify({ description = '^1You were killed by ' .. killerName, type = 'error' })
                 elseif not killedBySelf then
-                    exports['kw_notify']:ShowNotification('^1You died!', 'error')
+                    lib.notify({ description = '^1You died!', type = 'error' })
                 end
                 
                 wasDead = true
@@ -142,12 +142,12 @@ if cfg.Notifications and (cfg.Notifications.FuelLeak or cfg.Notifications.BodyDa
                 
                 -- Fuel tank leak
                 if cfg.Notifications.FuelLeak and tankHealth <= 400 and lastTankHealth > 400 then
-                    exports['kw_notify']:ShowNotification('^3Fuel tank leaking!', 'warning')
+                    lib.notify({ description = '^3Fuel tank leaking!', type = 'warning' })
                 end
                 
                 -- Vehicle heavily damaged
                 if cfg.Notifications.BodyDamage and bodyHealth <= 300 and lastBodyHealth > 300 then
-                    exports['kw_notify']:ShowNotification('^3Vehicle heavily damaged!', 'warning')
+                    lib.notify({ description = '^3Vehicle heavily damaged!', type = 'warning' })
                 end
                 
                 lastBodyHealth = bodyHealth
@@ -199,14 +199,14 @@ if cfg.Notifications and (cfg.Notifications.OutOfAmmo or cfg.Notifications.LowAm
             if hasAmmo and currentAmmo ~= nil then
                 -- Out of ammo (just fired last bullet)
                 if cfg.Notifications.OutOfAmmo and currentAmmo == 0 and lastAmmo > 0 and not notifiedEmpty then
-                    exports['kw_notify']:ShowNotification('^1Out of ammo!', 'warning')
+                    lib.notify({ description = '^1Out of ammo!', type = 'warning' })
                     notifiedEmpty = true
                     notifiedLow = false
                 end
                 
                 -- Low ammo (5 or less, and was above 5 before)
                 if cfg.Notifications.LowAmmo and currentAmmo <= 5 and currentAmmo > 0 and lastAmmo > 5 and not notifiedLow then
-                    exports['kw_notify']:ShowNotification('^3Low ammo! (' .. currentAmmo .. ' left)', 'warning')
+                    lib.notify({ description = '^3Low ammo! (' .. currentAmmo .. ' left)', type = 'warning' })
                     notifiedLow = true
                 end
                 
@@ -252,7 +252,7 @@ if cfg.EngineToggle and cfg.EngineToggle.Enabled then
             local vehicle = GetVehiclePedIsIn(ped, false)
             if vehicle ~= 0 then
                 if LocalPlayer.state.seatbelt then
-                    exports['kw_notify']:ShowNotification('You must unbuckle your seatbelt first!', 'error')
+                    lib.notify({ description = 'You must unbuckle your seatbelt first!', type = 'error' })
                     return
                 end
                 TaskLeaveVehicle(ped, vehicle, 16)
@@ -289,9 +289,9 @@ if cfg.EngineToggle and cfg.EngineToggle.Enabled then
                 SetVehicleEngineOn(vehicle, engineOn, false, true)
                 lastVehicle = vehicle
                 if engineOn then
-                    exports['kw_notify']:ShowNotification('^2Engine started', 'success')
+                    lib.notify({ description = '^2Engine started', type = 'success' })
                 else
-                    exports['kw_notify']:ShowNotification('^1Engine stopped', 'info')
+                    lib.notify({ description = '^1Engine stopped', type = 'info' })
                 end
             end
         end, false)
