@@ -20,6 +20,4 @@ data_file 'VEHICLE_LAYOUTS_FILE' 'vehiclelayouts.meta'   -- Not Required
 
 client_script {
     'vehicle_names.lua'    -- Not Required
-}
-server_script "@event-protection/Server/server.lua"
-client_script "@event-protection/Client/client.lua"
+}
