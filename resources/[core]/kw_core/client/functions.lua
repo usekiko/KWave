@@ -1321,13 +1321,7 @@ function KW.GetAccount(account)
     return nil
 end
 
-function KW.ShowInventory()
-    if not Config.EnableDefaultInventory then
-        return
-    end
 
-    exports.kw_inventory:ShowInventory()
-end
 
 RegisterNetEvent('kw:showNotification', KW.ShowNotification)
 
